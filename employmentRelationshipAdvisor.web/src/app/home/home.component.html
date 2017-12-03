@@ -1,23 +1,16 @@
-<mat-toolbar color="primary">
-    <mat-toolbar-row>
-        <span>MyMaterial</span>
-        <span class="example-spacer"></span>
+<app-toolbar></app-toolbar>
 
-        <button mat-button>About</button>
-        <button mat-button>Services</button>
-        <button mat-button>Contact</button>
-    </mat-toolbar-row>
-</mat-toolbar>
-
-<mat-card>
+<mat-card (keydown.enter)="calculate()">
     <mat-form-field>
-        <input matInput [(ngModel)]="salary" placeholder="Miesięczna pensja netto">
+        <input matInput [(ngModel)]="salaryNetto" placeholder="Miesięczna pensja netto">
     </mat-form-field>
-
     <br>
 
-    <button mat-raised-button (click)="showSalary()">Pokaż pensję</button>
-    <mat-spinner [style.display]="isSpinnerVisible ? 'block' : 'none'"></mat-spinner>
+    <button mat-raised-button (click)="calculate()">Sprawdź</button>
+    <div>
+        <br>
+        <mat-spinner [style.display]="isSpinnerVisible ? 'block' : 'none'"></mat-spinner>
+    </div>
 </mat-card>
 
 <mat-card *ngIf="salaryDisplay">

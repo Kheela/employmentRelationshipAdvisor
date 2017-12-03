@@ -8,7 +8,7 @@ import { Http, URLSearchParams } from '@angular/http';
 })
 export class HomeComponent implements OnInit {
   apiRoot = 'http://httpbin.org';
-  salary = '';
+  salaryNetto = '';
   salaryDisplay = '';
   isSpinnerVisible = false;
 
@@ -17,11 +17,11 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
-  showSalary() {
+  calculate() {
     this.isSpinnerVisible = true;
 
     setTimeout(() => {
-      this.salaryDisplay = this.salary;
+      this.salaryDisplay = this.salaryNetto;
       this.isSpinnerVisible = false;
     }, 2000);
   }
