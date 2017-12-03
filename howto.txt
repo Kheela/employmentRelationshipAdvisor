@@ -4,6 +4,14 @@
 > ng generate component home
 > ng g c about
 
+--------------------------------------
+    Bootstrap = responsive page
+    AngularJS = MVC
+    Material Design = great UI/UX
+
+Both material and bootstrap provide a responsive design and great UI/UX. MD seems to be tailored more towards mobile viewership.	
+--------------------------------------
+
 -- install bootstrap
 https://stackoverflow.com/questions/37649164/how-to-add-bootstrap-to-an-angular-cli-project
 
@@ -23,3 +31,12 @@ https://stackoverflow.com/questions/37649164/how-to-add-bootstrap-to-an-angular-
 
 > Restart ng serve if you're running it, and Bootstrap 4 should be working on your app.
 
+-- material
+
+> npm install @angular/material @angular/cdk --save
+> npm install @angular/animations // because material depends on some animations
+> npm install hammerjs // for gestures
+
+-- extensions
+
+https://medium.com/frontend-coach/7-must-have-visual-studio-code-extensions-for-angular-af9c476147fd
