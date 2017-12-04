@@ -1,22 +1,21 @@
 import { AppRoutingModule } from './app-routing.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
-import { CollapseDirective } from 'ngx-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { BootstrapModule } from './bootstrap.module';
 import { HomeComponent } from './home/home.component';
 import { MaterialModule } from './material.module';
-import { ToolbarComponent } from './home/toolbar/toolbar.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CollapseDirective,
     HomeComponent,
-    ToolbarComponent
+    NavigationComponent
   ],
   imports: [
     AppRoutingModule,
@@ -24,7 +23,8 @@ import { ToolbarComponent } from './home/toolbar/toolbar.component';
     BrowserAnimationsModule,
     FormsModule,
     HttpModule,
-    MaterialModule
+    MaterialModule,
+    BootstrapModule
   ],
   providers: [],
   bootstrap: [AppComponent]
