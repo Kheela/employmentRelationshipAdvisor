@@ -6,9 +6,9 @@ import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { BootstrapModule } from './bootstrap.module';
+import { BootstrapModule } from './common/ux/bootstrap.module';
 import { HomeComponent } from './home/components/home.component';
-import { MaterialModule } from './material.module';
+import { MaterialModule } from './common/ux/material.module';
 import { NavigationComponent } from './navigation/components/navigation.component';
 
 @NgModule({
