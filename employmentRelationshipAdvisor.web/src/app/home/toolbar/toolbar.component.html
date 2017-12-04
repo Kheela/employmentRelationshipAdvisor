@@ -1,10 +1,21 @@
-<mat-toolbar color="primary">
-    <mat-toolbar-row>
-        <span>Jaki wybrać stosunek pracy?</span>
-        <span class="example-spacer"></span>
+<nav class="navbar navbar-toggleable-sm navbar-expand-lg navbar-dark" style="background-color: #4776db;">
+    
+    <a class="navbar-brand" href="#">Navbar</a>
 
-        <!-- <button mat-button>About</button>
-        <button mat-button>Services</button>
-        <button mat-button>Contact</button> -->
-    </mat-toolbar-row>
-</mat-toolbar>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarNavAltMarkup"
+        aria-expanded="false" aria-label="Toggle navigation" (click)="isCollapsed = !isCollapsed">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup" [collapse]="isCollapsed">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="#">Home
+                <span class="sr-only">(current)</span>
+            </a>
+            <a class="nav-item nav-link" href="#">Features</a>
+            <a class="nav-item nav-link" href="#">Pricing</a>
+            <a class="nav-item nav-link disabled" href="#">Disabled</a>
+        </div>
+    </div>
+
+</nav>

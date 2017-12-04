@@ -1,18 +1,28 @@
 <app-toolbar></app-toolbar>
 
-<mat-card (keydown.enter)="calculate()">
-    <mat-form-field>
-        <input matInput [(ngModel)]="salaryNetto" placeholder="Miesięczna pensja netto">
-    </mat-form-field>
-    <br>
-
-    <button mat-raised-button (click)="calculate()">Sprawdź</button>
-    <div>
+<div class="card" (keydown.enter)="calculate()">
+    <div class="card-body">
+        <h4>Jaki wybrać stosunek pracy?</h4>
         <br>
-        <mat-spinner [style.display]="isSpinnerVisible ? 'block' : 'none'"></mat-spinner>
-    </div>
-</mat-card>
 
-<mat-card *ngIf="salaryDisplay">
-    <h1>{{ salaryDisplay }} </h1>
-</mat-card>
+        <div class="form-group">
+            <label for="salaryNetto">Miesięczna pensja netto (PLN)</label>
+            <input type="text" class="form-control" id="salaryNetto" placeholder="netto" [(ngModel)]="salaryNetto">
+        </div>
+    </div>
+
+    <button id="calculateBtn" type="button" class="btn btn-outline-primary btn-lg has-spinner" (click)="calculate(); onClick()"
+        [class.active]="wasCalculateClicked">
+        <span class="spinner" [style.display]="isSpinnerVisible ? 'inline' : 'none'">
+            <i class="icon-spin icon-refresh icon-large"></i>
+        </span>
+        <span [style.display]="isSpinnerVisible ? 'none' : 'inline'">
+            Sprawdź
+        </span>
+    </button>
+
+    <br>
+    <div class="card-body">
+        <h1 *ngIf="salaryDisplay">{{ salaryDisplay }} </h1>
+    </div>
+</div>

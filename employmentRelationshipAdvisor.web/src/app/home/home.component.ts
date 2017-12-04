@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, URLSearchParams } from '@angular/http';
+import { MouseEvent } from 'ngx-bootstrap/utils/facade/browser';
+import { element } from 'protractor';
 
 @Component({
   selector: 'home',
@@ -11,6 +13,7 @@ export class HomeComponent implements OnInit {
   salaryNetto = '';
   salaryDisplay = '';
   isSpinnerVisible = false;
+  wasCalculateClicked = false;
 
   constructor(private http: Http) { }
 
@@ -24,5 +27,9 @@ export class HomeComponent implements OnInit {
       this.salaryDisplay = this.salaryNetto;
       this.isSpinnerVisible = false;
     }, 2000);
+  }
+
+  onClick() {
+    this.wasCalculateClicked = !this.wasCalculateClicked;
   }
 }
