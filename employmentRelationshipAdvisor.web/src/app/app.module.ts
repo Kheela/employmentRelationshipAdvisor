@@ -7,9 +7,9 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { BootstrapModule } from './bootstrap.module';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './home/components/home.component';
 import { MaterialModule } from './material.module';
-import { NavigationComponent } from './navigation/navigation.component';
+import { NavigationComponent } from './navigation/components/navigation.component';
 
 @NgModule({
   declarations: [
