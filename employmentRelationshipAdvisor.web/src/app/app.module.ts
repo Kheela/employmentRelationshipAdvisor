@@ -8,7 +8,6 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BootstrapModule } from './common/ux/bootstrap.module';
 import { HomeComponent } from './home/components/home.component';
-import { MaterialModule } from './common/ux/material.module';
 import { NavigationComponent } from './navigation/components/navigation.component';
 
 @NgModule({
@@ -23,7 +22,6 @@ import { NavigationComponent } from './navigation/components/navigation.componen
     BrowserAnimationsModule,
     FormsModule,
     HttpModule,
-    MaterialModule,
     BootstrapModule
   ],
   providers: [],
