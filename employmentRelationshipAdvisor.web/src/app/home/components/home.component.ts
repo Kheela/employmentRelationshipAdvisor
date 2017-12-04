@@ -4,7 +4,7 @@ import { MouseEvent } from 'ngx-bootstrap/utils/facade/browser';
 import { element } from 'protractor';
 
 @Component({
-  selector: 'home',
+  selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
