@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9420872D-688B-4DA0-8A40-B40962B3F958}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>EmploymentRelationshipAdvisor</RootNamespace>
-    <AssemblyName>EmploymentRelationshipAdvisor</AssemblyName>
+    <ProjectGuid>{34D898C8-CCCA-42BB-B152-3C3D951F0502}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EmploymentRelationshipAdvisor.Shared</RootNamespace>
+    <AssemblyName>EmploymentRelationshipAdvisor.Shared</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -42,20 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EmploymentContract\EmploymentContractEmployeeExampleValues.cs" />
-    <Compile Include="EmploymentContract\EmploymentContractCalculationContext.cs" />
-    <Compile Include="EmploymentContract\EmploymentContractCalculator.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Extensions\PercentageExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\EmploymentRelationshipAdvisor.Shared\EmploymentRelationshipAdvisor.Shared.csproj">
-      <Project>{34d898c8-ccca-42bb-b152-3c3d951f0502}</Project>
-      <Name>EmploymentRelationshipAdvisor.Shared</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

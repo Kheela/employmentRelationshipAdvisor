@@ -1,5 +1,5 @@
 using System;
-using EmploymentRelationshipAdvisor.Calculation.Common;
+using EmploymentRelationshipAdvisor.Shared.Extensions;
 
 namespace EmploymentRelationshipAdvisor.Calculation.EmploymentContract
 {

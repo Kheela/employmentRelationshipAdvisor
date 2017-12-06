@@ -1,4 +1,4 @@
-﻿namespace EmploymentRelationshipAdvisor.Calculation.Common
+﻿namespace EmploymentRelationshipAdvisor.Shared.Extensions
 {
     public static class PercentageExtensions
     {
