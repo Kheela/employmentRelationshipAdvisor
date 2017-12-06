@@ -1,17 +1,17 @@
 using System;
 using EmploymentRelationshipAdvisor.Calculation.Common;
 
-namespace EmploymentRelationshipAdvisor.Calculation.PermanentContract
+namespace EmploymentRelationshipAdvisor.Calculation.EmploymentContract
 {
-    public class PermanentContractCalculationResult
+    public class EmploymentContractCalculationResult
     {
 
     }
 
-    public class PermanentContractCalculator
+    public class EmploymentContractCalculator
     {
-        public PermanentContractCalculationResult Calculate(decimal monthBruttoSalary,
-                                                            PermanentContractCalculationContext context)
+        public EmploymentContractCalculationResult Calculate(decimal monthBruttoSalary,
+                                                             EmploymentContractCalculationContext context)
         {
             Console.WriteLine($"Pensja brutto: {monthBruttoSalary.ToString("0.00")}");
             Console.WriteLine();
@@ -81,7 +81,7 @@ namespace EmploymentRelationshipAdvisor.Calculation.PermanentContract
             var monthNettoSalary = monthBruttoSalary - tax - socialInsuranceContribution - healthInsurance;
             Console.WriteLine($"Pensja netto: {monthNettoSalary.ToString("0.00")}");
 
-            return new PermanentContractCalculationResult();
+            return new EmploymentContractCalculationResult();
         }
     }
 }

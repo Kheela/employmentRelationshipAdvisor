@@ -1,5 +1,5 @@
 ﻿using System;
-using EmploymentRelationshipAdvisor.Calculation.PermanentContract;
+using EmploymentRelationshipAdvisor.Calculation.EmploymentContract;
 
 namespace EmploymentRelationshipAdvisor.Calculation
 {
@@ -7,21 +7,21 @@ namespace EmploymentRelationshipAdvisor.Calculation
     {
         static void Main(string[] args)
         {
-            var context = new PermanentContractCalculationContext
+            var context = new EmploymentContractCalculationContext
             {
-                Parameters = new PermanentContractCalculationParameters
+                Parameters = new EmploymentContractCalculationParameters
                 {
-                    EmployeeContributionParameters = new EmployeePermanentContractContributionParameters
+                    EmployeeContributionParameters = new EmploymentContractEmployeeContributionParameters
                     {
-                        SocialInsuranceContributionParameters = EmployeePermanentContractExampleValues.SocialInsuranceContributionParameters,
-                        DeductibleParameters = EmployeePermanentContractExampleValues.DeductibleParameters,
-                        HealthInsuranceContributionParameters = EmployeePermanentContractExampleValues.HealthInsuranceContributionParameters,
-                        TaxRelief = EmployeePermanentContractExampleValues.TaxRelief
+                        SocialInsuranceContributionParameters = EmploymentContractEmployeeExampleValues.SocialInsuranceContributionParameters,
+                        DeductibleParameters = EmploymentContractEmployeeExampleValues.DeductibleParameters,
+                        HealthInsuranceContributionParameters = EmploymentContractEmployeeExampleValues.HealthInsuranceContributionParameters,
+                        TaxRelief = EmploymentContractEmployeeExampleValues.TaxRelief
                     }
                 }
             };
 
-            var calculator = new PermanentContractCalculator();
+            var calculator = new EmploymentContractCalculator();
             calculator.Calculate(13000m, context);
 
             Console.ReadLine();

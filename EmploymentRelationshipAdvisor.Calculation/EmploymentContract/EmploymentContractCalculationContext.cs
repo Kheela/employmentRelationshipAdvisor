@@ -1,17 +1,17 @@
-﻿namespace EmploymentRelationshipAdvisor.Calculation.PermanentContract
+﻿namespace EmploymentRelationshipAdvisor.Calculation.EmploymentContract
 {
-    public class PermanentContractCalculationContext
+    public class EmploymentContractCalculationContext
     {
-        public PermanentContractCalculationParameters Parameters { get; set; }
+        public EmploymentContractCalculationParameters Parameters { get; set; }
     }
 
-    public class PermanentContractCalculationParameters
+    public class EmploymentContractCalculationParameters
     {
-        public EmployeePermanentContractContributionParameters EmployeeContributionParameters { get; set; } = new EmployeePermanentContractContributionParameters();
+        public EmploymentContractEmployeeContributionParameters EmployeeContributionParameters { get; set; } = new EmploymentContractEmployeeContributionParameters();
     }
 
     // todo: get from net
-    public class EmployeePermanentContractContributionParameters
+    public class EmploymentContractEmployeeContributionParameters
     {
         public SocialInsuranceContributionParameters SocialInsuranceContributionParameters { get; set; }
 

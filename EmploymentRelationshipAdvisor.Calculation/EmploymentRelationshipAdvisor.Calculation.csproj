@@ -42,10 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PermanentContract\EmployeePermanentContractExampleValues.cs" />
+    <Compile Include="EmploymentContract\EmploymentContractEmployeeExampleValues.cs" />
     <Compile Include="Common\PercentageExtensions.cs" />
-    <Compile Include="PermanentContract\PermanentContractCalculationContext.cs" />
-    <Compile Include="PermanentContract\PermanentContractCalculator.cs" />
+    <Compile Include="EmploymentContract\EmploymentContractCalculationContext.cs" />
+    <Compile Include="EmploymentContract\EmploymentContractCalculator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

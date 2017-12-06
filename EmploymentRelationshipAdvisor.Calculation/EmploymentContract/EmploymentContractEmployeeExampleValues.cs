@@ -1,6 +1,6 @@
-﻿namespace EmploymentRelationshipAdvisor.Calculation.PermanentContract
+﻿namespace EmploymentRelationshipAdvisor.Calculation.EmploymentContract
 {
-    public static class EmployeePermanentContractExampleValues
+    public static class EmploymentContractEmployeeExampleValues
     {
         public static SocialInsuranceContributionParameters SocialInsuranceContributionParameters = new SocialInsuranceContributionParameters
         {
