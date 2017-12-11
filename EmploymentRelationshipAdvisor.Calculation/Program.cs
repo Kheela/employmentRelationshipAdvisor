@@ -7,23 +7,24 @@ namespace EmploymentRelationshipAdvisor.Calculation
     {
         static void Main(string[] args)
         {
+            var calculator = new EmploymentContractCalculator();
+            var consoleReporter = new EmploymentContractCalculationResultConsoleReporter();
+
             var context = new EmploymentContractCalculationContext
             {
-                Parameters = new EmploymentContractCalculationParameters
+                EmployeeContributionParameters = new EmploymentContractEmployeeContributionParameters
                 {
-                    EmployeeContributionParameters = new EmploymentContractEmployeeContributionParameters
-                    {
-                        SocialInsuranceContributionParameters = EmploymentContractEmployeeExampleValues.SocialInsuranceContributionParameters,
-                        DeductibleParameters = EmploymentContractEmployeeExampleValues.DeductibleParameters,
-                        HealthInsuranceContributionParameters = EmploymentContractEmployeeExampleValues.HealthInsuranceContributionParameters,
-                        TaxRelief = EmploymentContractEmployeeExampleValues.TaxRelief
-                    }
+                    SocialInsuranceContributionParameters = EmploymentContractEmployeeExampleValues.SocialInsuranceContributionParameters,
+                    DeductibleParameters = EmploymentContractEmployeeExampleValues.DeductibleParameters,
+                    HealthInsuranceContributionParameters = EmploymentContractEmployeeExampleValues.HealthInsuranceContributionParameters,
+                    TaxRelief = EmploymentContractEmployeeExampleValues.TaxRelief
                 }
             };
 
-            var calculator = new EmploymentContractCalculator();
-            calculator.Calculate(13000m, context);
+            var calculationResult = calculator.Calculate(13000m, context);
+            consoleReporter.Report(calculationResult, context);
 
+            Console.WriteLine("Wcisnij <ENTER> aby zakonczyc");
             Console.ReadLine();
         }
     }

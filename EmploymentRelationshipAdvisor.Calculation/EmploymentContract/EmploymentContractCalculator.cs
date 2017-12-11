@@ -1,87 +1,116 @@
-using System;
 using EmploymentRelationshipAdvisor.Shared.Extensions;
 
 namespace EmploymentRelationshipAdvisor.Calculation.EmploymentContract
 {
     public class EmploymentContractCalculationResult
     {
+        public decimal BruttoSalary { get; set; }
 
+        public decimal SocialInsuranceContribution { get; set; }
+
+        public decimal PensionInsuranceContribution { get; set; }
+        public decimal DisabilityPensionInsuranceContribution { get; set; }
+        public decimal SicknessInsuranceContribution { get; set; }
+
+        public decimal TaxDeductibleExpenses { get; set; }
+        public decimal DriveExpenses { get; set; }
+
+        public decimal CopyrightLawsValue { get; set; }
+        public decimal CopyrightLawsCosts { get; set; }
+
+        public decimal TaxBase { get; set; }
+
+        public decimal HealthInsurance { get; set; }
+        public decimal HealthInsurancePaidFromTax { get; set; }
+        public decimal HealthInsurancePaidFromNetto { get; set; }
+
+        public decimal Tax { get; set; }
+
+        public decimal NettoSalary { get; set; }
     }
 
-    public class EmploymentContractCalculator
+    public interface IEmploymentContractCalculator
     {
-        public EmploymentContractCalculationResult Calculate(decimal monthBruttoSalary,
-                                                             EmploymentContractCalculationContext context)
+        EmploymentContractCalculationResult Calculate(decimal bruttoSalary, EmploymentContractCalculationContext context);
+    }
+
+    public class EmploymentContractCalculator : IEmploymentContractCalculator
+    {
+        public EmploymentContractCalculationResult Calculate(decimal bruttoSalary, EmploymentContractCalculationContext context)
         {
-            Console.WriteLine($"Pensja brutto: {monthBruttoSalary.ToString("0.00")}");
-            Console.WriteLine();
+            var result = new EmploymentContractCalculationResult
+            {
+                BruttoSalary = bruttoSalary
+            };
 
-            // 1. podstawa opodatkowania
-            // 1.1. skladki zus
-            var socialContributionParameters = context.Parameters.EmployeeContributionParameters.SocialInsuranceContributionParameters;
+            CalculateTaxBase(result, context);
+            CalculateHealthInsuranceContribution(result, context);
+            CalculateTax(result, context);
+            CalculateNettoSalary(result);
 
-            var pensionInsuranceContribution = socialContributionParameters.PensionInsuranceContributionPercentage.CalculatePercentage(monthBruttoSalary);
-            Console.WriteLine($"ZUS emer. ({socialContributionParameters.PensionInsuranceContributionPercentage.ToString("0.00")}%): {pensionInsuranceContribution.ToString("0.00")}");
+            return result;
+        }
 
-            var disabilityPensionInsuranceContribution = socialContributionParameters.DisabilityPensionInsuranceContributionPercentage.CalculatePercentage(monthBruttoSalary);
-            Console.WriteLine($"ZUS rent. ({socialContributionParameters.DisabilityPensionInsuranceContributionPercentage.ToString("0.00")}%): {disabilityPensionInsuranceContribution.ToString("0.00")}");
+        public EmploymentContractCalculationResult CalculateTaxBase(EmploymentContractCalculationResult result, EmploymentContractCalculationContext context)
+        {
+            CalculateSocialInsuranceContribution(result, context);
+            CalculateDeductibles(result, context);
 
-            var sicknessInsuranceContribution = socialContributionParameters.SicknessInsuranceContributionPercentage.CalculatePercentage(monthBruttoSalary);
-            Console.WriteLine($"ZUS chor. ({socialContributionParameters.SicknessInsuranceContributionPercentage.ToString("0.00")}%): {sicknessInsuranceContribution.ToString("0.00")}");
+            var salaryMinusSocial = result.BruttoSalary - result.SocialInsuranceContribution;
+            result.TaxBase = salaryMinusSocial - result.CopyrightLawsCosts;
 
-            var socialInsuranceContributionPercentage = socialContributionParameters.PensionInsuranceContributionPercentage + socialContributionParameters.DisabilityPensionInsuranceContributionPercentage + socialContributionParameters.SicknessInsuranceContributionPercentage;
-            var socialInsuranceContribution = socialInsuranceContributionPercentage.CalculatePercentage(monthBruttoSalary);
-            Console.WriteLine($"ZUS ({socialInsuranceContributionPercentage.ToString("0.00")}%): {socialInsuranceContribution.ToString("0.00")}");
-            Console.WriteLine();
+            return result;
+        }
 
-            // 1.2 koszty uzysku
+        private EmploymentContractCalculationResult CalculateSocialInsuranceContribution(EmploymentContractCalculationResult result, EmploymentContractCalculationContext context)
+        {
+            var socialParameters = context.EmployeeContributionParameters.SocialInsuranceContributionParameters;
+
+            result.PensionInsuranceContribution = socialParameters.PensionInsuranceContributionPercentage.PercentageOf(result.BruttoSalary);
+            result.DisabilityPensionInsuranceContribution = socialParameters.DisabilityPensionInsuranceContributionPercentage.PercentageOf(result.BruttoSalary);
+            result.SicknessInsuranceContribution = socialParameters.SicknessInsuranceContributionPercentage.PercentageOf(result.BruttoSalary);
+            result.SocialInsuranceContribution = socialParameters.TotalPercentage.PercentageOf(result.BruttoSalary);
+
+            return result;
+        }
+
+        private EmploymentContractCalculationResult CalculateDeductibles(EmploymentContractCalculationResult result, EmploymentContractCalculationContext context)
+        {
             // koszty uzysku z calej pensji - pomijam na razie
-            var taxDeductibleExpenses = context.Parameters.EmployeeContributionParameters.DeductibleParameters.TaxDeductibleExpensesPercentage.CalculatePercentage(monthBruttoSalary);
-            Console.WriteLine($"Koszty uzysku: {taxDeductibleExpenses.ToString("0.00")}");
+            var deductibleParameters = context.EmployeeContributionParameters.DeductibleParameters;
 
-            var driveExpenses = context.Parameters.EmployeeContributionParameters.DeductibleParameters.DriveExpenses;
-            Console.WriteLine($"Koszty uzysku za dojazd: {driveExpenses.ToString("0.00")}");
+            result.TaxDeductibleExpenses = deductibleParameters.TaxDeductibleExpensesPercentage.PercentageOf(result.BruttoSalary);
+            result.DriveExpenses = deductibleParameters.DriveExpenses;
 
-            var salaryMinusSocial = monthBruttoSalary - socialInsuranceContribution;
+            var salaryMinusSocial = result.BruttoSalary - result.SocialInsuranceContribution;
 
-            var copyrightLawsValue = context.Parameters.EmployeeContributionParameters.DeductibleParameters.CopyrightLawsPercentage.CalculatePercentage(salaryMinusSocial);
-            Console.WriteLine($"Prawa autorskie: {copyrightLawsValue.ToString("0.00")}");
+            result.CopyrightLawsValue = deductibleParameters.CopyrightLawsPercentage.PercentageOf(salaryMinusSocial);
+            result.CopyrightLawsCosts = EmploymentContractConsts.CopyrightLawsCostsPercentage.PercentageOf(result.CopyrightLawsValue);
 
-            const decimal copyrightLawsCostsPercentage = 50m;
-            var copyrightLawsCosts = copyrightLawsCostsPercentage.CalculatePercentage(copyrightLawsValue);
-            Console.WriteLine($"Koszty z praw autorskich: {copyrightLawsCosts.ToString("0.00")}");
+            return result;
+        }
 
-            var taxBase = salaryMinusSocial - copyrightLawsCosts;
-            Console.WriteLine($"Podstawa opodatkowania (PIT): {taxBase.ToString("0.00")}");
-            Console.WriteLine();
+        private static void CalculateHealthInsuranceContribution(EmploymentContractCalculationResult result, EmploymentContractCalculationContext context)
+        {
+            var healthParameters = context.EmployeeContributionParameters.HealthInsuranceContributionParameters;
+            var salaryMinusSocial = result.BruttoSalary - result.SocialInsuranceContribution;
 
-            // 2. skladki na ubezpieczenie zdrowotne
-            var healthInsurance = context.Parameters.EmployeeContributionParameters.HealthInsuranceContributionParameters.TotalHealthInsurancePercentage.CalculatePercentage(salaryMinusSocial);
-            Console.WriteLine($"Ubezpieczenie zdrowotne (NFZ) - calosc: {healthInsurance.ToString("0.00")}");
+            result.HealthInsurance = healthParameters.TotalHealthInsurancePercentage.PercentageOf(salaryMinusSocial);
+            result.HealthInsurancePaidFromTax = healthParameters.HealthInsurancePaidFromTaxPercentage.PercentageOf(salaryMinusSocial);
+            result.HealthInsurancePaidFromNetto = result.HealthInsurance - result.HealthInsurancePaidFromTax;
+        }
 
-            var healthInsurancePaidFromTax = context.Parameters.EmployeeContributionParameters.HealthInsuranceContributionParameters.HealthInsurancePaidFromTaxPercentage.CalculatePercentage(salaryMinusSocial);
-            Console.WriteLine($"NFZ - skladka odliczana od podatku: {healthInsurancePaidFromTax.ToString("0.00")}");
-
-            var healthInsurancePaidFromNetto = healthInsurance - healthInsurancePaidFromTax;
-            Console.WriteLine($"NFZ - skladka oplacana przez zatrudnionego: {healthInsurancePaidFromNetto.ToString("0.00")}");
-            Console.WriteLine();
+        private static void CalculateTax(EmploymentContractCalculationResult result, EmploymentContractCalculationContext context)
+        {
+            var taxRelief = context.EmployeeContributionParameters.TaxRelief;
 
             // 3. zaliczka na podatek
-            var taxRelief = context.Parameters.EmployeeContributionParameters.TaxRelief;
-            Console.WriteLine($"Ulga podatkowa: {taxRelief.ToString("0.00")}");
+            result.Tax = EmploymentContractConsts.TaxPercentage.PercentageOf(result.TaxBase) - taxRelief - result.HealthInsurancePaidFromTax;
+        }
 
-            const decimal taxPercentage = 18m; // todo: dodac prog 32% itd..
-            var tax = taxPercentage.CalculatePercentage(taxBase) - taxRelief - healthInsurancePaidFromTax;
-            //todo: zaokraglenia a nie format
-            Console.WriteLine($"Podatek dochodowy (PIT)");
-            Console.WriteLine($"({taxPercentage}% * podstawa opodatkowania - ulga - NFZ z podatku): {tax.ToString("0.00")}");
-            Console.WriteLine();
-
-            // 4. netto
-            var monthNettoSalary = monthBruttoSalary - tax - socialInsuranceContribution - healthInsurance;
-            Console.WriteLine($"Pensja netto: {monthNettoSalary.ToString("0.00")}");
-
-            return new EmploymentContractCalculationResult();
+        private static void CalculateNettoSalary(EmploymentContractCalculationResult result)
+        {
+            result.NettoSalary = result.BruttoSalary - result.Tax - result.SocialInsuranceContribution - result.HealthInsurance;
         }
     }
 }

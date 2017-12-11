@@ -2,11 +2,6 @@
 {
     public class EmploymentContractCalculationContext
     {
-        public EmploymentContractCalculationParameters Parameters { get; set; }
-    }
-
-    public class EmploymentContractCalculationParameters
-    {
         public EmploymentContractEmployeeContributionParameters EmployeeContributionParameters { get; set; } = new EmploymentContractEmployeeContributionParameters();
     }
 
@@ -30,6 +25,16 @@
         public decimal DisabilityPensionInsuranceContributionPercentage { get; set; }
 
         public decimal SicknessInsuranceContributionPercentage { get; set; }
+
+        public decimal TotalPercentage
+        {
+            get
+            {
+                return PensionInsuranceContributionPercentage +
+                    DisabilityPensionInsuranceContributionPercentage +
+                    SicknessInsuranceContributionPercentage;
+            }
+        }
     }
 
     public class DeductibleParameters

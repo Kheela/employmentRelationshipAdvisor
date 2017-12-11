@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{9420872D-688B-4DA0-8A40-B40962B3F958}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>EmploymentRelationshipAdvisor</RootNamespace>
-    <AssemblyName>EmploymentRelationshipAdvisor</AssemblyName>
+    <RootNamespace>EmploymentRelationshipAdvisor.Calculation</RootNamespace>
+    <AssemblyName>EmploymentRelationshipAdvisor.Calculation</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>6</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -42,9 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmploymentContract\EmploymentContractConsts.cs" />
+    <Compile Include="EmploymentContract\EmploymentContractCalculationResultConsoleReporter.cs" />
+    <Compile Include="EmploymentContract\EmploymentContractCalculator.cs" />
     <Compile Include="EmploymentContract\EmploymentContractEmployeeExampleValues.cs" />
     <Compile Include="EmploymentContract\EmploymentContractCalculationContext.cs" />
-    <Compile Include="EmploymentContract\EmploymentContractCalculator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
