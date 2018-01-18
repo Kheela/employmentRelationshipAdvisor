@@ -1,6 +1,7 @@
-﻿using System;
+﻿using EmploymentRelationshipAdvisor.Calculation.EmploymentContract;
+using System;
 
-namespace EmploymentRelationshipAdvisor.Calculation.EmploymentContract
+namespace EmploymentRelationshipAdvisor.ConsoleApi
 {
     public interface IEmploymentContractCalculationResultConsoleReporter
     {

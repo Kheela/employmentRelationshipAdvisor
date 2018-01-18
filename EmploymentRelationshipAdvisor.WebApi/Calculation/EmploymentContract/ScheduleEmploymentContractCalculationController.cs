@@ -1,14 +1,14 @@
-﻿using System;
-using EmploymentRelationshipAdvisor.Calculation.EmploymentContract;
+﻿using EmploymentRelationshipAdvisor.Calculation.EmploymentContract;
+using System.Web.Http;
 
-namespace EmploymentRelationshipAdvisor.Calculation
+namespace EmploymentRelationshipAdvisor.WebApi.Calculation.EmploymentContract
 {
-    class Program
+    public class ScheduleEmploymentContractCalculationController : ApiController
     {
-        static void Main(string[] args)
+        // GET: api/ScheduleEmploymentContractCalculation
+        public EmploymentContractCalculationResult Get()
         {
             var calculator = new EmploymentContractCalculator();
-            var consoleReporter = new EmploymentContractCalculationResultConsoleReporter();
 
             var context = new EmploymentContractCalculationContext
             {
@@ -22,10 +22,8 @@ namespace EmploymentRelationshipAdvisor.Calculation
             };
 
             var calculationResult = calculator.Calculate(13000m, context);
-            consoleReporter.Report(calculationResult, context);
 
-            Console.WriteLine("Wcisnij <ENTER> aby zakonczyc");
-            Console.ReadLine();
+            return calculationResult;
         }
     }
 }
