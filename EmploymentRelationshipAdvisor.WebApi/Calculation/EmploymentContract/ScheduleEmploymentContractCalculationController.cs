@@ -5,8 +5,8 @@ namespace EmploymentRelationshipAdvisor.WebApi.Calculation.EmploymentContract
 {
     public class ScheduleEmploymentContractCalculationController : ApiController
     {
-        // GET: api/ScheduleEmploymentContractCalculation
-        public EmploymentContractCalculationResult Get()
+        // GET api/ScheduleEmploymentContractCalculation
+        public EmploymentContractCalculationResult Get(decimal salaryBrutto)
         {
             var calculator = new EmploymentContractCalculator();
 
@@ -21,7 +21,7 @@ namespace EmploymentRelationshipAdvisor.WebApi.Calculation.EmploymentContract
                 }
             };
 
-            var calculationResult = calculator.Calculate(13000m, context);
+            var calculationResult = calculator.Calculate(salaryBrutto, context);
 
             return calculationResult;
         }

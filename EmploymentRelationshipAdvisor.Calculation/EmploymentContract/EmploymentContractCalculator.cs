@@ -1,10 +1,11 @@
 using EmploymentRelationshipAdvisor.Shared.Extensions;
+using System;
 
 namespace EmploymentRelationshipAdvisor.Calculation.EmploymentContract
 {
     public class EmploymentContractCalculationResult
     {
-        public decimal BruttoSalary { get; set; }
+        public decimal SalaryBrutto { get; set; }
 
         public decimal SocialInsuranceContribution { get; set; }
 
@@ -26,21 +27,21 @@ namespace EmploymentRelationshipAdvisor.Calculation.EmploymentContract
 
         public decimal Tax { get; set; }
 
-        public decimal NettoSalary { get; set; }
+        public decimal SalaryNetto { get; set; }
     }
 
     public interface IEmploymentContractCalculator
     {
-        EmploymentContractCalculationResult Calculate(decimal bruttoSalary, EmploymentContractCalculationContext context);
+        EmploymentContractCalculationResult Calculate(decimal salaryBrutto, EmploymentContractCalculationContext context);
     }
 
     public class EmploymentContractCalculator : IEmploymentContractCalculator
     {
-        public EmploymentContractCalculationResult Calculate(decimal bruttoSalary, EmploymentContractCalculationContext context)
+        public EmploymentContractCalculationResult Calculate(decimal salaryBrutto, EmploymentContractCalculationContext context)
         {
             var result = new EmploymentContractCalculationResult
             {
-                BruttoSalary = bruttoSalary
+                SalaryBrutto = salaryBrutto
             };
 
             CalculateTaxBase(result, context);
@@ -56,7 +57,7 @@ namespace EmploymentRelationshipAdvisor.Calculation.EmploymentContract
             CalculateSocialInsuranceContribution(result, context);
             CalculateDeductibles(result, context);
 
-            var salaryMinusSocial = result.BruttoSalary - result.SocialInsuranceContribution;
+            var salaryMinusSocial = result.SalaryBrutto - result.SocialInsuranceContribution;
             result.TaxBase = salaryMinusSocial - result.CopyrightLawsCosts;
 
             return result;
@@ -66,10 +67,10 @@ namespace EmploymentRelationshipAdvisor.Calculation.EmploymentContract
         {
             var socialParameters = context.EmployeeContributionParameters.SocialInsuranceContributionParameters;
 
-            result.PensionInsuranceContribution = socialParameters.PensionInsuranceContributionPercentage.PercentageOf(result.BruttoSalary);
-            result.DisabilityPensionInsuranceContribution = socialParameters.DisabilityPensionInsuranceContributionPercentage.PercentageOf(result.BruttoSalary);
-            result.SicknessInsuranceContribution = socialParameters.SicknessInsuranceContributionPercentage.PercentageOf(result.BruttoSalary);
-            result.SocialInsuranceContribution = socialParameters.TotalPercentage.PercentageOf(result.BruttoSalary);
+            result.PensionInsuranceContribution = socialParameters.PensionInsuranceContributionPercentage.PercentageOf(result.SalaryBrutto);
+            result.DisabilityPensionInsuranceContribution = socialParameters.DisabilityPensionInsuranceContributionPercentage.PercentageOf(result.SalaryBrutto);
+            result.SicknessInsuranceContribution = socialParameters.SicknessInsuranceContributionPercentage.PercentageOf(result.SalaryBrutto);
+            result.SocialInsuranceContribution = socialParameters.TotalPercentage.PercentageOf(result.SalaryBrutto);
 
             return result;
         }
@@ -79,10 +80,10 @@ namespace EmploymentRelationshipAdvisor.Calculation.EmploymentContract
             // koszty uzysku z calej pensji - pomijam na razie
             var deductibleParameters = context.EmployeeContributionParameters.DeductibleParameters;
 
-            result.TaxDeductibleExpenses = deductibleParameters.TaxDeductibleExpensesPercentage.PercentageOf(result.BruttoSalary);
+            result.TaxDeductibleExpenses = deductibleParameters.TaxDeductibleExpensesPercentage.PercentageOf(result.SalaryBrutto);
             result.DriveExpenses = deductibleParameters.DriveExpenses;
 
-            var salaryMinusSocial = result.BruttoSalary - result.SocialInsuranceContribution;
+            var salaryMinusSocial = result.SalaryBrutto - result.SocialInsuranceContribution;
 
             result.CopyrightLawsValue = deductibleParameters.CopyrightLawsPercentage.PercentageOf(salaryMinusSocial);
             result.CopyrightLawsCosts = EmploymentContractConsts.CopyrightLawsCostsPercentage.PercentageOf(result.CopyrightLawsValue);
@@ -93,7 +94,7 @@ namespace EmploymentRelationshipAdvisor.Calculation.EmploymentContract
         private static void CalculateHealthInsuranceContribution(EmploymentContractCalculationResult result, EmploymentContractCalculationContext context)
         {
             var healthParameters = context.EmployeeContributionParameters.HealthInsuranceContributionParameters;
-            var salaryMinusSocial = result.BruttoSalary - result.SocialInsuranceContribution;
+            var salaryMinusSocial = result.SalaryBrutto - result.SocialInsuranceContribution;
 
             result.HealthInsurance = healthParameters.TotalHealthInsurancePercentage.PercentageOf(salaryMinusSocial);
             result.HealthInsurancePaidFromTax = healthParameters.HealthInsurancePaidFromTaxPercentage.PercentageOf(salaryMinusSocial);
@@ -105,12 +106,12 @@ namespace EmploymentRelationshipAdvisor.Calculation.EmploymentContract
             var taxRelief = context.EmployeeContributionParameters.TaxRelief;
 
             // 3. zaliczka na podatek
-            result.Tax = EmploymentContractConsts.TaxPercentage.PercentageOf(result.TaxBase) - taxRelief - result.HealthInsurancePaidFromTax;
+            result.Tax = Math.Max(0, EmploymentContractConsts.TaxPercentage.PercentageOf(result.TaxBase) - taxRelief - result.HealthInsurancePaidFromTax);
         }
 
         private static void CalculateNettoSalary(EmploymentContractCalculationResult result)
         {
-            result.NettoSalary = result.BruttoSalary - result.Tax - result.SocialInsuranceContribution - result.HealthInsurance;
+            result.SalaryNetto = result.SalaryBrutto - result.Tax - result.SocialInsuranceContribution - result.HealthInsurance;
         }
     }
 }

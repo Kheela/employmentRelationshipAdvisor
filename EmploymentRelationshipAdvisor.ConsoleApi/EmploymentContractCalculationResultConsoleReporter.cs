@@ -13,7 +13,7 @@ namespace EmploymentRelationshipAdvisor.ConsoleApi
         public void Report(EmploymentContractCalculationResult result, EmploymentContractCalculationContext context)
         {
             //todo: zaokraglenia a nie format
-            ReportBruttoSalary(result.BruttoSalary);
+            ReportBruttoSalary(result.SalaryBrutto);
             ReportTaxBase(result, context);
             ReportHealthInsuranceContribution(result);
             ReportTax(result, context);
@@ -79,7 +79,7 @@ namespace EmploymentRelationshipAdvisor.ConsoleApi
 
         private static void ReportNettoSalary(EmploymentContractCalculationResult result)
         {
-            Console.WriteLine($"Pensja netto: {result.NettoSalary.ToString("0.00")}");
+            Console.WriteLine($"Pensja netto: {result.SalaryNetto.ToString("0.00")}");
         }
     }
 }
