@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Http, URLSearchParams } from '@angular/http';
-import { MouseEvent } from 'ngx-bootstrap/utils/facade/browser';
 import { element } from 'protractor';
+import { MouseEvent } from 'ngx-bootstrap/utils/facade/browser';
+import { Observable } from "rxjs/Observable";
+import "rxjs/Rx"
+
+import { EmploymentContractCalculationService } from '../services/employmentContractCalculation.service';
 
 @Component({
   selector: 'app-home',
@@ -9,24 +12,40 @@ import { element } from 'protractor';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  apiRoot = 'http://httpbin.org';
-  salaryNetto = '';
-  salaryDisplay = '';
-  isSpinnerVisible = false;
-  wasCalculateClicked = false;
+  private salaryBrutto: number;
+  private calculationResult = '';
+  private isLoading = false;
+  private wasCalculateClicked = false;
+  private enableEmploymentCalculation = true;
+  private enableContractCalculation = false;
 
-  constructor(private http: Http) { }
+  constructor(private service: EmploymentContractCalculationService) { }
 
   ngOnInit() {
   }
 
   calculate() {
-    this.isSpinnerVisible = true;
+    this.isLoading = true;
 
-    setTimeout(() => {
-      this.salaryDisplay = this.salaryNetto;
-      this.isSpinnerVisible = false;
-    }, 2000);
+    this.service.scheduleCalculation(this.salaryBrutto)
+      //todo: .filter(data => this.form.valid)
+      .subscribe(
+        response => {
+          console.log(response);
+          this.calculationResult = response;
+          //JSON.stringify(response)
+          this.isLoading = false;
+        },
+        error => {
+          alert('error');
+          this.isLoading = false;
+        }
+      );
+
+    // setTimeout(() => {
+    //   this.calculationResult = this.salaryBrutto.toString();
+    //   this.isSpinnerVisible = false;
+    // }, 2000);
   }
 
   onClick() {

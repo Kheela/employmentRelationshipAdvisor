@@ -4,11 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
+import { UiSwitchModule } from 'angular2-ui-switch';
 
 import { AppComponent } from './app.component';
 import { BootstrapModule } from './common/ux/bootstrap.module';
 import { HomeComponent } from './home/components/home.component';
 import { NavigationComponent } from './navigation/components/navigation.component';
+import { EmploymentContractCalculationService } from './home/services/employmentContractCalculation.service';
 
 @NgModule({
   declarations: [
@@ -18,13 +20,14 @@ import { NavigationComponent } from './navigation/components/navigation.componen
   ],
   imports: [
     AppRoutingModule,
+    BootstrapModule,
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
     HttpModule,
-    BootstrapModule
+    UiSwitchModule
   ],
-  providers: [],
+  providers: [EmploymentContractCalculationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
