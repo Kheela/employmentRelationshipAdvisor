@@ -40,3 +40,139 @@ https://stackoverflow.com/questions/37649164/how-to-add-bootstrap-to-an-angular-
 -- extensions
 
 https://medium.com/frontend-coach/7-must-have-visual-studio-code-extensions-for-angular-af9c476147fd
+
+-- Q&A
+
+- Q: co oznacza $ na koncu nazwy zmiennej?
+
+public users$: Observable<IUser[]>
+
+public ngOnInit() {
+        this.users$ = this.client.fetchUsers()
+    }
+	
+A: Using the dollar sign in the name of a variable that is an observable, is considered best practice
+
+- Q: Co to sa observables
+
+Observables are lazy collections of multiple values over time.
+1. Observables are lazy. If you don’t subscribe nothing is going to happen.
+2. Observables can have multiple values over time (promisy - tylko 1)
+
+.subscribe(res => console.log(res.json()))
+Observable Chain
+reactive programming
+operator switch (observable of observables => observable)
+operator do (do zapamietywania stanu pomiedzy stanami observabla)
+filtr async (sam wywoluje subscribe)
+
+- Q: Co oznacza $ w napisie?
+
+let url = `${this.apiRoot}/get`;
+
+Variable Substitution
+Jak w C# 6.0 w stringu
+
+- Q: Po co dodawać .json przy wypisywaniu odpowiedzi HTTP?
+
+Zeby zmienic tekst sformatowany jako JSON w obiekt
+
+- Q: Co to jest destructuring w ES6?
+
+Destructuring is a way of extracting values into variables from data stored in objects and arrays.
+
+const {first: first, last: last} = obj; //  extract the property first and store in a constant called first, the same for last.
+console.log(first); // Asim
+console.log(last); // Hussain
+
+key and value of an object: you can shorten {search: search} into just { search }
+
+- Q: Co to btoa
+
+javascript function btoa converts a string to base64.
+
+- Q: Co to jest CORS?
+
+Cross Origin Resource Sharing
+a security measure implemented in all browsers that stops you from using an API in a potentially unsolicited way
+
+unless an API sets certain headers in the response a browser will reject the response
+No 'Access-Control-Allow-Origin' header is present on the requested resource
+
+JSONP is a method of performing API requests which go around the issue of CORS.
+JSONP is a solution to this problem, it treats the API as if it was a javascript file. It dynamically adds https://itunes.apple.com/search?term=love&media=music&limit=20 as if it were a script tag in our our HTML like so:
+
+Copy<script src="https://itunes.apple.com/search?term=love&media=music&limit=20"></script>
+The browser then just downloads the javascript file and since browsers don’t check for CORS when downloading javascript files it a works around the issue of CORS.
+
+That’s is JSONP in a nutshell.
+
+We treat the API as a javascript file.
+The API wraps the JSON response in a function who’s name we define.
+When the browser downloads the fake API script it runs it, it calls the function passing it the JSON data.
+
+We can only use JSONP when:
+1. The API itself supports JSONP
+2. We can only use it for GET requests
+
+- Q: Co oznacza # w tagu html-owym
+
+<input type="search"
+       class="form-control"
+       placeholder="Enter search string"
+       #search> 
+
+template reference variable
+This tells Angular to bind this <input> control to the variable search.
+We can then use this variable search in other places in the template.
+search is only available as a variable in the template, we don’t automatically see the variable search inside the javascript code of our JokeFormComponent class.
+
+  <button class="btn btn-primary"
+          (click)="doSearch(search.value)"> 
+          Search
+  </button>
+
+- Q: Co oznaczaja {{ }} (moustache syntax) w tagu html-owym?
+
+String Interpolation
+the template output the contents of our properties
+contains JavaScript which is run by Angular and the output inserted in the HTML
+
+- Q: Co oznaczaja [] w tagu html-owym?
+
+<p class="card-text" [hidden]="true">{{joke.punchline}}</p>
+
+input property binding
+
+Angular doesn’t manipulate HTML attributes, it manipulates DOM properties because the DOM is what actually gets displayed.
+So when we write [hidden] we are manipulating the DOM property and not the HTML attribute.
+This is why the above is called Input Property Binding and not Input Attribute Binding.
+
+<div class="card card-block"
+     *ngFor="let joke of jokes">
+  <h4 class="card-title">{{joke.setup}}</h4>
+  <p class="card-text"
+     [hidden]="joke.hide">{{joke.punchline}}</p>
+</div>
+
+With the [] we are binding to an input of a Component.
+
+- Q: Co oznaczaja () w tagu html-owym?
+
+<a class="btn btn-primary"
+   (click)="joke.hide = !joke.hide">Tell Me
+</a>
+
+output event binding
+
+We want to set joke.hide to false when the user clicks the button, and then back to true again when they click the button a second time.
+The target inside the () is an event we want to listen for
+
+<a class="btn btn-primary"
+   (click)="toggle(joke)">Tell Me
+</a>
+
+With the () we are binding to an output of a Component
+
+<joke-form (jokeCreated)="addJoke($event)"></joke-form>
+
