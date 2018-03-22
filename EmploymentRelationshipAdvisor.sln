@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmploymentRelationshipAdvisor.Calculation", "employmentRelationshipAdvisor.Calculation\EmploymentRelationshipAdvisor.Calculation.csproj", "{9420872D-688B-4DA0-8A40-B40962B3F958}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERA.Calculation", "ERA.Calculation\ERA.Calculation.csproj", "{9420872D-688B-4DA0-8A40-B40962B3F958}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmploymentRelationshipAdvisor.Shared", "EmploymentRelationshipAdvisor.Shared\EmploymentRelationshipAdvisor.Shared.csproj", "{34D898C8-CCCA-42BB-B152-3C3D951F0502}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERA.Shared", "ERA.Shared\ERA.Shared.csproj", "{34D898C8-CCCA-42BB-B152-3C3D951F0502}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmploymentRelationshipAdvisor.WebApi", "EmploymentRelationshipAdvisor.WebApi\EmploymentRelationshipAdvisor.WebApi.csproj", "{E5DFCAB7-86D7-4CF9-975D-CA47DE41FB36}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERA.WebApi", "ERA.WebApi\ERA.WebApi.csproj", "{E5DFCAB7-86D7-4CF9-975D-CA47DE41FB36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmploymentRelationshipAdvisor.ConsoleApi", "EmploymentRelationshipAdvisor.ConsoleApi\EmploymentRelationshipAdvisor.ConsoleApi.csproj", "{A29421D4-670D-4E65-B877-D18EA4362E49}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERA.ConsoleApi", "ERA.ConsoleApi\ERA.ConsoleApi.csproj", "{A29421D4-670D-4E65-B877-D18EA4362E49}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
