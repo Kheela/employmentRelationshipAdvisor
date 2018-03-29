@@ -16,12 +16,12 @@ namespace ERA.Web
 
             appBuilder.UseWebApi(httpConfiguration);
 
-            SetStaticFilesHosting(appBuilder);
+            //SetStaticFilesHosting(appBuilder);
         }
 
         private void SetStaticFilesHosting(IAppBuilder appBuilder)
         {
-            var staticFilesPath = @".\Website\App";
+            var staticFilesPath = @".\Website\UI";
 
             var contentTypeProvider = new FileExtensionContentTypeProvider();
             contentTypeProvider.Mappings[".json"] = "application/json";
@@ -31,7 +31,7 @@ namespace ERA.Web
                 EnableDirectoryBrowsing = true,
                 EnableDefaultFiles = true,
                 StaticFileOptions = { ContentTypeProvider = contentTypeProvider },
-                DefaultFilesOptions = { DefaultFileNames = { "index.html" } }
+                DefaultFilesOptions = { DefaultFileNames = { @"index.html" } }
             };
 
             options.FileSystem = new PhysicalFileSystem(staticFilesPath);
