@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERA.ConsoleApi", "ERA.Conso
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERA.Web", "ERA.Web\ERA.Web.csproj", "{F3202197-1C29-4E36-B0EB-E8A4F395800C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERA.WebApi_new", "ERA.WebApi_new\ERA.WebApi_new.csproj", "{F3AB3644-BAAF-4BEB-A6DA-359B4B1D4647}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{F3202197-1C29-4E36-B0EB-E8A4F395800C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3202197-1C29-4E36-B0EB-E8A4F395800C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3202197-1C29-4E36-B0EB-E8A4F395800C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3AB3644-BAAF-4BEB-A6DA-359B4B1D4647}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3AB3644-BAAF-4BEB-A6DA-359B4B1D4647}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3AB3644-BAAF-4BEB-A6DA-359B4B1D4647}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3AB3644-BAAF-4BEB-A6DA-359B4B1D4647}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

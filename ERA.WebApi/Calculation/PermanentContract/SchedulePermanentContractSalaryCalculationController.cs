@@ -5,7 +5,7 @@ namespace ERA.WebApi.Calculation.PermanentContract
 {
     public class SchedulePermanentContractSalaryCalculationController : ApiController
     {
-        // GET api/ScheduleEmploymentContractCalculation
+        // GET api/SchedulePermanentContractSalaryCalculation
         public PermanentContractSalaryCalculationResult Get(decimal salaryBrutto)
         {
             var calculator = new PermanentContractSalaryCalculator();
