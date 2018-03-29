@@ -2,9 +2,9 @@
 #
 # Automatically adds branch name to every commit message.
 #
-NAME=$(git branch | grep '*' | sed 's/feat\///') 
+NAME=$(git branch | grep '*' | sed 's/*//' | sed 's/ //' | sed 's/feat\///') 
 
-if [ "$NAME"="master" ] 
+if [ "$NAME" = "master" ] 
 then
 	echo "" >> "$1"
 else
