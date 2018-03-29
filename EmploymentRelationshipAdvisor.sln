@@ -7,13 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERA.Calculation", "ERA.Calc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERA.Shared", "ERA.Shared\ERA.Shared.csproj", "{34D898C8-CCCA-42BB-B152-3C3D951F0502}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERA.WebApi", "ERA.WebApi\ERA.WebApi.csproj", "{E5DFCAB7-86D7-4CF9-975D-CA47DE41FB36}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERA.ConsoleApi", "ERA.ConsoleApi\ERA.ConsoleApi.csproj", "{A29421D4-670D-4E65-B877-D18EA4362E49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERA.Web_old", "ERA.Web\ERA.Web_old.csproj", "{F3202197-1C29-4E36-B0EB-E8A4F395800C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERA.Web", "ERA.WebApi_new\ERA.Web.csproj", "{F3AB3644-BAAF-4BEB-A6DA-359B4B1D4647}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERA.Web", "ERA.Web\ERA.Web.csproj", "{F3AB3644-BAAF-4BEB-A6DA-359B4B1D4647}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
