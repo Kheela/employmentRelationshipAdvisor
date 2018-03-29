@@ -153,7 +153,7 @@
 cd "$(SolutionDir)ERA.Web\NgApp" &amp;&amp;^
 echo "Building $(SolutionDir)ERA.Web\NgApp\dist..." &amp;&amp;^
 ng build &amp;&amp;^
-echo "Copying files from $(SolutionDir)ERA.Web\NgApp\dist to $(ProjectDir)Scripts\NgApp..."
+echo "Copying files from $(SolutionDir)ERA.Web\NgApp\dist to $(ProjectDir)Scripts\NgApp..." &amp;&amp;^
 xcopy /I /R /Y /S /E "$(SolutionDir)ERA.Web\NgApp\dist\*.*" "$(ProjectDir)Scripts\NgApp"</PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
