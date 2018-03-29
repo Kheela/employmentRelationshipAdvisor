@@ -109,7 +109,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ERA.Calculation\ERA.Calculation.csproj">
       <Project>{9420872d-688b-4da0-8a40-b40962b3f958}</Project>
-      <Name>EmploymentRelationshipAdvisor.Calculation</Name>
+      <Name>ERA.Calculation</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
