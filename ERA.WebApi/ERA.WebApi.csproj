@@ -86,7 +86,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Calculation\EmploymentContract\ScheduleEmploymentContractCalculationController.cs" />
+    <Compile Include="Calculation\PermanentContract\SchedulePermanentContractSalaryCalculationController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

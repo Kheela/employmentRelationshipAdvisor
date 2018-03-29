@@ -1,9 +1,9 @@
 ﻿using ERA.Calculation.PermanentContract;
 using System.Web.Http;
 
-namespace ERA.WebApi.Calculation.EmploymentContract
+namespace ERA.WebApi.Calculation.PermanentContract
 {
-    public class ScheduleEmploymentContractCalculationController : ApiController
+    public class SchedulePermanentContractSalaryCalculationController : ApiController
     {
         // GET api/ScheduleEmploymentContractCalculation
         public PermanentContractSalaryCalculationResult Get(decimal salaryBrutto)
