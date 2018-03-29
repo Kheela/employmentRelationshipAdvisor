@@ -1,11 +1,11 @@
-﻿using ERA.WebApi_new.App_Start;
+﻿using ERA.Web.App_Start;
 using Microsoft.Owin.FileSystems;
 using Microsoft.Owin.StaticFiles;
 using Microsoft.Owin.StaticFiles.ContentTypes;
 using Owin;
 using System.Web.Http;
 
-namespace ERA.WebApi_new
+namespace ERA.Web
 {
     public class Startup
     {

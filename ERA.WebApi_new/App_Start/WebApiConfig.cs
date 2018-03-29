@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Http;
 
-namespace ERA.WebApi_new.App_Start
+namespace ERA.Web.App_Start
 {
     public class WebApiConfig
     {

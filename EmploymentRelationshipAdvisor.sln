@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERA.ConsoleApi", "ERA.Conso
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERA.Web_old", "ERA.Web\ERA.Web_old.csproj", "{F3202197-1C29-4E36-B0EB-E8A4F395800C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERA.WebApi_new", "ERA.WebApi_new\ERA.WebApi_new.csproj", "{F3AB3644-BAAF-4BEB-A6DA-359B4B1D4647}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERA.Web", "ERA.WebApi_new\ERA.Web.csproj", "{F3AB3644-BAAF-4BEB-A6DA-359B4B1D4647}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
