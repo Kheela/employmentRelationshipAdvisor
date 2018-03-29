@@ -116,7 +116,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Calculation\PermanentContract\SchedulePermanentContractSalaryCalculationController.cs" />
+    <Compile Include="Webapi\Calculation\PermanentContract\SchedulePermanentContractSalaryCalculationController.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
   </ItemGroup>
@@ -127,8 +127,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Website\App\" />
     <Folder Include="Website\Sources\" />
+    <Folder Include="Website\UI\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -163,8 +163,12 @@
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
   <PropertyGroup>
-    <PreBuildEvent>
-    </PreBuildEvent>
+    <PreBuildEvent>echo "cd $(ProjectDir)Website\Sources" &amp;&amp;^
+cd "$(ProjectDir)Website\Sources" &amp;&amp;^
+echo "Building $(ProjectDir)Website\Sources\dist..." &amp;&amp;^
+ng build &amp;&amp;^
+echo "Copying files from $(ProjectDir)Website\Sources\dist to $(ProjectDir)Website\UI..." &amp;&amp;^
+xcopy /I /R /Y /S /E "$(ProjectDir)Website\Sources\dist\*.*" "$(ProjectDir)Website\UI"</PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
