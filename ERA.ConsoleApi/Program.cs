@@ -8,7 +8,7 @@ namespace ERA.ConsoleApi
         static void Main(string[] args)
         {
             var calculator = new PermanentContractSalaryCalculator();
-            var consoleReporter = new EmploymentContractCalculationResultConsoleReporter();
+            var consoleReporter = new PermanentContractSalaryCalculationConsoleReporter();
 
             var context = new PermanentContractSalaryCalculationContext
             {

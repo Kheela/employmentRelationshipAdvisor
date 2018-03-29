@@ -3,12 +3,12 @@ using System;
 
 namespace ERA.ConsoleApi
 {
-    public interface IEmploymentContractCalculationResultConsoleReporter
+    public interface IPermanentContractSalaryCalculationConsoleReporter
     {
         void Report(PermanentContractSalaryCalculationResult result, PermanentContractSalaryCalculationContext context);
     }
 
-    public class EmploymentContractCalculationResultConsoleReporter : IEmploymentContractCalculationResultConsoleReporter
+    public class PermanentContractSalaryCalculationConsoleReporter : IPermanentContractSalaryCalculationConsoleReporter
     {
         public void Report(PermanentContractSalaryCalculationResult result, PermanentContractSalaryCalculationContext context)
         {
