@@ -6,7 +6,7 @@ import "rxjs/Rx"
 @Injectable()
 export class EmploymentContractCalculationService {
 
-    private baseUrl = 'http://localhost:18021/api/ScheduleEmploymentContractCalculation';
+    private baseUrl = 'http://localhost:3524/api/SchedulePermanentContractSalaryCalculation';
 
     constructor(private http: Http) { }
 
