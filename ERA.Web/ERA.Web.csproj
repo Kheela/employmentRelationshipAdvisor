@@ -217,14 +217,6 @@
     <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
-  <PropertyGroup>
-    <PreBuildEvent>echo "cd $(ProjectDir)Website\Sources" &amp;&amp;^
-cd "$(ProjectDir)Website\Sources" &amp;&amp;^
-echo "Building $(ProjectDir)Website\Sources\dist..." &amp;&amp;^
-ng build &amp;&amp;^
-echo "Copying files from $(ProjectDir)Website\Sources\dist to $(ProjectDir)Website\UI..." &amp;&amp;^
-xcopy /I /R /Y /S /E "$(ProjectDir)Website\Sources\dist\*.*" "$(ProjectDir)Website\UI"</PreBuildEvent>
-  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
@@ -232,4 +224,13 @@ xcopy /I /R /Y /S /E "$(ProjectDir)Website\Sources\dist\*.*" "$(ProjectDir)Websi
   <Target Name="AfterBuild">
   </Target>
   -->
+  <Target Name="Build Angular" Condition="'$(Configuration)'=='Release'" BeforeTargets="Build">
+    <Message Text="* * * * * * Building Angular App * * * * * *" Importance="high" />
+    <Exec Command="echo &quot;cd $(ProjectDir)Website\Sources&quot; &amp;&amp;^
+cd &quot;$(ProjectDir)Website\Sources&quot; &amp;&amp;^
+echo &quot;Building $(ProjectDir)Website\Sources\dist...&quot; &amp;&amp;^
+ng build &amp;&amp;^
+echo &quot;Copying files from $(ProjectDir)Website\Sources\dist to $(ProjectDir)Website\UI...&quot; &amp;&amp;^
+xcopy /I /R /Y /S /E &quot;$(ProjectDir)Website\Sources\dist\*.*&quot; &quot;$(ProjectDir)Website\UI&quot;" />
+  </Target>
 </Project>
