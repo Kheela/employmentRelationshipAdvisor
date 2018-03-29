@@ -46,10 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EmploymentContract\EmploymentContractConsts.cs" />
-    <Compile Include="EmploymentContract\EmploymentContractCalculator.cs" />
-    <Compile Include="EmploymentContract\EmploymentContractEmployeeExampleValues.cs" />
-    <Compile Include="EmploymentContract\EmploymentContractCalculationContext.cs" />
+    <Compile Include="PermanentContract\PermanentContractConsts.cs" />
+    <Compile Include="PermanentContract\PermanentContractSalaryCalculator.cs" />
+    <Compile Include="PermanentContract\PermanentContractEmployeeExampleValues.cs" />
+    <Compile Include="PermanentContract\PermanentContractSalaryCalculationContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

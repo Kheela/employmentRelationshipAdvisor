@@ -1,14 +1,14 @@
 ﻿using ERA.Calculation.PermanentContract;
-using System;
+using System.Web.Http;
 
-namespace ERA.ConsoleApi
+namespace ERA.WebApi.Calculation.PermanentContract
 {
-    class Program
+    public class SchedulePermanentContractSalaryCalculationController : ApiController
     {
-        static void Main(string[] args)
+        // GET api/ScheduleEmploymentContractCalculation
+        public PermanentContractSalaryCalculationResult Get(decimal salaryBrutto)
         {
             var calculator = new PermanentContractSalaryCalculator();
-            var consoleReporter = new PermanentContractSalaryCalculationConsoleReporter();
 
             var context = new PermanentContractSalaryCalculationContext
             {
@@ -21,11 +21,9 @@ namespace ERA.ConsoleApi
                 }
             };
 
-            var calculationResult = calculator.Calculate(13000m, context);
-            consoleReporter.Report(calculationResult, context);
+            var calculationResult = calculator.Calculate(salaryBrutto, context);
 
-            Console.WriteLine("Wcisnij <ENTER> aby zakonczyc");
-            Console.ReadLine();
+            return calculationResult;
         }
     }
 }

@@ -1,9 +1,9 @@
 using ERA.Shared.Extensions;
 using System;
 
-namespace ERA.Calculation.EmploymentContract
+namespace ERA.Calculation.PermanentContract
 {
-    public class EmploymentContractCalculationResult
+    public class PermanentContractSalaryCalculationResult
     {
         public decimal SalaryBrutto { get; set; }
 
@@ -30,16 +30,16 @@ namespace ERA.Calculation.EmploymentContract
         public decimal SalaryNetto { get; set; }
     }
 
-    public interface IEmploymentContractCalculator
+    public interface IPermanentContractSalaryCalculator
     {
-        EmploymentContractCalculationResult Calculate(decimal salaryBrutto, EmploymentContractCalculationContext context);
+        PermanentContractSalaryCalculationResult Calculate(decimal salaryBrutto, PermanentContractSalaryCalculationContext context);
     }
 
-    public class EmploymentContractCalculator : IEmploymentContractCalculator
+    public class PermanentContractSalaryCalculator : IPermanentContractSalaryCalculator
     {
-        public EmploymentContractCalculationResult Calculate(decimal salaryBrutto, EmploymentContractCalculationContext context)
+        public PermanentContractSalaryCalculationResult Calculate(decimal salaryBrutto, PermanentContractSalaryCalculationContext context)
         {
-            var result = new EmploymentContractCalculationResult
+            var result = new PermanentContractSalaryCalculationResult
             {
                 SalaryBrutto = salaryBrutto
             };
@@ -52,7 +52,7 @@ namespace ERA.Calculation.EmploymentContract
             return result;
         }
 
-        public EmploymentContractCalculationResult CalculateTaxBase(EmploymentContractCalculationResult result, EmploymentContractCalculationContext context)
+        public PermanentContractSalaryCalculationResult CalculateTaxBase(PermanentContractSalaryCalculationResult result, PermanentContractSalaryCalculationContext context)
         {
             CalculateSocialInsuranceContribution(result, context);
             CalculateDeductibles(result, context);
@@ -63,7 +63,7 @@ namespace ERA.Calculation.EmploymentContract
             return result;
         }
 
-        private EmploymentContractCalculationResult CalculateSocialInsuranceContribution(EmploymentContractCalculationResult result, EmploymentContractCalculationContext context)
+        private PermanentContractSalaryCalculationResult CalculateSocialInsuranceContribution(PermanentContractSalaryCalculationResult result, PermanentContractSalaryCalculationContext context)
         {
             var socialParameters = context.EmployeeContributionParameters.SocialInsuranceContributionParameters;
 
@@ -75,7 +75,7 @@ namespace ERA.Calculation.EmploymentContract
             return result;
         }
 
-        private EmploymentContractCalculationResult CalculateDeductibles(EmploymentContractCalculationResult result, EmploymentContractCalculationContext context)
+        private PermanentContractSalaryCalculationResult CalculateDeductibles(PermanentContractSalaryCalculationResult result, PermanentContractSalaryCalculationContext context)
         {
             // koszty uzysku z calej pensji - pomijam na razie
             var deductibleParameters = context.EmployeeContributionParameters.DeductibleParameters;
@@ -86,12 +86,12 @@ namespace ERA.Calculation.EmploymentContract
             var salaryMinusSocial = result.SalaryBrutto - result.SocialInsuranceContribution;
 
             result.CopyrightLawsValue = deductibleParameters.CopyrightLawsPercentage.PercentageOf(salaryMinusSocial);
-            result.CopyrightLawsCosts = EmploymentContractConsts.CopyrightLawsCostsPercentage.PercentageOf(result.CopyrightLawsValue);
+            result.CopyrightLawsCosts = PermanentContractConsts.CopyrightLawsCostsPercentage.PercentageOf(result.CopyrightLawsValue);
 
             return result;
         }
 
-        private static void CalculateHealthInsuranceContribution(EmploymentContractCalculationResult result, EmploymentContractCalculationContext context)
+        private static void CalculateHealthInsuranceContribution(PermanentContractSalaryCalculationResult result, PermanentContractSalaryCalculationContext context)
         {
             var healthParameters = context.EmployeeContributionParameters.HealthInsuranceContributionParameters;
             var salaryMinusSocial = result.SalaryBrutto - result.SocialInsuranceContribution;
@@ -101,15 +101,15 @@ namespace ERA.Calculation.EmploymentContract
             result.HealthInsurancePaidFromNetto = result.HealthInsurance - result.HealthInsurancePaidFromTax;
         }
 
-        private static void CalculateTax(EmploymentContractCalculationResult result, EmploymentContractCalculationContext context)
+        private static void CalculateTax(PermanentContractSalaryCalculationResult result, PermanentContractSalaryCalculationContext context)
         {
             var taxRelief = context.EmployeeContributionParameters.TaxRelief;
 
             // 3. zaliczka na podatek
-            result.Tax = Math.Max(0, EmploymentContractConsts.TaxPercentage.PercentageOf(result.TaxBase) - taxRelief - result.HealthInsurancePaidFromTax);
+            result.Tax = Math.Max(0, PermanentContractConsts.TaxPercentage.PercentageOf(result.TaxBase) - taxRelief - result.HealthInsurancePaidFromTax);
         }
 
-        private static void CalculateNettoSalary(EmploymentContractCalculationResult result)
+        private static void CalculateNettoSalary(PermanentContractSalaryCalculationResult result)
         {
             result.SalaryNetto = result.SalaryBrutto - result.Tax - result.SocialInsuranceContribution - result.HealthInsurance;
         }
