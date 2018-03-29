@@ -1,0 +1,62 @@
+<app-navigation></app-navigation>
+
+<div class="card">
+    <div class="card-body">
+        <h4>Wybierz stosunek pracy</h4>
+        <br>
+
+        <div class-="container">
+            
+            <div class="row">
+                <div class="col-1">
+                    <label for="enableEmploymentCalculation" class="">Umowa stała</label>
+                </div>
+                <div class="col-1">
+                    <ui-switch id="enableEmploymentCalculation" [(ngModel)]="enableEmploymentCalculation" size="small" disabled></ui-switch>
+                </div>
+            </div>
+
+            <div class="w-100"></div>
+
+            <div class="row">
+                <div class="col-1">
+                    <label for="enableContractCalculation" class="">Umowa B2B</label>
+                </div>
+                <div class="col-1">
+                    <ui-switch id="enableContractCalculation" [(ngModel)]="enableContractCalculation" size="small" disabled></ui-switch>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="card" (keydown.enter)="calculate()">
+    <div class="card-body">
+        <h4>Wprowadź informacje o zarobkach</h4>
+        <br>
+
+        <div class="form-group">
+            <label for="salaryBrutto">Miesięczna pensja brutto (PLN)</label>
+            <input type="text" class="form-control" id="salaryBrutto" placeholder="brutto" [(ngModel)]="salaryBrutto" required> 
+        </div>
+    </div>
+
+    <button id="calculateBtn" type="button" class="btn btn-outline-primary btn-lg has-spinner" (click)="calculate(); onClick()"
+        [class.active]="wasCalculateClicked">
+        <span class="spinner" [style.display]="isLoading ? 'inline' : 'none'">
+            <i class="icon-spin icon-refresh icon-large"></i>
+        </span>
+        <span [style.display]="isLoading ? 'none' : 'inline'">
+            Sprawdź
+        </span>
+    </button>
+
+    <br>
+    <div class="card-body">
+        <label for="salaryNetto">Miesięczna pensja netto (PLN)</label>
+        <h1 *ngIf="calculationResult" id="salaryNetto">{{ calculationResult.SalaryNetto }} </h1>
+        <br>
+        <div *ngIf="calculationResult"> {{ calculationResult | json }} </div>
+    </div>
+</div>
