@@ -1,4 +1,4 @@
-﻿using ERA.Calculation.EmploymentContract;
+﻿using ERA.Calculation.PermanentContract;
 using System;
 
 namespace ERA.ConsoleApi
@@ -7,17 +7,17 @@ namespace ERA.ConsoleApi
     {
         static void Main(string[] args)
         {
-            var calculator = new EmploymentContractCalculator();
+            var calculator = new PermanentContractSalaryCalculator();
             var consoleReporter = new EmploymentContractCalculationResultConsoleReporter();
 
-            var context = new EmploymentContractCalculationContext
+            var context = new PermanentContractSalaryCalculationContext
             {
-                EmployeeContributionParameters = new EmploymentContractEmployeeContributionParameters
+                EmployeeContributionParameters = new PermanentContractEmployeeContributionParameters
                 {
-                    SocialInsuranceContributionParameters = EmploymentContractEmployeeExampleValues.SocialInsuranceContributionParameters,
-                    DeductibleParameters = EmploymentContractEmployeeExampleValues.DeductibleParameters,
-                    HealthInsuranceContributionParameters = EmploymentContractEmployeeExampleValues.HealthInsuranceContributionParameters,
-                    TaxRelief = EmploymentContractEmployeeExampleValues.TaxRelief
+                    SocialInsuranceContributionParameters = PermanentContractEmployeeExampleValues.SocialInsuranceContributionParameters,
+                    DeductibleParameters = PermanentContractEmployeeExampleValues.DeductibleParameters,
+                    HealthInsuranceContributionParameters = PermanentContractEmployeeExampleValues.HealthInsuranceContributionParameters,
+                    TaxRelief = PermanentContractEmployeeExampleValues.TaxRelief
                 }
             };
 

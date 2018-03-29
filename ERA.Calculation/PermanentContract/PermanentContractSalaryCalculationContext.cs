@@ -1,12 +1,12 @@
-﻿namespace ERA.Calculation.EmploymentContract
+﻿namespace ERA.Calculation.PermanentContract
 {
-    public class EmploymentContractCalculationContext
+    public class PermanentContractSalaryCalculationContext
     {
-        public EmploymentContractEmployeeContributionParameters EmployeeContributionParameters { get; set; } = new EmploymentContractEmployeeContributionParameters();
+        public PermanentContractEmployeeContributionParameters EmployeeContributionParameters { get; set; } = new PermanentContractEmployeeContributionParameters();
     }
 
     // todo: get from net
-    public class EmploymentContractEmployeeContributionParameters
+    public class PermanentContractEmployeeContributionParameters
     {
         public SocialInsuranceContributionParameters SocialInsuranceContributionParameters { get; set; }
 

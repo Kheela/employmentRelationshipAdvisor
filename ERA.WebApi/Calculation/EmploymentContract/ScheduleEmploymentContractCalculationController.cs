@@ -1,4 +1,4 @@
-﻿using ERA.Calculation.EmploymentContract;
+﻿using ERA.Calculation.PermanentContract;
 using System.Web.Http;
 
 namespace ERA.WebApi.Calculation.EmploymentContract
@@ -6,18 +6,18 @@ namespace ERA.WebApi.Calculation.EmploymentContract
     public class ScheduleEmploymentContractCalculationController : ApiController
     {
         // GET api/ScheduleEmploymentContractCalculation
-        public EmploymentContractCalculationResult Get(decimal salaryBrutto)
+        public PermanentContractSalaryCalculationResult Get(decimal salaryBrutto)
         {
-            var calculator = new EmploymentContractCalculator();
+            var calculator = new PermanentContractSalaryCalculator();
 
-            var context = new EmploymentContractCalculationContext
+            var context = new PermanentContractSalaryCalculationContext
             {
-                EmployeeContributionParameters = new EmploymentContractEmployeeContributionParameters
+                EmployeeContributionParameters = new PermanentContractEmployeeContributionParameters
                 {
-                    SocialInsuranceContributionParameters = EmploymentContractEmployeeExampleValues.SocialInsuranceContributionParameters,
-                    DeductibleParameters = EmploymentContractEmployeeExampleValues.DeductibleParameters,
-                    HealthInsuranceContributionParameters = EmploymentContractEmployeeExampleValues.HealthInsuranceContributionParameters,
-                    TaxRelief = EmploymentContractEmployeeExampleValues.TaxRelief
+                    SocialInsuranceContributionParameters = PermanentContractEmployeeExampleValues.SocialInsuranceContributionParameters,
+                    DeductibleParameters = PermanentContractEmployeeExampleValues.DeductibleParameters,
+                    HealthInsuranceContributionParameters = PermanentContractEmployeeExampleValues.HealthInsuranceContributionParameters,
+                    TaxRelief = PermanentContractEmployeeExampleValues.TaxRelief
                 }
             };
 

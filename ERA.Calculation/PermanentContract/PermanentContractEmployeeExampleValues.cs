@@ -1,6 +1,6 @@
-﻿namespace ERA.Calculation.EmploymentContract
+﻿namespace ERA.Calculation.PermanentContract
 {
-    public static class EmploymentContractEmployeeExampleValues
+    public static class PermanentContractEmployeeExampleValues
     {
         public static SocialInsuranceContributionParameters SocialInsuranceContributionParameters = new SocialInsuranceContributionParameters
         {
