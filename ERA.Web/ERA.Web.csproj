@@ -27,6 +27,7 @@
     </NuGetPackageImportStamp>
     <TargetFrameworkProfile />
     <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -44,6 +45,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -226,11 +228,16 @@
   -->
   <Target Name="Build Angular" Condition="'$(Configuration)'=='Release'" BeforeTargets="Build">
     <Message Text="* * * * * * Building Angular App * * * * * *" Importance="high" />
-    <Exec Command="echo &quot;cd $(ProjectDir)Website\Sources&quot; &amp;&amp;^
+    <Exec ConsoleToMSBuild="true" Command="echo &quot;cd $(ProjectDir)Website\Sources&quot; &amp;&amp;^
+cd &quot;$(ProjectDir)Website\Sources&quot; &amp;&amp;^
+echo &quot;npm install...&quot; &amp;&amp;^
+npm install &amp;&amp;^
 cd &quot;$(ProjectDir)Website\Sources&quot; &amp;&amp;^
 echo &quot;Building $(ProjectDir)Website\Sources\dist...&quot; &amp;&amp;^
 ng build &amp;&amp;^
 echo &quot;Copying files from $(ProjectDir)Website\Sources\dist to $(ProjectDir)Website\UI...&quot; &amp;&amp;^
-xcopy /I /R /Y /S /E &quot;$(ProjectDir)Website\Sources\dist\*.*&quot; &quot;$(ProjectDir)Website\UI&quot;" />
+xcopy /I /R /Y /S /E &quot;$(ProjectDir)Website\Sources\dist\*.*&quot; &quot;$(ProjectDir)Website\UI&quot;">
+     <Output TaskParameter="ConsoleOutput" PropertyName="OutputOfExec" />
+   </Exec>
   </Target>
 </Project>
