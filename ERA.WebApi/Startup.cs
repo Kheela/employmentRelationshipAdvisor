@@ -3,6 +3,7 @@ using Microsoft.Owin.FileSystems;
 using Microsoft.Owin.StaticFiles;
 using Microsoft.Owin.StaticFiles.ContentTypes;
 using Owin;
+using System.IO;
 using System.Web.Http;
 
 namespace ERA.Web
@@ -19,6 +20,7 @@ namespace ERA.Web
             //SetStaticFilesHosting(appBuilder);
         }
 
+        // to nie dziala ..:(
         private void SetStaticFilesHosting(IAppBuilder appBuilder)
         {
             var staticFilesPath = @".\Website\UI";
