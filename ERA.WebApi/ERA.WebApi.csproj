@@ -38,6 +38,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -110,46 +111,19 @@
   <ItemGroup>
     <Content Include="index.html" />
     <Content Include="packages.config" />
-    <None Include="Website\Sources\.gitignore" />
-    <None Include="Website\Sources\karma.conf.js" />
-    <None Include="Website\Sources\protractor.conf.js" />
-    <None Include="Website\Sources\src\app\app.component.html" />
-    <None Include="Website\Sources\src\app\home\components\home.component.html" />
-    <None Include="Website\Sources\src\app\navigation\components\navigation.component.html" />
-    <None Include="Website\Sources\src\app\test\components\test.component.html" />
-    <None Include="Website\Sources\src\favicon.ico" />
-    <None Include="Website\Sources\src\index.html" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-    <None Include="Website\Sources\.angular-cli.json" />
-    <None Include="Website\Sources\.editorconfig" />
-    <None Include="Website\Sources\.vscode\settings.json" />
-    <None Include="Website\Sources\e2e\tsconfig.e2e.json" />
-    <None Include="Website\Sources\npm" />
-    <None Include="Website\Sources\package-lock.json" />
-    <None Include="Website\Sources\package.json" />
-    <None Include="Website\Sources\README.md" />
-    <None Include="Website\Sources\src\app\app.component.scss" />
-    <None Include="Website\Sources\src\app\home\components\home.component.scss" />
-    <None Include="Website\Sources\src\app\navigation\components\navigation.component.scss" />
-    <None Include="Website\Sources\src\app\test\components\test.component.scss" />
-    <None Include="Website\Sources\src\assets\.gitkeep" />
-    <None Include="Website\Sources\src\styles.scss" />
-    <None Include="Website\Sources\src\tsconfig.app.json" />
-    <None Include="Website\Sources\src\tsconfig.spec.json" />
-    <None Include="Website\Sources\tsconfig.json" />
-    <None Include="Website\Sources\tslint.json" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Webapi\Calculation\PermanentContract\SchedulePermanentContractSalaryCalculationController.cs" />
+    <Compile Include="Calculation\PermanentContract\SchedulePermanentContractSalaryCalculationController.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
   </ItemGroup>
@@ -160,32 +134,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Website\UI\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Website\Sources\e2e\app.e2e-spec.ts" />
-    <None Include="Website\Sources\e2e\app.po.ts" />
-    <None Include="Website\Sources\src\app\app-routing.module.ts" />
-    <None Include="Website\Sources\src\app\app.component.spec.ts" />
-    <None Include="Website\Sources\src\app\app.component.ts" />
-    <None Include="Website\Sources\src\app\app.module.ts" />
-    <None Include="Website\Sources\src\app\common\ux\bootstrap.module.ts" />
-    <None Include="Website\Sources\src\app\home\components\home.component.spec.ts" />
-    <None Include="Website\Sources\src\app\home\components\home.component.ts" />
-    <None Include="Website\Sources\src\app\home\services\employmentContractCalculation.service.ts" />
-    <None Include="Website\Sources\src\app\navigation\components\navigation.component.spec.ts" />
-    <None Include="Website\Sources\src\app\navigation\components\navigation.component.ts" />
-    <None Include="Website\Sources\src\app\test\components\test.component.spec.ts" />
-    <None Include="Website\Sources\src\app\test\components\test.component.ts" />
-    <None Include="Website\Sources\src\environments\environment.prod.ts" />
-    <None Include="Website\Sources\src\environments\environment.ts" />
-    <None Include="Website\Sources\src\main.ts" />
-    <None Include="Website\Sources\src\polyfills.ts" />
-    <None Include="Website\Sources\src\test.ts" />
-    <None Include="Website\Sources\src\typings.d.ts" />
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Website\UI\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
