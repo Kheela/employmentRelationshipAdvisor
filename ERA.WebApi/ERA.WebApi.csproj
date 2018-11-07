@@ -137,7 +137,7 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Website\UI\" />
+    <Folder Include="Website\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -179,4 +179,10 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <Target Name="Build Angular" Condition="'$(Configuration)' == 'Release'" BeforeTargets="Build">
+    <Message Text="* * * * * * Building Angular App * * * * * *" Importance="high" />
+    <Exec ConsoleToMSBuild="true" Command="echo &quot;cd $(SolutionDir)ERA.WebUI\ng5\Sources&quot; &amp;&amp;^&#xD;&#xA;cd &quot;$(SolutionDir)ERA.WebUI\ng5\Sources&quot; &amp;&amp;^&#xD;&#xA;echo &quot;npm install...&quot; &amp;&amp;^&#xD;&#xA;npm install &amp;&amp;^&#xD;&#xA;cd &quot;$(SolutionDir)ERA.WebUI\ng5\Sources&quot; &amp;&amp;^&#xD;&#xA;echo &quot;Building $(SolutionDir)ERA.WebUI\ng5\Sources\dist...&quot; &amp;&amp;^&#xD;&#xA;ng build &amp;&amp;^&#xD;&#xA;echo &quot;Copying files from $(SolutionDir)ERA.WebUI\ng5\Sources\dist to $(ProjectDir)Website...&quot; &amp;&amp;^&#xD;&#xA;xcopy /I /R /Y /S /E &quot;$(SolutionDir)ERA.WebUI\ng5\Sources\dist\*.*&quot; &quot;$(ProjectDir)\Website&quot;">
+      <Output TaskParameter="ConsoleOutput" PropertyName="OutputOfExec" />
+    </Exec>
+  </Target>
 </Project>
