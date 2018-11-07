@@ -227,10 +227,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  <Target Name="Build Angular" Condition="'$(Configuration)'=='Release'" BeforeTargets="Build">
-    <Message Text="* * * * * * Building Angular App * * * * * *" Importance="high" />
-    <Exec ConsoleToMSBuild="true" Command="echo &quot;cd $(ProjectDir)Website\Sources&quot; &amp;&amp;^&#xD;&#xA;cd &quot;$(ProjectDir)Website\Sources&quot; &amp;&amp;^&#xD;&#xA;echo &quot;npm install...&quot; &amp;&amp;^&#xD;&#xA;npm install &amp;&amp;^&#xD;&#xA;cd &quot;$(ProjectDir)Website\Sources&quot; &amp;&amp;^&#xD;&#xA;echo &quot;Building $(ProjectDir)Website\Sources\dist...&quot; &amp;&amp;^&#xD;&#xA;ng build &amp;&amp;^&#xD;&#xA;echo &quot;Copying files from $(ProjectDir)Website\Sources\dist to $(ProjectDir)Website\UI...&quot; &amp;&amp;^&#xD;&#xA;xcopy /I /R /Y /S /E &quot;$(ProjectDir)Website\Sources\dist\*.*&quot; &quot;$(ProjectDir)Website\UI&quot;">
-      <Output TaskParameter="ConsoleOutput" PropertyName="OutputOfExec" />
-    </Exec>
-  </Target>
 </Project>
