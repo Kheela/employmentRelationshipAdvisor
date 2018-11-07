@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F3AB3644-BAAF-4BEB-A6DA-359B4B1D4647}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ERA.WebUI</RootNamespace>
+    <AssemblyName>ERA.WebUI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="Website\Sources\.gitignore" />
+    <None Include="Website\Sources\karma.conf.js" />
+    <None Include="Website\Sources\protractor.conf.js" />
+    <None Include="Website\Sources\src\app\app.component.html" />
+    <None Include="Website\Sources\src\app\home\components\home.component.html" />
+    <None Include="Website\Sources\src\app\navigation\components\navigation.component.html" />
+    <None Include="Website\Sources\src\app\test\components\test.component.html" />
+    <None Include="Website\Sources\src\favicon.ico" />
+    <None Include="Website\Sources\src\index.html" />
+    <None Include="Website\Sources\.angular-cli.json" />
+    <None Include="Website\Sources\.editorconfig" />
+    <None Include="Website\Sources\.vscode\settings.json" />
+    <None Include="Website\Sources\e2e\tsconfig.e2e.json" />
+    <None Include="Website\Sources\npm" />
+    <None Include="Website\Sources\package-lock.json" />
+    <None Include="Website\Sources\package.json" />
+    <None Include="Website\Sources\README.md" />
+    <None Include="Website\Sources\src\app\app.component.scss" />
+    <None Include="Website\Sources\src\app\home\components\home.component.scss" />
+    <None Include="Website\Sources\src\app\navigation\components\navigation.component.scss" />
+    <None Include="Website\Sources\src\app\test\components\test.component.scss" />
+    <None Include="Website\Sources\src\assets\.gitkeep" />
+    <None Include="Website\Sources\src\styles.scss" />
+    <None Include="Website\Sources\src\tsconfig.app.json" />
+    <None Include="Website\Sources\src\tsconfig.spec.json" />
+    <None Include="Website\Sources\tsconfig.json" />
+    <None Include="Website\Sources\tslint.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Website\UI\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Website\Sources\e2e\app.e2e-spec.ts" />
+    <None Include="Website\Sources\e2e\app.po.ts" />
+    <None Include="Website\Sources\src\app\app-routing.module.ts" />
+    <None Include="Website\Sources\src\app\app.component.spec.ts" />
+    <None Include="Website\Sources\src\app\app.component.ts" />
+    <None Include="Website\Sources\src\app\app.module.ts" />
+    <None Include="Website\Sources\src\app\common\ux\bootstrap.module.ts" />
+    <None Include="Website\Sources\src\app\home\components\home.component.spec.ts" />
+    <None Include="Website\Sources\src\app\home\components\home.component.ts" />
+    <None Include="Website\Sources\src\app\home\services\employmentContractCalculation.service.ts" />
+    <None Include="Website\Sources\src\app\navigation\components\navigation.component.spec.ts" />
+    <None Include="Website\Sources\src\app\navigation\components\navigation.component.ts" />
+    <None Include="Website\Sources\src\app\test\components\test.component.spec.ts" />
+    <None Include="Website\Sources\src\app\test\components\test.component.ts" />
+    <None Include="Website\Sources\src\environments\environment.prod.ts" />
+    <None Include="Website\Sources\src\environments\environment.ts" />
+    <None Include="Website\Sources\src\main.ts" />
+    <None Include="Website\Sources\src\polyfills.ts" />
+    <None Include="Website\Sources\src\test.ts" />
+    <None Include="Website\Sources\src\typings.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Target Name="Build Angular" BeforeTargets="Build">
+    <Message Text="* * * * * * Building Angular App * * * * * *" Importance="high" />
+    <Exec ConsoleToMSBuild="true" Command="echo &quot;cd $(ProjectDir)Website\Sources&quot; &amp;&amp;^&#xD;&#xA;cd &quot;$(ProjectDir)Website\Sources&quot; &amp;&amp;^&#xD;&#xA;echo &quot;npm install...&quot; &amp;&amp;^&#xD;&#xA;npm install &amp;&amp;^&#xD;&#xA;cd &quot;$(ProjectDir)Website\Sources&quot; &amp;&amp;^&#xD;&#xA;echo &quot;Building $(ProjectDir)Website\Sources\dist...&quot; &amp;&amp;^&#xD;&#xA;ng build &amp;&amp;^&#xD;&#xA;echo &quot;Copying files from $(ProjectDir)Website\Sources\dist to $(ProjectDir)Website\UI...&quot; &amp;&amp;^&#xD;&#xA;xcopy /I /R /Y /S /E &quot;$(ProjectDir)Website\Sources\dist\*.*&quot; &quot;$(ProjectDir)Website\UI&quot;">
+      <Output TaskParameter="ConsoleOutput" PropertyName="OutputOfExec" />
+    </Exec>
+  </Target>
+</Project>
