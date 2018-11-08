@@ -128,7 +128,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ERA.PermanentContract.Calculation.Application\ERA.PermanentContractSalaryCalculation.Application.csproj">
+    <ProjectReference Include="..\ERA.PermanentContractSalaryCalculation.Application\ERA.PermanentContractSalaryCalculation.Application.csproj">
       <Project>{9420872D-688B-4DA0-8A40-B40962B3F958}</Project>
       <Name>ERA.PermanentContractSalaryCalculation.Application</Name>
     </ProjectReference>

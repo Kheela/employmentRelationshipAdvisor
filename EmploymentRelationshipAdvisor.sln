@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2050
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERA.PermanentContractSalaryCalculation.Application", "ERA.PermanentContract.Calculation.Application\ERA.PermanentContractSalaryCalculation.Application.csproj", "{9420872D-688B-4DA0-8A40-B40962B3F958}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERA.PermanentContractSalaryCalculation.Application", "ERA.PermanentContractSalaryCalculation.Application\ERA.PermanentContractSalaryCalculation.Application.csproj", "{9420872D-688B-4DA0-8A40-B40962B3F958}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERA.Shared", "ERA.Shared\ERA.Shared.csproj", "{34D898C8-CCCA-42BB-B152-3C3D951F0502}"
 EndProject
