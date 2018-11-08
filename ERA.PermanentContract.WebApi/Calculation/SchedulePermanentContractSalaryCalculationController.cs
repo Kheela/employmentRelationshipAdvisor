@@ -1,7 +1,7 @@
 ﻿using System.Web.Http;
 using ERA.PermanentContract.Calculation.Application;
 
-namespace ERA.WebApi.Calculation.PermanentContract
+namespace ERA.PermanentContract.WebApi.Calculation
 {
     public class SchedulePermanentContractSalaryCalculationController : ApiController
     {
