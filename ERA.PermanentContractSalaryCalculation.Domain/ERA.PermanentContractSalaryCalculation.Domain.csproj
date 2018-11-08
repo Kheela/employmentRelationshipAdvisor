@@ -4,16 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9420872D-688B-4DA0-8A40-B40962B3F958}</ProjectGuid>
+    <ProjectGuid>{F4645549-0CF4-46EF-8DAF-81BBCE41FB9A}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>ERA.PermanentContractSalaryCalculation.Application</RootNamespace>
-    <AssemblyName>ERA.PermanentContractSalaryCalculation.Application</AssemblyName>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ERA.PermanentContractSalaryCalculation.Domain</RootNamespace>
+    <AssemblyName>ERA.PermanentContractSalaryCalculation.Domain</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -21,19 +21,14 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <LangVersion>6</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -46,21 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PermanentContractConsts.cs" />
-    <Compile Include="PermanentContractSalaryCalculator.cs" />
-    <Compile Include="PermanentContractEmployeeExampleValues.cs" />
-    <Compile Include="PermanentContractSalaryCalculationContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ERA.PermanentContractSalaryCalculation.Domain\ERA.PermanentContractSalaryCalculation.Domain.csproj">
-      <Project>{f4645549-0cf4-46ef-8daf-81bbce41fb9a}</Project>
-      <Name>ERA.PermanentContractSalaryCalculation.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ERA.Shared\ERA.Shared.csproj">
-      <Project>{34d898c8-ccca-42bb-b152-3c3d951f0502}</Project>
-      <Name>ERA.Shared</Name>
-    </ProjectReference>
+    <Folder Include="Entities\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

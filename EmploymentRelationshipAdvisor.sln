@@ -33,6 +33,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Domain", "1. Domain", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{B3318629-025F-4C9D-B0EC-CCBF34261980}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERA.PermanentContractSalaryCalculation.Domain", "ERA.PermanentContractSalaryCalculation.Domain\ERA.PermanentContractSalaryCalculation.Domain.csproj", "{F4645549-0CF4-46EF-8DAF-81BBCE41FB9A}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		ERA.WebUI\ERA.WebUI.projitems*{f6fc0d65-cf92-4bef-82ca-6bcd1d5681e0}*SharedItemsImports = 13
@@ -58,6 +60,10 @@ Global
 		{6E0EA9F1-CE3E-42F8-B962-E6457A88B8FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E0EA9F1-CE3E-42F8-B962-E6457A88B8FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E0EA9F1-CE3E-42F8-B962-E6457A88B8FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4645549-0CF4-46EF-8DAF-81BBCE41FB9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4645549-0CF4-46EF-8DAF-81BBCE41FB9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4645549-0CF4-46EF-8DAF-81BBCE41FB9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4645549-0CF4-46EF-8DAF-81BBCE41FB9A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -76,6 +82,7 @@ Global
 		{4EC4001B-9DAE-4D62-8EE3-96EDD3A8E393} = {F2E62E61-78FD-4909-84E4-2247C065F440}
 		{37AD107A-9569-465C-8533-ED901AB37BBB} = {F2E62E61-78FD-4909-84E4-2247C065F440}
 		{B3318629-025F-4C9D-B0EC-CCBF34261980} = {1719891D-6618-4CCB-9E16-36E2419C8E73}
+		{F4645549-0CF4-46EF-8DAF-81BBCE41FB9A} = {37AD107A-9569-465C-8533-ED901AB37BBB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {59DA5486-4FCE-4BF9-9419-B202A6C4E136}
