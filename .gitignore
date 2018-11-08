@@ -6,7 +6,7 @@
 *.user
 *.userosscache
 *.sln.docstates
-ERA.WebApi/Website/*
+ERA*.WebApi/Website/*
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
