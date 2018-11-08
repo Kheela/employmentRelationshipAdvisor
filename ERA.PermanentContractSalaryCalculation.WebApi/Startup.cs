@@ -1,12 +1,11 @@
-﻿using ERA.Web.App_Start;
+﻿using System.Web.Http;
+using ERA.PermanentContractSalaryCalculation.WebApi.App_Start;
 using Microsoft.Owin.FileSystems;
 using Microsoft.Owin.StaticFiles;
 using Microsoft.Owin.StaticFiles.ContentTypes;
 using Owin;
-using System.IO;
-using System.Web.Http;
 
-namespace ERA.Web
+namespace ERA.PermanentContractSalaryCalculation.WebApi
 {
     public class Startup
     {

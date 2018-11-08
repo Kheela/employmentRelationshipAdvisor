@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Http;
+﻿using System.Web.Http;
 
-namespace ERA.Web.App_Start
+namespace ERA.PermanentContractSalaryCalculation.WebApi.App_Start
 {
     public class WebApiConfig
     {
