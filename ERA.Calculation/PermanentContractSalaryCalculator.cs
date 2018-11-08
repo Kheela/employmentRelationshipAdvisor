@@ -1,7 +1,7 @@
-using ERA.Shared.Extensions;
 using System;
+using ERA.Shared.Extensions;
 
-namespace ERA.Calculation.PermanentContract
+namespace ERA.PermanentContract.Calculation.Application
 {
     public class PermanentContractSalaryCalculationResult
     {

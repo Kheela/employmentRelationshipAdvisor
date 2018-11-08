@@ -1,5 +1,5 @@
 ﻿using System.Web.Http;
-using ERA.Calculation.PermanentContract;
+using ERA.PermanentContract.Calculation.Application;
 
 namespace ERA.WebApi.Calculation.PermanentContract
 {
