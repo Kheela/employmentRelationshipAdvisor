@@ -7,6 +7,7 @@
 *.userosscache
 *.sln.docstates
 ERA*.WebApi/Website/*
+!ERA*.WebApi/Website/i_am_here_so_that_git_sees_this_folder.txt
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs

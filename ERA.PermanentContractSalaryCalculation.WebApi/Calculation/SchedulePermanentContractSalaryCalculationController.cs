@@ -1,4 +1,5 @@
-﻿using System.Web.Http;
+﻿using ERA.PermanentContractSalaryCalculation.Application;
+using System.Web.Http;
 
 namespace ERA.PermanentContractSalaryCalculation.WebApi.Calculation
 {
