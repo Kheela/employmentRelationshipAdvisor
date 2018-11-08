@@ -49,9 +49,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ERA.PermanentContract.Calculation.Application\ERA.PermanentContract.Calculation.Application.csproj">
+    <ProjectReference Include="..\ERA.PermanentContract.Calculation.Application\ERA.PermanentContractSalaryCalculation.Application.csproj">
       <Project>{9420872d-688b-4da0-8a40-b40962b3f958}</Project>
-      <Name>ERA.PermanentContract.Calculation.Application</Name>
+      <Name>ERA.PermanentContractSalaryCalculation.Application</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

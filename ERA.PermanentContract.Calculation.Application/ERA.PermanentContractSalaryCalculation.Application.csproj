@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{9420872D-688B-4DA0-8A40-B40962B3F958}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>ERA.PermanentContract.Calculation.Application</RootNamespace>
-    <AssemblyName>ERA.PermanentContract.Calculation.Application</AssemblyName>
+    <RootNamespace>ERA.PermanentContractSalaryCalculation.Application</RootNamespace>
+    <AssemblyName>ERA.PermanentContractSalaryCalculation.Application</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
