@@ -1,4 +1,4 @@
-﻿namespace ERA.Calculation.PermanentContract
+﻿namespace ERA.PermanentContract.Calculation.Application
 {
     public static class PermanentContractConsts
     {

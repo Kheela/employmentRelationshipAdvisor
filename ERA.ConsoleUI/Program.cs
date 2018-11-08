@@ -1,5 +1,5 @@
-﻿using ERA.Calculation.PermanentContract;
-using System;
+﻿using System;
+using ERA.PermanentContract.Calculation.Application;
 
 namespace ERA.ConsoleApi
 {
