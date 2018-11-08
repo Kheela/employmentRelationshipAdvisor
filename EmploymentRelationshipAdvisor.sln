@@ -21,7 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{5476A3DE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERA.ConsoleUI", "ERA.ConsoleUI\ERA.ConsoleUI.csproj", "{A29421D4-670D-4E65-B877-D18EA4362E49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERA.PermanentContract.WebApi", "ERA.WebApi\ERA.PermanentContract.WebApi.csproj", "{6E0EA9F1-CE3E-42F8-B962-E6457A88B8FD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERA.PermanentContract.WebApi", "ERA.PermanentContract.WebApi\ERA.PermanentContract.WebApi.csproj", "{6E0EA9F1-CE3E-42F8-B962-E6457A88B8FD}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "ERA.WebUI", "ERA.WebUI\ERA.WebUI.shproj", "{F6FC0D65-CF92-4BEF-82CA-6BCD1D5681E0}"
 EndProject
