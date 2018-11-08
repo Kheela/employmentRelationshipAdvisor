@@ -6,3 +6,9 @@ ClipSave := StrReplace(ClipSave, " ", "_")
 Send %ClipSave%
 ClipSave:="" ; clear variable
 Return
+
+; paste git
+^g:: ; ctrl+git
+GitWithSpace = "git "
+GitWithSpace := StrReplace(GitWithSpace, """")
+Send %GitWithSpace%
