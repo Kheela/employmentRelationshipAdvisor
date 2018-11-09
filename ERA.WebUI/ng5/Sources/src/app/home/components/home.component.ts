@@ -12,7 +12,7 @@ import { EmploymentContractCalculationService } from '../services/employmentCont
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  private salaryBrutto: number;
+  private salaryGross: number;
   private calculationResult = '';
   private isLoading = false;
   private wasCalculateClicked = false;
@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
   calculate() {
     this.isLoading = true;
 
-    this.service.scheduleCalculation(this.salaryBrutto)
+    this.service.scheduleCalculation(this.salaryGross)
       //todo: .filter(data => this.form.valid)
       .subscribe(
         response => {
@@ -43,7 +43,7 @@ export class HomeComponent implements OnInit {
       );
 
     // setTimeout(() => {
-    //   this.calculationResult = this.salaryBrutto.toString();
+    //   this.calculationResult = this.salaryGross.toString();
     //   this.isSpinnerVisible = false;
     // }, 2000);
   }

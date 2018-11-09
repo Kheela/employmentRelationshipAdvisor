@@ -10,8 +10,8 @@ export class EmploymentContractCalculationService {
 
     constructor(private http: Http) { }
 
-    scheduleCalculation(salaryBrutto: number) {
-        return this.http.get(this.baseUrl + "?salaryBrutto=" + salaryBrutto)
+    scheduleCalculation(salaryGross: number) {
+        return this.http.get(this.baseUrl + "?salaryGross=" + salaryGross)
             //.map(res => <Customer[]> res.json())
             .map(res => res.json())
             .catch(error => {
