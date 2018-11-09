@@ -18,6 +18,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sources", "Sources", "{8690159D-A744-46A8-8BAC-8249BA56CC02}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{5476A3DE-6A20-4F6E-8BFF-1EA82480344E}"
+	ProjectSection(SolutionItems) = preProject
+		ReadMe.md = ReadMe.md
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERA.ConsoleUI", "ERA.ConsoleUI\ERA.ConsoleUI.csproj", "{A29421D4-670D-4E65-B877-D18EA4362E49}"
 EndProject
@@ -34,6 +37,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{B3318629-025F-4C9D-B0EC-CCBF34261980}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERA.PermanentContractSalaryCalculation.Domain", "ERA.PermanentContractSalaryCalculation.Domain\ERA.PermanentContractSalaryCalculation.Domain.csproj", "{F4645549-0CF4-46EF-8DAF-81BBCE41FB9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERA.PermanentContractSalaryCalculation.Application.Tests", "ERA.PermanentContractSalaryCalculation.Application.Tests\ERA.PermanentContractSalaryCalculation.Application.Tests.csproj", "{72029CB0-BE16-41B8-B647-C466C79F188A}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
@@ -64,6 +69,10 @@ Global
 		{F4645549-0CF4-46EF-8DAF-81BBCE41FB9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4645549-0CF4-46EF-8DAF-81BBCE41FB9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4645549-0CF4-46EF-8DAF-81BBCE41FB9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72029CB0-BE16-41B8-B647-C466C79F188A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72029CB0-BE16-41B8-B647-C466C79F188A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72029CB0-BE16-41B8-B647-C466C79F188A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72029CB0-BE16-41B8-B647-C466C79F188A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,6 +92,7 @@ Global
 		{37AD107A-9569-465C-8533-ED901AB37BBB} = {F2E62E61-78FD-4909-84E4-2247C065F440}
 		{B3318629-025F-4C9D-B0EC-CCBF34261980} = {1719891D-6618-4CCB-9E16-36E2419C8E73}
 		{F4645549-0CF4-46EF-8DAF-81BBCE41FB9A} = {37AD107A-9569-465C-8533-ED901AB37BBB}
+		{72029CB0-BE16-41B8-B647-C466C79F188A} = {5476A3DE-6A20-4F6E-8BFF-1EA82480344E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {59DA5486-4FCE-4BF9-9419-B202A6C4E136}

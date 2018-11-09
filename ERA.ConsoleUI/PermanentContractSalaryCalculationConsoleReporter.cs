@@ -40,10 +40,10 @@ namespace ERA.ConsoleApi
         {
             var socialContributionParameters = context.Parameters.SocialInsuranceSetting;
 
-            Console.WriteLine($"ZUS emer. ({socialContributionParameters.RetirementInsurancePercent.ToString("0.00")}%): {result.PensionInsuranceContribution.ToString("0.00")}");
-            Console.WriteLine($"ZUS rent. ({socialContributionParameters.DisabilityPensionInsurancePercent.ToString("0.00")}%): {result.DisabilityPensionInsuranceContribution.ToString("0.00")}");
-            Console.WriteLine($"ZUS chor. ({socialContributionParameters.SicknessInsurancePercent.ToString("0.00")}%): {result.SicknessInsuranceContribution.ToString("0.00")}");
-            Console.WriteLine($"ZUS ({socialContributionParameters.TotalPercent.ToString("0.00")}%): {result.SocialInsuranceContribution.ToString("0.00")}");
+            Console.WriteLine($"ZUS emer. ({socialContributionParameters.RetirementInsurancePercent.ToString("0.00")}%): {result.RetirementInsurance.ToString("0.00")}");
+            Console.WriteLine($"ZUS rent. ({socialContributionParameters.DisabilityPensionInsurancePercent.ToString("0.00")}%): {result.DisabilityPensionInsurance.ToString("0.00")}");
+            Console.WriteLine($"ZUS chor. ({socialContributionParameters.SicknessInsurancePercent.ToString("0.00")}%): {result.SicknessInsurance.ToString("0.00")}");
+            Console.WriteLine($"ZUS ({socialContributionParameters.TotalPercent.ToString("0.00")}%): {result.TotalSocialInsurance.ToString("0.00")}");
             Console.WriteLine();
         }
 

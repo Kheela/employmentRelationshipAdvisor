@@ -4,11 +4,11 @@
     {
         public decimal SalaryBrutto { get; set; }
 
-        public decimal SocialInsuranceContribution { get; set; }
+        public decimal TotalSocialInsurance { get; set; }
 
-        public decimal PensionInsuranceContribution { get; set; }
-        public decimal DisabilityPensionInsuranceContribution { get; set; }
-        public decimal SicknessInsuranceContribution { get; set; }
+        public decimal RetirementInsurance { get; set; }
+        public decimal DisabilityPensionInsurance { get; set; }
+        public decimal SicknessInsurance { get; set; }
 
         public decimal TaxDeductibleExpenses { get; set; }
 

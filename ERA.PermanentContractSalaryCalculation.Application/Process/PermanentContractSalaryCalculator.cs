@@ -1,7 +1,9 @@
 using System;
 using ERA.PermanentContractSalaryCalculation.Application.Models;
+using ERA.PermanentContractSalaryCalculation.Application.Process.Calculators;
 using ERA.PermanentContractSalaryCalculation.Domain.Constants;
 using ERA.PermanentContractSalaryCalculation.Domain.Enumerations;
+using ERA.PermanentContractSalaryCalculation.Domain.Referential;
 using ERA.Shared.Extensions;
 
 namespace ERA.PermanentContractSalaryCalculation.Application.Process
@@ -41,23 +43,11 @@ namespace ERA.PermanentContractSalaryCalculation.Application.Process
             PermanentContractSalaryCalculationResult result, 
             PermanentContractSalaryCalculationContext context)
         {
-            CalculateSocialInsuranceContribution(result, context);
+            result.CalculateSocialInsurance(result.SalaryBrutto, context.Parameters.SocialInsuranceSetting);
             CalculateDeductibles(copyrightLawsPercent, result, context);
 
-            var salaryMinusSocial = result.SalaryBrutto - result.SocialInsuranceContribution;
+            var salaryMinusSocial = result.SalaryBrutto - result.TotalSocialInsurance;
             result.TaxBase = salaryMinusSocial - result.CopyrightLawsCosts; // deductibles
-
-            return result;
-        }
-
-        private PermanentContractSalaryCalculationResult CalculateSocialInsuranceContribution(PermanentContractSalaryCalculationResult result, PermanentContractSalaryCalculationContext context)
-        {
-            var socialParameters = context.Parameters.SocialInsuranceSetting;
-
-            result.PensionInsuranceContribution = result.SalaryBrutto.GetPercent(socialParameters.RetirementInsurancePercent);
-            result.DisabilityPensionInsuranceContribution = result.SalaryBrutto.GetPercent(socialParameters.DisabilityPensionInsurancePercent);
-            result.SicknessInsuranceContribution = result.SalaryBrutto.GetPercent(socialParameters.SicknessInsurancePercent);
-            result.SocialInsuranceContribution = result.SalaryBrutto.GetPercent(socialParameters.TotalPercent);
 
             return result;
         }
@@ -71,7 +61,7 @@ namespace ERA.PermanentContractSalaryCalculation.Application.Process
             var taxDeductibleExpenses = context.Parameters.EmploymentRelationshipTaxDeductibleExpensesSetting;
             result.TaxDeductibleExpenses = taxDeductibleExpenses.Amount;
 
-            var salaryMinusSocial = result.SalaryBrutto - result.SocialInsuranceContribution;
+            var salaryMinusSocial = result.SalaryBrutto - result.TotalSocialInsurance;
 
             result.CopyrightLawsValue = salaryMinusSocial.GetPercent(copyrightLawsPercent);
             result.CopyrightLawsCosts = result.CopyrightLawsValue.GetPercent(CopyrightLawsCosts.Percent);
@@ -82,7 +72,7 @@ namespace ERA.PermanentContractSalaryCalculation.Application.Process
         private static void CalculateHealthInsuranceContribution(PermanentContractSalaryCalculationResult result, PermanentContractSalaryCalculationContext context)
         {
             var healthParameters = context.Parameters.HealthInsuranceSetting;
-            var salaryMinusSocial = result.SalaryBrutto - result.SocialInsuranceContribution;
+            var salaryMinusSocial = result.SalaryBrutto - result.TotalSocialInsurance;
 
             result.HealthInsurance = salaryMinusSocial.GetPercent(healthParameters.HealthInsurancePercent);
             result.DeductibleHealthInsurance = Math.Floor(salaryMinusSocial.GetPercent(healthParameters.DeductibleHealthInsurancePercent));
@@ -106,7 +96,7 @@ namespace ERA.PermanentContractSalaryCalculation.Application.Process
 
         private static void CalculateNettoSalary(PermanentContractSalaryCalculationResult result)
         {
-            result.SalaryNetto = result.SalaryBrutto - result.Tax - result.SocialInsuranceContribution - result.HealthInsurance;
+            result.SalaryNetto = result.SalaryBrutto - result.Tax - result.TotalSocialInsurance - result.HealthInsurance;
         }
     }
 }
