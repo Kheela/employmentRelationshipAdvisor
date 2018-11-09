@@ -1,5 +1,6 @@
 ﻿using System;
-using ERA.PermanentContractSalaryCalculation.Application;
+using ERA.PermanentContractSalaryCalculation.Application.Models;
+using ERA.PermanentContractSalaryCalculation.Application.Process;
 using ERA.PermanentContractSalaryCalculation.Domain.Constants;
 
 namespace ERA.ConsoleApi
@@ -38,10 +39,10 @@ namespace ERA.ConsoleApi
         {
             var socialContributionParameters = context.EmployeeContributionParameters.SocialInsuranceContributionParameters;
 
-            Console.WriteLine($"ZUS emer. ({socialContributionParameters.PensionInsuranceContributionPercentage.ToString("0.00")}%): {result.PensionInsuranceContribution.ToString("0.00")}");
-            Console.WriteLine($"ZUS rent. ({socialContributionParameters.DisabilityPensionInsuranceContributionPercentage.ToString("0.00")}%): {result.DisabilityPensionInsuranceContribution.ToString("0.00")}");
-            Console.WriteLine($"ZUS chor. ({socialContributionParameters.SicknessInsuranceContributionPercentage.ToString("0.00")}%): {result.SicknessInsuranceContribution.ToString("0.00")}");
-            Console.WriteLine($"ZUS ({socialContributionParameters.TotalPercentage.ToString("0.00")}%): {result.SocialInsuranceContribution.ToString("0.00")}");
+            Console.WriteLine($"ZUS emer. ({socialContributionParameters.RetirementInsurancePercent.ToString("0.00")}%): {result.PensionInsuranceContribution.ToString("0.00")}");
+            Console.WriteLine($"ZUS rent. ({socialContributionParameters.DisabilityPensionInsurancePercent.ToString("0.00")}%): {result.DisabilityPensionInsuranceContribution.ToString("0.00")}");
+            Console.WriteLine($"ZUS chor. ({socialContributionParameters.SicknessInsurancePercent.ToString("0.00")}%): {result.SicknessInsuranceContribution.ToString("0.00")}");
+            Console.WriteLine($"ZUS ({socialContributionParameters.TotalPercent.ToString("0.00")}%): {result.SocialInsuranceContribution.ToString("0.00")}");
             Console.WriteLine();
         }
 

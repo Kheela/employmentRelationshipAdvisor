@@ -46,9 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PermanentContractSalaryCalculator.cs" />
+    <Compile Include="Models\PermanentContractSalaryCalculationResult.cs" />
+    <Compile Include="Process\PermanentContractSalaryCalculator.cs" />
     <Compile Include="PermanentContractEmployeeExampleValues.cs" />
-    <Compile Include="PermanentContractSalaryCalculationContext.cs" />
+    <Compile Include="Process\PermanentContractSalaryCalculationContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

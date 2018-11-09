@@ -1,25 +1,27 @@
-﻿namespace ERA.PermanentContractSalaryCalculation.Application
+﻿using ERA.PermanentContractSalaryCalculation.Application.Process;
+
+namespace ERA.PermanentContractSalaryCalculation.Application
 {
     public static class PermanentContractEmployeeExampleValues
     {
         public static SocialInsuranceContributionParameters SocialInsuranceContributionParameters = new SocialInsuranceContributionParameters
         {
-            PensionInsuranceContributionPercentage = 9.76m,
-            DisabilityPensionInsuranceContributionPercentage = 1.5m,
-            SicknessInsuranceContributionPercentage = 2.45m
+            RetirementInsurancePercent = 9.76f,
+            DisabilityPensionInsurancePercent = 1.5f,
+            SicknessInsurancePercent = 2.45f
         };
 
         public static DeductibleParameters DeductibleParameters = new DeductibleParameters
         {
-            TaxDeductibleExpensesPercentage = 0m,
+            TaxDeductibleExpensesPercent = 0f,
             DriveExpenses = 111.25m,
-            CopyrightLawsPercentage = 80m
+            CopyrightLawsPercent = 80f
         };
 
         public static HealthInsuranceContributionParameters HealthInsuranceContributionParameters = new HealthInsuranceContributionParameters
         {
-            HealthInsurancePaidFromTaxPercentage = 7.75m,
-            TotalHealthInsurancePercentage = 9m
+            HealthInsurancePaidFromTaxPercent = 7.75f,
+            TotalHealthInsurancePercent = 9f
         };
 
         public static decimal TaxRelief = 560m / 12;
