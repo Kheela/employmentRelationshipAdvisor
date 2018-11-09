@@ -132,6 +132,10 @@
       <Project>{9420872D-688B-4DA0-8A40-B40962B3F958}</Project>
       <Name>ERA.PermanentContractSalaryCalculation.Application</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ERA.PermanentContractSalaryCalculation.Domain\ERA.PermanentContractSalaryCalculation.Domain.csproj">
+      <Project>{F4645549-0CF4-46EF-8DAF-81BBCE41FB9A}</Project>
+      <Name>ERA.PermanentContractSalaryCalculation.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

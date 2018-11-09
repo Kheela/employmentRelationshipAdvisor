@@ -1,4 +1,6 @@
-﻿namespace ERA.PermanentContractSalaryCalculation.Application.Process
+﻿using ERA.PermanentContractSalaryCalculation.Domain.Referential;
+
+namespace ERA.PermanentContractSalaryCalculation.Application.Process
 {
     public class PermanentContractSalaryCalculationContext
     {
@@ -8,36 +10,25 @@
     // todo: get from net
     public class PermanentContractEmployeeContributionParameters
     {
-        public SocialInsuranceContributionParameters SocialInsuranceContributionParameters { get; set; }
+        public SocialInsuranceSetting SocialInsuranceSetting { get; set; } // z sieci
         public DeductibleParameters DeductibleParameters { get; set; }
         public HealthInsuranceContributionParameters HealthInsuranceContributionParameters { get; set; }
         public decimal TaxRelief { get; set; }
     }
 
-    public class SocialInsuranceContributionParameters
-    {
-        // emerytalne
-        public float RetirementInsurancePercent { get; set; }
-        public float DisabilityPensionInsurancePercent { get; set; }
-        public float SicknessInsurancePercent { get; set; }
-
-        public float TotalPercent => RetirementInsurancePercent +
-                                     DisabilityPensionInsurancePercent +
-                                     SicknessInsurancePercent;
-    }
-
+    // do odliczenia
     public class DeductibleParameters
     {
-        // koszty uzysku
-        public float TaxDeductibleExpensesPercent { get; set; }
-        public decimal DriveExpenses { get; set; }
-        public float CopyrightLawsPercent { get; set; }
+        // koszty uzyskania przychodu
+        public float TaxDeductibleExpensesPercent { get; set; } // z sieci
+        public decimal DriveExpenses { get; set; } // z UI
+        public float CopyrightLawsPercent { get; set; } // z UI
     }
 
     public class HealthInsuranceContributionParameters
     {
-        public float TotalHealthInsurancePercent { get; set; }
-        public float HealthInsurancePaidFromTaxPercent { get; set; }
+        public float TotalHealthInsurancePercent { get; set; } // tyle trzeba wplacic do zusu
+        public float HealthInsurancePaidFromTaxPercent { get; set; } // zmiejsza podatek dochodowy
         public float HealthInsurancePaidFromNettoPercent => TotalHealthInsurancePercent - HealthInsurancePaidFromTaxPercent;
     }
 }

@@ -40,7 +40,7 @@ namespace ERA.PermanentContractSalaryCalculation.Application.Process
 
         private PermanentContractSalaryCalculationResult CalculateSocialInsuranceContribution(PermanentContractSalaryCalculationResult result, PermanentContractSalaryCalculationContext context)
         {
-            var socialParameters = context.EmployeeContributionParameters.SocialInsuranceContributionParameters;
+            var socialParameters = context.EmployeeContributionParameters.SocialInsuranceSetting;
 
             result.PensionInsuranceContribution = result.SalaryBrutto.GetPercent(socialParameters.RetirementInsurancePercent);
             result.DisabilityPensionInsuranceContribution = result.SalaryBrutto.GetPercent(socialParameters.DisabilityPensionInsurancePercent);

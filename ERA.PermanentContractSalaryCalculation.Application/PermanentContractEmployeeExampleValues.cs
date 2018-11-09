@@ -1,10 +1,11 @@
 ﻿using ERA.PermanentContractSalaryCalculation.Application.Process;
+using ERA.PermanentContractSalaryCalculation.Domain.Referential;
 
 namespace ERA.PermanentContractSalaryCalculation.Application
 {
     public static class PermanentContractEmployeeExampleValues
     {
-        public static SocialInsuranceContributionParameters SocialInsuranceContributionParameters = new SocialInsuranceContributionParameters
+        public static SocialInsuranceSetting SocialInsuranceSetting = new SocialInsuranceSetting
         {
             RetirementInsurancePercent = 9.76f,
             DisabilityPensionInsurancePercent = 1.5f,

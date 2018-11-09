@@ -37,7 +37,7 @@ namespace ERA.ConsoleApi
 
         private static void ReportSocialInsuranceContributionCalculationInfo(PermanentContractSalaryCalculationResult result, PermanentContractSalaryCalculationContext context)
         {
-            var socialContributionParameters = context.EmployeeContributionParameters.SocialInsuranceContributionParameters;
+            var socialContributionParameters = context.EmployeeContributionParameters.SocialInsuranceSetting;
 
             Console.WriteLine($"ZUS emer. ({socialContributionParameters.RetirementInsurancePercent.ToString("0.00")}%): {result.PensionInsuranceContribution.ToString("0.00")}");
             Console.WriteLine($"ZUS rent. ({socialContributionParameters.DisabilityPensionInsurancePercent.ToString("0.00")}%): {result.DisabilityPensionInsuranceContribution.ToString("0.00")}");
