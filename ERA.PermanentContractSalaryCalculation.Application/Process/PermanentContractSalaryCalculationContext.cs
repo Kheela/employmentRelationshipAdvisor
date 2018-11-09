@@ -13,6 +13,6 @@ namespace ERA.PermanentContractSalaryCalculation.Application.Process
         public SocialInsuranceSetting SocialInsuranceSetting { get; set; }
         public HealthInsuranceSetting HealthInsuranceSetting { get; set; }
         // koszty uzyskania przychodu
-        public EmploymentRelationshipTaxDeductibleExpensesSetting EmploymentRelationshipTaxDeductibleExpensesSetting { get; set; } // wybieram 1 z 4 na podstawie informacji z UI
+        public EmploymentRelationshipTaxSetting EmploymentRelationshipTaxSetting { get; set; } // wybieram 1 z 4 na podstawie informacji z UI
     }
 }

@@ -17,7 +17,7 @@ namespace ERA.PermanentContractSalaryCalculation.WebApi.WebApi
                 Parameters = new PermanentContractEmployeeContributionParameters
                 {
                     SocialInsuranceSetting = PermanentContractEmployeeExampleValues.SocialInsuranceSetting,
-                    EmploymentRelationshipTaxDeductibleExpensesSetting = PermanentContractEmployeeExampleValues.EmploymentRelationshipTaxDeductibleExpensesSetting,
+                    EmploymentRelationshipTaxSetting = PermanentContractEmployeeExampleValues.EmploymentRelationshipTaxSetting,
                     HealthInsuranceSetting = PermanentContractEmployeeExampleValues.HealthInsuranceSetting
                 }
             };

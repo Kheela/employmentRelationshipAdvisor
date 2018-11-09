@@ -1,6 +1,6 @@
-﻿using ERA.PermanentContractSalaryCalculation.Domain.Enumerations;
-using ERA.Shared.Extensions;
+﻿using ERA.Shared.Extensions;
 using System;
+using ERA.PermanentContractSalaryCalculation.Domain.Constants;
 
 namespace ERA.PermanentContractSalaryCalculation.Application.Process.Calculations
 {

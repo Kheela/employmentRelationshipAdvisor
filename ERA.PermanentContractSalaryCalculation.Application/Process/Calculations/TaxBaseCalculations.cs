@@ -10,13 +10,13 @@ namespace ERA.PermanentContractSalaryCalculation.Application.Process.Calculation
             this CalculationResultBuilder builder,
             float copyrightLawsPercent,
             decimal totalSocialInsurance,
-            decimal employmentRelationshipTaxDeductibleExpenses)
+            decimal employmentRelationshipDeductibles)
         {
             var salaryMinusSocial = builder.SalaryGross - totalSocialInsurance;
 
             return builder
                 .CalculateCopyrightLawsDeductibles(salaryMinusSocial, copyrightLawsPercent)
-                .Calculate(() => builder.Result.TotalDeductibles = employmentRelationshipTaxDeductibleExpenses +
+                .Calculate(() => builder.Result.TotalDeductibles = employmentRelationshipDeductibles +
                                                                    builder.Result.CopyrightLawsDeductibles +
                                                                    0) //todo: context.Parameters.DriveExpenses;
                 .Calculate(() =>
@@ -30,7 +30,7 @@ namespace ERA.PermanentContractSalaryCalculation.Application.Process.Calculation
         {
             var copyrightLawsValue = salaryMinusSocial.GetPercent(copyrightLawsPercent);
             builder.Result.CopyrightLawsValue = copyrightLawsValue;
-            builder.Result.CopyrightLawsDeductibles = copyrightLawsValue.GetPercent(CopyrightLawsCosts.Percent);
+            builder.Result.CopyrightLawsDeductibles = copyrightLawsValue.GetPercent(CopyrightLaws.DeductiblesPercent);
 
             return builder;
         }

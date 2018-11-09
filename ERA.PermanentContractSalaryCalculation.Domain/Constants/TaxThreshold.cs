@@ -1,4 +1,4 @@
-﻿namespace ERA.PermanentContractSalaryCalculation.Domain.Enumerations
+﻿namespace ERA.PermanentContractSalaryCalculation.Domain.Constants
 {
     public static class TaxThreshold
     {

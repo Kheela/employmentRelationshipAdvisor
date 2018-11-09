@@ -1,7 +1,7 @@
 ﻿using System;
 using ERA.PermanentContractSalaryCalculation.Application.Models;
 using ERA.PermanentContractSalaryCalculation.Application.Process;
-using ERA.PermanentContractSalaryCalculation.Domain.Enumerations;
+using ERA.PermanentContractSalaryCalculation.Domain.Constants;
 
 namespace ERA.ConsoleApi
 {

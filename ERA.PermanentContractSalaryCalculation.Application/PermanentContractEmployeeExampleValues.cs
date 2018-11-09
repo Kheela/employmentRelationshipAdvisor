@@ -11,10 +11,10 @@ namespace ERA.PermanentContractSalaryCalculation.Application
             SicknessInsurancePercent = 2.45f
         };
 
-        public static EmploymentRelationshipTaxDeductibleExpensesSetting
-            EmploymentRelationshipTaxDeductibleExpensesSetting = new EmploymentRelationshipTaxDeductibleExpensesSetting
+        public static EmploymentRelationshipTaxSetting EmploymentRelationshipTaxSetting =
+            new EmploymentRelationshipTaxSetting
             {
-                Amount = 111.25m
+                DeductiblesAmount = 111.25m
             };
 
         public static HealthInsuranceSetting HealthInsuranceSetting = new HealthInsuranceSetting

@@ -36,8 +36,7 @@ namespace ERA.PermanentContractSalaryCalculation.Application.Tests
         {
             // arrange
             var setting = PermanentContractEmployeeExampleValues.SocialInsuranceSetting;
-            var employmentRelationshipTaxDeductibleExpenses = PermanentContractEmployeeExampleValues
-                .EmploymentRelationshipTaxDeductibleExpensesSetting.Amount;
+            var employmentRelationshipTaxDeductibles = PermanentContractEmployeeExampleValues.EmploymentRelationshipTaxSetting.DeductiblesAmount;
             var builder = new CalculationResultBuilder();
 
             // act
@@ -45,7 +44,7 @@ namespace ERA.PermanentContractSalaryCalculation.Application.Tests
                 .SetSalaryGross(salaryGross)
                 .CreateResult()
                 .CalculateSocialInsurance(setting)
-                .CalculateTaxBase(copyrightLawsPercent, builder.Result.TotalSocialInsurance, employmentRelationshipTaxDeductibleExpenses)
+                .CalculateTaxBase(copyrightLawsPercent, builder.Result.TotalSocialInsurance, employmentRelationshipTaxDeductibles)
                 .Result
                 .TaxBase;
 
@@ -89,7 +88,7 @@ namespace ERA.PermanentContractSalaryCalculation.Application.Tests
             var context = new PermanentContractSalaryCalculationContext();
             context.Parameters.SocialInsuranceSetting = PermanentContractEmployeeExampleValues.SocialInsuranceSetting;
             context.Parameters.HealthInsuranceSetting = PermanentContractEmployeeExampleValues.HealthInsuranceSetting;
-            context.Parameters.EmploymentRelationshipTaxDeductibleExpensesSetting = PermanentContractEmployeeExampleValues.EmploymentRelationshipTaxDeductibleExpensesSetting;
+            context.Parameters.EmploymentRelationshipTaxSetting = PermanentContractEmployeeExampleValues.EmploymentRelationshipTaxSetting;
 
             // act
             var calculationResult = calculator.Calculate(salaryGross, copyrightLawsPercent, context);
@@ -110,7 +109,7 @@ namespace ERA.PermanentContractSalaryCalculation.Application.Tests
             var context = new PermanentContractSalaryCalculationContext();
             context.Parameters.SocialInsuranceSetting = PermanentContractEmployeeExampleValues.SocialInsuranceSetting;
             context.Parameters.HealthInsuranceSetting = PermanentContractEmployeeExampleValues.HealthInsuranceSetting;
-            context.Parameters.EmploymentRelationshipTaxDeductibleExpensesSetting = PermanentContractEmployeeExampleValues.EmploymentRelationshipTaxDeductibleExpensesSetting;
+            context.Parameters.EmploymentRelationshipTaxSetting = PermanentContractEmployeeExampleValues.EmploymentRelationshipTaxSetting;
 
             // act
             var calculationResult = calculator.Calculate(salaryGross, copyrightLawsPercent, context);

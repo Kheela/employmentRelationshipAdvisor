@@ -47,7 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\PermanentContractSalaryCalculationResult.cs" />
-    <Compile Include="Process\CalculationResultBuilder.cs" />
+    <Compile Include="Process\Calculations\CalculationResultBuilder.cs" />
     <Compile Include="Process\Calculations\HealthInsuranceCalculations.cs" />
     <Compile Include="Process\Calculations\TaxMonthlyExemptionCalculations.cs" />
     <Compile Include="Process\Calculations\SalaryNettCalculations.cs" />
