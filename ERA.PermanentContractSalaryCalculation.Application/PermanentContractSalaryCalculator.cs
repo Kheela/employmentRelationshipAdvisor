@@ -1,4 +1,5 @@
 using System;
+using ERA.PermanentContractSalaryCalculation.Domain.Constants;
 using ERA.Shared.Extensions;
 
 namespace ERA.PermanentContractSalaryCalculation.Application

@@ -1,4 +1,4 @@
-﻿namespace ERA.PermanentContractSalaryCalculation.Application
+﻿namespace ERA.PermanentContractSalaryCalculation.Domain.Constants
 {
     public static class PermanentContractConsts
     {

@@ -53,6 +53,10 @@
       <Project>{9420872d-688b-4da0-8a40-b40962b3f958}</Project>
       <Name>ERA.PermanentContractSalaryCalculation.Application</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ERA.PermanentContractSalaryCalculation.Domain\ERA.PermanentContractSalaryCalculation.Domain.csproj">
+      <Project>{f4645549-0cf4-46ef-8daf-81bbce41fb9a}</Project>
+      <Name>ERA.PermanentContractSalaryCalculation.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

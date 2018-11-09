@@ -46,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PermanentContractConsts.cs" />
     <Compile Include="PermanentContractSalaryCalculator.cs" />
     <Compile Include="PermanentContractEmployeeExampleValues.cs" />
     <Compile Include="PermanentContractSalaryCalculationContext.cs" />
