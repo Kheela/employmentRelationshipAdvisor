@@ -8,22 +8,21 @@ namespace ERA.PermanentContractSalaryCalculation.WebApi.WebApi
     public class SchedulePermanentContractSalaryCalculationController : ApiController
     {
         // GET api/SchedulePermanentContractSalaryCalculation
-        public PermanentContractSalaryCalculationResult Get(decimal salaryBrutto)
+        public PermanentContractSalaryCalculationResult Get(decimal salaryBrutto, float copyrightLawsPercent = 0)
         {
             var calculator = new PermanentContractSalaryCalculator();
 
             var context = new PermanentContractSalaryCalculationContext
             {
-                EmployeeContributionParameters = new PermanentContractEmployeeContributionParameters
+                Parameters = new PermanentContractEmployeeContributionParameters
                 {
                     SocialInsuranceSetting = PermanentContractEmployeeExampleValues.SocialInsuranceSetting,
-                    DeductibleParameters = PermanentContractEmployeeExampleValues.DeductibleParameters,
-                    HealthInsuranceContributionParameters = PermanentContractEmployeeExampleValues.HealthInsuranceContributionParameters,
-                    TaxRelief = PermanentContractEmployeeExampleValues.TaxRelief
+                    EmploymentRelationshipTaxDeductibleExpensesSetting = PermanentContractEmployeeExampleValues.EmploymentRelationshipTaxDeductibleExpensesSetting,
+                    HealthInsuranceSetting = PermanentContractEmployeeExampleValues.HealthInsuranceSetting
                 }
             };
 
-            var calculationResult = calculator.Calculate(salaryBrutto, context);
+            var calculationResult = calculator.Calculate(salaryBrutto, copyrightLawsPercent, context);
 
             return calculationResult;
         }

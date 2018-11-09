@@ -13,16 +13,15 @@ namespace ERA.ConsoleApi
 
             var context = new PermanentContractSalaryCalculationContext
             {
-                EmployeeContributionParameters = new PermanentContractEmployeeContributionParameters
+                Parameters = new PermanentContractEmployeeContributionParameters
                 {
                     SocialInsuranceSetting = PermanentContractEmployeeExampleValues.SocialInsuranceSetting,
-                    DeductibleParameters = PermanentContractEmployeeExampleValues.DeductibleParameters,
-                    HealthInsuranceContributionParameters = PermanentContractEmployeeExampleValues.HealthInsuranceContributionParameters,
-                    TaxRelief = PermanentContractEmployeeExampleValues.TaxRelief
+                    EmploymentRelationshipTaxDeductibleExpensesSetting = PermanentContractEmployeeExampleValues.EmploymentRelationshipTaxDeductibleExpensesSetting,
+                    HealthInsuranceSetting = PermanentContractEmployeeExampleValues.HealthInsuranceSetting
                 }
             };
 
-            var calculationResult = calculator.Calculate(13000m, context);
+            var calculationResult = calculator.Calculate(13000m, 80f, context);
             consoleReporter.Report(calculationResult, context);
 
             Console.WriteLine("Wcisnij <ENTER> aby zakonczyc");

@@ -43,6 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\PermanentContractConsts.cs" />
+    <Compile Include="Referential\EmploymentRelationshipTaxDeductibleExpensesSetting.cs" />
+    <Compile Include="Referential\HealthInsuranceSetting.cs" />
     <Compile Include="Referential\SocialInsuranceSetting.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
