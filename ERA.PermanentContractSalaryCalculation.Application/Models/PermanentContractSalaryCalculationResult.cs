@@ -19,7 +19,7 @@
 
         public decimal HealthInsurance { get; set; }
         public decimal HealthInsuranceDeductibles { get; set; }
-        public decimal HealthInsurancePaidFromNetto { get; set; }
+        public decimal HealthInsurancePaidFromNett { get; set; }
 
         public decimal TaxMonthlyExemption { get; set; }
         public decimal Tax { get; set; }

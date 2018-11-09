@@ -15,14 +15,14 @@ namespace ERA.ConsoleApi
         public void Report(PermanentContractSalaryCalculationResult result, PermanentContractSalaryCalculationContext context)
         {
             //todo: zaokraglenia a nie format
-            ReportGrossSalary(result.SalaryGross);
+            ReportSalaryGross(result.SalaryGross);
             ReportTaxBase(result, context);
             ReportHealthInsuranceContribution(result);
             ReportTax(result, context);
-            ReportNettoSalary(result);
+            ReportSalaryNett(result);
         }
 
-        private static void ReportGrossSalary(decimal salaryGross)
+        private static void ReportSalaryGross(decimal salaryGross)
         {
             Console.WriteLine($"Pensja brutto: {salaryGross.ToString("0.00")}");
             Console.WriteLine();
@@ -65,7 +65,7 @@ namespace ERA.ConsoleApi
         {
             Console.WriteLine($"Ubezpieczenie zdrowotne (NFZ) - calosc: {result.HealthInsurance.ToString("0.00")}");
             Console.WriteLine($"NFZ - skladka odliczana od podatku: {result.HealthInsuranceDeductibles.ToString("0.00")}");
-            Console.WriteLine($"NFZ - skladka oplacana przez zatrudnionego: {result.HealthInsurancePaidFromNetto.ToString("0.00")}");
+            Console.WriteLine($"NFZ - skladka oplacana przez zatrudnionego: {result.HealthInsurancePaidFromNett.ToString("0.00")}");
             Console.WriteLine();
         }
 
@@ -79,7 +79,7 @@ namespace ERA.ConsoleApi
             Console.WriteLine();
         }
 
-        private static void ReportNettoSalary(PermanentContractSalaryCalculationResult result)
+        private static void ReportSalaryNett(PermanentContractSalaryCalculationResult result)
         {
             Console.WriteLine($"Pensja netto: {result.SalaryNett.ToString("0.00")}");
         }

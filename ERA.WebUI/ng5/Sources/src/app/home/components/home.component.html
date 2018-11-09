@@ -38,7 +38,7 @@
 
         <div class="form-group">
             <label for="salaryGross">Miesięczna pensja brutto (PLN)</label>
-            <input type="text" class="form-control" id="salaryGross" placeholder="gross" [(ngModel)]="salaryGross" required> 
+            <input type="text" class="form-control" id="salaryGross" placeholder="brutto" [(ngModel)]="salaryGross" required> 
         </div>
     </div>
 
@@ -54,8 +54,8 @@
 
     <br>
     <div class="card-body">
-        <label for="salaryNetto">Miesięczna pensja netto (PLN)</label>
-        <h1 *ngIf="calculationResult" id="salaryNetto">{{ calculationResult.SalaryNetto }} </h1>
+        <label for="salaryNett">Miesięczna pensja netto (PLN)</label>
+        <h1 *ngIf="calculationResult" id="salaryNett">{{ calculationResult.SalaryNett }} </h1>
         <br>
         <div *ngIf="calculationResult"> {{ calculationResult | json }} </div>
     </div>

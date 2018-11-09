@@ -20,7 +20,7 @@ namespace ERA.PermanentContractSalaryCalculation.Application.Process.Calculation
                     builder.Result.HealthInsuranceDeductibles =
                         Math.Round(salaryMinusSocial.GetPercent(setting.DeductibleHealthInsurancePercent)))
                 .Calculate(() =>
-                    builder.Result.HealthInsurancePaidFromNetto =
+                    builder.Result.HealthInsurancePaidFromNett =
                         builder.Result.HealthInsurance - builder.Result.HealthInsuranceDeductibles);
         }
     }
