@@ -1,6 +1,7 @@
 using System;
 using ERA.PermanentContractSalaryCalculation.Application.Models;
 using ERA.PermanentContractSalaryCalculation.Domain.Constants;
+using ERA.PermanentContractSalaryCalculation.Domain.Enumerations;
 using ERA.Shared.Extensions;
 
 namespace ERA.PermanentContractSalaryCalculation.Application.Process
@@ -73,7 +74,7 @@ namespace ERA.PermanentContractSalaryCalculation.Application.Process
             var salaryMinusSocial = result.SalaryBrutto - result.SocialInsuranceContribution;
 
             result.CopyrightLawsValue = salaryMinusSocial.GetPercent(copyrightLawsPercent);
-            result.CopyrightLawsCosts = result.CopyrightLawsValue.GetPercent(PermanentContractConsts.CopyrightLawsCostsPercent);
+            result.CopyrightLawsCosts = result.CopyrightLawsValue.GetPercent(CopyrightLawsCosts.Percent);
 
             return result;
         }
@@ -93,7 +94,7 @@ namespace ERA.PermanentContractSalaryCalculation.Application.Process
             result.MonthlyTaxExemption = CalculateMonthlyTaxExemption(result.TaxBase);
 
             // 3. zaliczka na podatek
-            result.Tax = Math.Max(0, result.TaxBase.GetPercent(PermanentContractConsts.TaxPercent)) - result.MonthlyTaxExemption - result.DeductibleHealthInsurance;
+            result.Tax = Math.Max(0, result.TaxBase.GetPercent(TaxThreshold._18)) - result.MonthlyTaxExemption - result.DeductibleHealthInsurance;
         }
 
         private static decimal CalculateMonthlyTaxExemption(decimal taxBase)

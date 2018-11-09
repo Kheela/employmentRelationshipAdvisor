@@ -2,6 +2,7 @@
 using ERA.PermanentContractSalaryCalculation.Application.Models;
 using ERA.PermanentContractSalaryCalculation.Application.Process;
 using ERA.PermanentContractSalaryCalculation.Domain.Constants;
+using ERA.PermanentContractSalaryCalculation.Domain.Enumerations;
 
 namespace ERA.ConsoleApi
 {
@@ -75,7 +76,7 @@ namespace ERA.ConsoleApi
 
             Console.WriteLine($"Ulga podatkowa: {taxRelief.ToString("0.00")}");
             Console.WriteLine($"Podatek dochodowy (PIT)");
-            Console.WriteLine($"({PermanentContractConsts.TaxPercent}% * podstawa opodatkowania - ulga - NFZ z podatku): {result.Tax.ToString("0.00")}");
+            Console.WriteLine($"({TaxThreshold._18}% * podstawa opodatkowania - ulga - NFZ z podatku): {result.Tax.ToString("0.00")}");
             Console.WriteLine();
         }
 
