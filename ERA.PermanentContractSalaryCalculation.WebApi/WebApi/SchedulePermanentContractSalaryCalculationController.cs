@@ -8,7 +8,7 @@ namespace ERA.PermanentContractSalaryCalculation.WebApi.WebApi
     public class SchedulePermanentContractSalaryCalculationController : ApiController
     {
         // GET api/SchedulePermanentContractSalaryCalculation
-        public PermanentContractSalaryCalculationResult Get(decimal salaryGross, float copyrightLawsPercent = 0)
+        public EmployeeSalaryCalculationResult Get(decimal salaryGross, float copyrightLawsPercent = 0)
         {
             var calculator = new PermanentContractSalaryCalculator();
 
@@ -16,9 +16,9 @@ namespace ERA.PermanentContractSalaryCalculation.WebApi.WebApi
             {
                 Parameters = new PermanentContractEmployeeContributionParameters
                 {
-                    SocialInsuranceSetting = PermanentContractEmployeeExampleValues.SocialInsuranceSetting,
-                    EmploymentRelationshipTaxSetting = PermanentContractEmployeeExampleValues.EmploymentRelationshipTaxSetting,
-                    HealthInsuranceSetting = PermanentContractEmployeeExampleValues.HealthInsuranceSetting
+                    SocialInsuranceSetting = EmployeeExampleValues.SocialInsuranceSetting,
+                    EmploymentRelationshipTaxSetting = EmployeeExampleValues.EmploymentRelationshipTaxSetting,
+                    HealthInsuranceSetting = EmployeeExampleValues.HealthInsuranceSetting
                 }
             };
 

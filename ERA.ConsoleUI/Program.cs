@@ -15,9 +15,9 @@ namespace ERA.ConsoleApi
             {
                 Parameters = new PermanentContractEmployeeContributionParameters
                 {
-                    SocialInsuranceSetting = PermanentContractEmployeeExampleValues.SocialInsuranceSetting,
-                    EmploymentRelationshipTaxSetting = PermanentContractEmployeeExampleValues.EmploymentRelationshipTaxSetting,
-                    HealthInsuranceSetting = PermanentContractEmployeeExampleValues.HealthInsuranceSetting
+                    SocialInsuranceSetting = EmployeeExampleValues.SocialInsuranceSetting,
+                    EmploymentRelationshipTaxSetting = EmployeeExampleValues.EmploymentRelationshipTaxSetting,
+                    HealthInsuranceSetting = EmployeeExampleValues.HealthInsuranceSetting
                 }
             };
 

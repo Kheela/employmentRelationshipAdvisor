@@ -7,12 +7,12 @@ namespace ERA.ConsoleApi
 {
     public interface IPermanentContractSalaryCalculationConsoleReporter
     {
-        void Report(PermanentContractSalaryCalculationResult result, PermanentContractSalaryCalculationContext context);
+        void Report(EmployeeSalaryCalculationResult result, PermanentContractSalaryCalculationContext context);
     }
 
     public class PermanentContractSalaryCalculationConsoleReporter : IPermanentContractSalaryCalculationConsoleReporter
     {
-        public void Report(PermanentContractSalaryCalculationResult result, PermanentContractSalaryCalculationContext context)
+        public void Report(EmployeeSalaryCalculationResult result, PermanentContractSalaryCalculationContext context)
         {
             //todo: zaokraglenia a nie format
             ReportSalaryGross(result.SalaryGross);
@@ -28,14 +28,14 @@ namespace ERA.ConsoleApi
             Console.WriteLine();
         }
 
-        private static void ReportTaxBase(PermanentContractSalaryCalculationResult result, PermanentContractSalaryCalculationContext context)
+        private static void ReportTaxBase(EmployeeSalaryCalculationResult result, PermanentContractSalaryCalculationContext context)
         {
             ReportSocialInsuranceContributionCalculationInfo(result, context);
             ReportDeductiblesCalculationInfo(result);
             ReportTaxBase(result);
         }
 
-        private static void ReportSocialInsuranceContributionCalculationInfo(PermanentContractSalaryCalculationResult result, PermanentContractSalaryCalculationContext context)
+        private static void ReportSocialInsuranceContributionCalculationInfo(EmployeeSalaryCalculationResult result, PermanentContractSalaryCalculationContext context)
         {
             var socialContributionParameters = context.Parameters.SocialInsuranceSetting;
 
@@ -46,7 +46,7 @@ namespace ERA.ConsoleApi
             Console.WriteLine();
         }
 
-        private static void ReportDeductiblesCalculationInfo(PermanentContractSalaryCalculationResult result)
+        private static void ReportDeductiblesCalculationInfo(EmployeeSalaryCalculationResult result)
         {
             Console.WriteLine($"Koszty uzysku: {result.TotalDeductibles.ToString("0.00")}");
             //todo:Console.WriteLine($"Koszty uzysku za dojazd: {result.DriveExpenses.ToString("0.00")}");
@@ -55,13 +55,13 @@ namespace ERA.ConsoleApi
             Console.WriteLine();
         }
 
-        private static void ReportTaxBase(PermanentContractSalaryCalculationResult result)
+        private static void ReportTaxBase(EmployeeSalaryCalculationResult result)
         {
             Console.WriteLine($"Podstawa opodatkowania (PIT): {result.TaxBase.ToString("0.00")}");
             Console.WriteLine();
         }
 
-        private static void ReportHealthInsuranceContribution(PermanentContractSalaryCalculationResult result)
+        private static void ReportHealthInsuranceContribution(EmployeeSalaryCalculationResult result)
         {
             Console.WriteLine($"Ubezpieczenie zdrowotne (NFZ) - calosc: {result.HealthInsurance.ToString("0.00")}");
             Console.WriteLine($"NFZ - skladka odliczana od podatku: {result.HealthInsuranceDeductibles.ToString("0.00")}");
@@ -69,7 +69,7 @@ namespace ERA.ConsoleApi
             Console.WriteLine();
         }
 
-        private static void ReportTax(PermanentContractSalaryCalculationResult result, PermanentContractSalaryCalculationContext context)
+        private static void ReportTax(EmployeeSalaryCalculationResult result, PermanentContractSalaryCalculationContext context)
         {
             var taxRelief = result.TaxMonthlyExemption;
 
@@ -79,7 +79,7 @@ namespace ERA.ConsoleApi
             Console.WriteLine();
         }
 
-        private static void ReportSalaryNett(PermanentContractSalaryCalculationResult result)
+        private static void ReportSalaryNett(EmployeeSalaryCalculationResult result)
         {
             Console.WriteLine($"Pensja netto: {result.SalaryNett.ToString("0.00")}");
         }

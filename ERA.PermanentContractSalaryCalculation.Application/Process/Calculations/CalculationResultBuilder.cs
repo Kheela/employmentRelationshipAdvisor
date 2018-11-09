@@ -6,7 +6,7 @@ namespace ERA.PermanentContractSalaryCalculation.Application.Process.Calculation
     public class CalculationResultBuilder
     {
         public decimal SalaryGross { get; private set; }
-        public PermanentContractSalaryCalculationResult Result { get; private set; }
+        public EmployeeSalaryCalculationResult Result { get; private set; }
 
         public CalculationResultBuilder SetSalaryGross(decimal salaryGross)
         {
@@ -22,7 +22,7 @@ namespace ERA.PermanentContractSalaryCalculation.Application.Process.Calculation
 
         public CalculationResultBuilder CreateResult()
         {
-            Result = new PermanentContractSalaryCalculationResult();
+            Result = new EmployeeSalaryCalculationResult();
             Result.SalaryGross = SalaryGross;
             return this;
         }

@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\PermanentContractSalaryCalculationResult.cs" />
+    <Compile Include="Models\EmployeeSalaryCalculationResult.cs" />
     <Compile Include="Process\Calculations\CalculationResultBuilder.cs" />
     <Compile Include="Process\Calculations\HealthInsuranceCalculations.cs" />
     <Compile Include="Process\Calculations\TaxMonthlyExemptionCalculations.cs" />
@@ -54,7 +54,7 @@
     <Compile Include="Process\Calculations\TaxBaseCalculations.cs" />
     <Compile Include="Process\Calculations\TaxCalculations.cs" />
     <Compile Include="Process\PermanentContractSalaryCalculator.cs" />
-    <Compile Include="PermanentContractEmployeeExampleValues.cs" />
+    <Compile Include="EmployeeExampleValues.cs" />
     <Compile Include="Process\PermanentContractSalaryCalculationContext.cs" />
     <Compile Include="Process\Calculations\SocialInsuranceCostCalculations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

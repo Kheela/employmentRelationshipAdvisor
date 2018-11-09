@@ -5,7 +5,7 @@ namespace ERA.PermanentContractSalaryCalculation.Application.Process
 {
     public interface IPermanentContractSalaryCalculator
     {
-        PermanentContractSalaryCalculationResult Calculate(
+        EmployeeSalaryCalculationResult Calculate(
             decimal salaryGross,
             //todo: decimal driveExpenses,
             float copyrightLawsPercent,
@@ -14,7 +14,7 @@ namespace ERA.PermanentContractSalaryCalculation.Application.Process
 
     public class PermanentContractSalaryCalculator : IPermanentContractSalaryCalculator
     {
-        public PermanentContractSalaryCalculationResult Calculate(
+        public EmployeeSalaryCalculationResult Calculate(
             decimal salaryGross, 
             //todo: decimal driveExpenses,
             float copyrightLawsPercent,

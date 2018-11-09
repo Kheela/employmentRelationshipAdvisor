@@ -1,6 +1,6 @@
 ﻿namespace ERA.PermanentContractSalaryCalculation.Application.Models
 {
-    public class PermanentContractSalaryCalculationResult
+    public class EmployeeSalaryCalculationResult
     {
         public decimal SalaryGross { get; set; }
         public decimal SalaryNett { get; set; }

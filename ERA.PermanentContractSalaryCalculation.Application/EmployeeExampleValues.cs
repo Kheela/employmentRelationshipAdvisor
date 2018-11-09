@@ -2,7 +2,7 @@
 
 namespace ERA.PermanentContractSalaryCalculation.Application
 {
-    public static class PermanentContractEmployeeExampleValues
+    public static class EmployeeExampleValues
     {
         public static SocialInsuranceSetting SocialInsuranceSetting = new SocialInsuranceSetting
         {
@@ -22,7 +22,5 @@ namespace ERA.PermanentContractSalaryCalculation.Application
             DeductibleHealthInsurancePercent = 7.75f,
             HealthInsurancePercent = 9f
         };
-
-        public static decimal TaxRelief = 560m / 12;
     }
 }

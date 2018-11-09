@@ -13,7 +13,7 @@ namespace ERA.PermanentContractSalaryCalculation.Application.Tests
             decimal expectedValue)
         {
             // arrange
-            var setting = PermanentContractEmployeeExampleValues.SocialInsuranceSetting;
+            var setting = EmployeeExampleValues.SocialInsuranceSetting;
             var builder = new CalculationResultBuilder();
 
             // act
@@ -35,8 +35,8 @@ namespace ERA.PermanentContractSalaryCalculation.Application.Tests
             decimal expectedValue)
         {
             // arrange
-            var setting = PermanentContractEmployeeExampleValues.SocialInsuranceSetting;
-            var employmentRelationshipTaxDeductibles = PermanentContractEmployeeExampleValues.EmploymentRelationshipTaxSetting.DeductiblesAmount;
+            var setting = EmployeeExampleValues.SocialInsuranceSetting;
+            var employmentRelationshipTaxDeductibles = EmployeeExampleValues.EmploymentRelationshipTaxSetting.DeductiblesAmount;
             var builder = new CalculationResultBuilder();
 
             // act
@@ -59,8 +59,8 @@ namespace ERA.PermanentContractSalaryCalculation.Application.Tests
             decimal expectedHealthInsuranceDeductibles)
         {
             // arrange
-            var socialSetting = PermanentContractEmployeeExampleValues.SocialInsuranceSetting;
-            var healthSetting = PermanentContractEmployeeExampleValues.HealthInsuranceSetting;
+            var socialSetting = EmployeeExampleValues.SocialInsuranceSetting;
+            var healthSetting = EmployeeExampleValues.HealthInsuranceSetting;
             var builder = new CalculationResultBuilder();
 
             // act
@@ -86,9 +86,9 @@ namespace ERA.PermanentContractSalaryCalculation.Application.Tests
             var calculator = new PermanentContractSalaryCalculator();
 
             var context = new PermanentContractSalaryCalculationContext();
-            context.Parameters.SocialInsuranceSetting = PermanentContractEmployeeExampleValues.SocialInsuranceSetting;
-            context.Parameters.HealthInsuranceSetting = PermanentContractEmployeeExampleValues.HealthInsuranceSetting;
-            context.Parameters.EmploymentRelationshipTaxSetting = PermanentContractEmployeeExampleValues.EmploymentRelationshipTaxSetting;
+            context.Parameters.SocialInsuranceSetting = EmployeeExampleValues.SocialInsuranceSetting;
+            context.Parameters.HealthInsuranceSetting = EmployeeExampleValues.HealthInsuranceSetting;
+            context.Parameters.EmploymentRelationshipTaxSetting = EmployeeExampleValues.EmploymentRelationshipTaxSetting;
 
             // act
             var calculationResult = calculator.Calculate(salaryGross, copyrightLawsPercent, context);
@@ -107,9 +107,9 @@ namespace ERA.PermanentContractSalaryCalculation.Application.Tests
             var calculator = new PermanentContractSalaryCalculator();
 
             var context = new PermanentContractSalaryCalculationContext();
-            context.Parameters.SocialInsuranceSetting = PermanentContractEmployeeExampleValues.SocialInsuranceSetting;
-            context.Parameters.HealthInsuranceSetting = PermanentContractEmployeeExampleValues.HealthInsuranceSetting;
-            context.Parameters.EmploymentRelationshipTaxSetting = PermanentContractEmployeeExampleValues.EmploymentRelationshipTaxSetting;
+            context.Parameters.SocialInsuranceSetting = EmployeeExampleValues.SocialInsuranceSetting;
+            context.Parameters.HealthInsuranceSetting = EmployeeExampleValues.HealthInsuranceSetting;
+            context.Parameters.EmploymentRelationshipTaxSetting = EmployeeExampleValues.EmploymentRelationshipTaxSetting;
 
             // act
             var calculationResult = calculator.Calculate(salaryGross, copyrightLawsPercent, context);
