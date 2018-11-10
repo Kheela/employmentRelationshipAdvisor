@@ -55,7 +55,10 @@
     <br>
     <div class="card-body">
         <label for="salaryNett">Miesięczna pensja netto (PLN)</label>
-        <h1 *ngIf="calculationResult" id="salaryNett">{{ calculationResult.SalaryNett }} </h1>
+        <h1 *ngIf="calculationResult" id="salaryNett">{{ calculationResult.EmployeeSalaryCalculationResult.SalaryNett }} </h1>
+        <br>
+        <label for="employerPaymentCost">Całkowity koszt wypłaty (PLN)</label>
+        <h1 *ngIf="calculationResult" id="employerPaymentCost">{{ calculationResult.EmployerPaymentCostCalculationResult.TotalPaymentCost }} </h1>
         <br>
         <div *ngIf="calculationResult"> {{ calculationResult | json }} </div>
     </div>
