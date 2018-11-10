@@ -7,12 +7,12 @@ namespace ERA.ConsoleApi
 {
     public interface IPermanentContractSalaryCalculationConsoleReporter
     {
-        void Report(EmployeeSalaryCalculationResult result, PermanentContractSalaryCalculationContext context);
+        void Report(EmployeeSalaryCalculationResult result, EmployeeSalaryCalculationContext context);
     }
 
     public class PermanentContractSalaryCalculationConsoleReporter : IPermanentContractSalaryCalculationConsoleReporter
     {
-        public void Report(EmployeeSalaryCalculationResult result, PermanentContractSalaryCalculationContext context)
+        public void Report(EmployeeSalaryCalculationResult result, EmployeeSalaryCalculationContext context)
         {
             //todo: zaokraglenia a nie format
             ReportSalaryGross(result.SalaryGross);
@@ -28,14 +28,14 @@ namespace ERA.ConsoleApi
             Console.WriteLine();
         }
 
-        private static void ReportTaxBase(EmployeeSalaryCalculationResult result, PermanentContractSalaryCalculationContext context)
+        private static void ReportTaxBase(EmployeeSalaryCalculationResult result, EmployeeSalaryCalculationContext context)
         {
             ReportSocialInsuranceContributionCalculationInfo(result, context);
             ReportDeductiblesCalculationInfo(result);
             ReportTaxBase(result);
         }
 
-        private static void ReportSocialInsuranceContributionCalculationInfo(EmployeeSalaryCalculationResult result, PermanentContractSalaryCalculationContext context)
+        private static void ReportSocialInsuranceContributionCalculationInfo(EmployeeSalaryCalculationResult result, EmployeeSalaryCalculationContext context)
         {
             var socialContributionParameters = context.Parameters.SocialInsuranceSetting;
 
@@ -69,7 +69,7 @@ namespace ERA.ConsoleApi
             Console.WriteLine();
         }
 
-        private static void ReportTax(EmployeeSalaryCalculationResult result, PermanentContractSalaryCalculationContext context)
+        private static void ReportTax(EmployeeSalaryCalculationResult result, EmployeeSalaryCalculationContext context)
         {
             var taxRelief = result.TaxMonthlyExemption;
 

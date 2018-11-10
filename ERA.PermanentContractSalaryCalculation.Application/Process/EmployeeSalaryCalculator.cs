@@ -3,24 +3,24 @@ using ERA.PermanentContractSalaryCalculation.Application.Process.Calculations;
 
 namespace ERA.PermanentContractSalaryCalculation.Application.Process
 {
-    public interface IPermanentContractSalaryCalculator
+    public interface IEmployeeSalaryCalculator
     {
         EmployeeSalaryCalculationResult Calculate(
             decimal salaryGross,
             //todo: decimal driveExpenses,
             float copyrightLawsPercent,
-            PermanentContractSalaryCalculationContext context);
+            EmployeeSalaryCalculationContext context);
     }
 
-    public class PermanentContractSalaryCalculator : IPermanentContractSalaryCalculator
+    public class EmployeeEmployeeSalaryCalculator : IEmployeeSalaryCalculator
     {
         public EmployeeSalaryCalculationResult Calculate(
             decimal salaryGross, 
             //todo: decimal driveExpenses,
             float copyrightLawsPercent,
-            PermanentContractSalaryCalculationContext context)
+            EmployeeSalaryCalculationContext context)
         {
-            var builder = new CalculationResultBuilder();
+            var builder = new EmployeeSalaryCalculationResultBuilder();
 
             var result = builder
                 .SetSalaryGross(salaryGross)

@@ -48,15 +48,15 @@
   <ItemGroup>
     <Compile Include="Models\EmployeeSalaryCalculationResult.cs" />
     <Compile Include="Models\EmployerSalaryCalculationResult.cs" />
-    <Compile Include="Process\Calculations\CalculationResultBuilder.cs" />
+    <Compile Include="Process\Calculations\EmployeeSalaryCalculationResultBuilder.cs" />
     <Compile Include="Process\Calculations\HealthInsuranceCalculations.cs" />
     <Compile Include="Process\Calculations\TaxMonthlyExemptionCalculations.cs" />
     <Compile Include="Process\Calculations\SalaryNettCalculations.cs" />
     <Compile Include="Process\Calculations\TaxBaseCalculations.cs" />
     <Compile Include="Process\Calculations\TaxCalculations.cs" />
-    <Compile Include="Process\PermanentContractSalaryCalculator.cs" />
+    <Compile Include="Process\EmployeeSalaryCalculator.cs" />
     <Compile Include="EmployeeExampleValues.cs" />
-    <Compile Include="Process\PermanentContractSalaryCalculationContext.cs" />
+    <Compile Include="Process\EmployeeSalaryCalculationContext.cs" />
     <Compile Include="Process\Calculations\SocialInsuranceCostCalculations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

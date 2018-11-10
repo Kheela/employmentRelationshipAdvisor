@@ -6,8 +6,8 @@ namespace ERA.PermanentContractSalaryCalculation.Application.Process.Calculation
 {
     public static class HealthInsuranceCalculations
     {
-        public static CalculationResultBuilder CalculateHealthInsurance(
-            this CalculationResultBuilder builder,
+        public static EmployeeSalaryCalculationResultBuilder CalculateHealthInsurance(
+            this EmployeeSalaryCalculationResultBuilder builder,
             decimal totalSocialInsurance,
             HealthInsuranceSetting setting)
         {

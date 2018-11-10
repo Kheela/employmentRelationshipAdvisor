@@ -5,8 +5,8 @@ namespace ERA.PermanentContractSalaryCalculation.Application.Process.Calculation
 {
     public static class SocialInsuranceCostCalculations
     {
-        public static CalculationResultBuilder CalculateSocialInsurance(
-            this CalculationResultBuilder builder, 
+        public static EmployeeSalaryCalculationResultBuilder CalculateSocialInsurance(
+            this EmployeeSalaryCalculationResultBuilder builder, 
             SocialInsuranceSetting setting)
         {
             return builder

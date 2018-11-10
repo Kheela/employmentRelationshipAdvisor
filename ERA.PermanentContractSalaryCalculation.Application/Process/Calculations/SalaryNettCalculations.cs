@@ -4,8 +4,8 @@ namespace ERA.PermanentContractSalaryCalculation.Application.Process.Calculation
 {
     public static class SalaryNettCalculations
     {
-        public static CalculationResultBuilder CalculateSalaryNett(
-            this CalculationResultBuilder builder,
+        public static EmployeeSalaryCalculationResultBuilder CalculateSalaryNett(
+            this EmployeeSalaryCalculationResultBuilder builder,
             decimal tax,
             decimal totalSocialInsurance,
             decimal healthInsurance)

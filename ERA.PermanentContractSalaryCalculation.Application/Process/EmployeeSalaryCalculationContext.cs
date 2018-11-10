@@ -2,13 +2,13 @@
 
 namespace ERA.PermanentContractSalaryCalculation.Application.Process
 {
-    public class PermanentContractSalaryCalculationContext
+    public class EmployeeSalaryCalculationContext
     {
-        public PermanentContractEmployeeContributionParameters Parameters { get; set; } = new PermanentContractEmployeeContributionParameters();
+        public EmployeeParameters Parameters { get; set; } = new EmployeeParameters();
     }
 
     // todo: get from net
-    public class PermanentContractEmployeeContributionParameters
+    public class EmployeeParameters
     {
         public SocialInsuranceSetting SocialInsuranceSetting { get; set; }
         public HealthInsuranceSetting HealthInsuranceSetting { get; set; }

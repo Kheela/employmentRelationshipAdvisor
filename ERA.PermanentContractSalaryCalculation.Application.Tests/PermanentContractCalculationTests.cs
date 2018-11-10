@@ -14,7 +14,7 @@ namespace ERA.PermanentContractSalaryCalculation.Application.Tests
         {
             // arrange
             var setting = EmployeeExampleValues.SocialInsuranceSetting;
-            var builder = new CalculationResultBuilder();
+            var builder = new EmployeeSalaryCalculationResultBuilder();
 
             // act
             var result = builder
@@ -37,7 +37,7 @@ namespace ERA.PermanentContractSalaryCalculation.Application.Tests
             // arrange
             var setting = EmployeeExampleValues.SocialInsuranceSetting;
             var employmentRelationshipTaxDeductibles = EmployeeExampleValues.EmploymentRelationshipTaxSetting.DeductiblesAmount;
-            var builder = new CalculationResultBuilder();
+            var builder = new EmployeeSalaryCalculationResultBuilder();
 
             // act
             var result = builder
@@ -61,7 +61,7 @@ namespace ERA.PermanentContractSalaryCalculation.Application.Tests
             // arrange
             var socialSetting = EmployeeExampleValues.SocialInsuranceSetting;
             var healthSetting = EmployeeExampleValues.HealthInsuranceSetting;
-            var builder = new CalculationResultBuilder();
+            var builder = new EmployeeSalaryCalculationResultBuilder();
 
             // act
             var result = builder
@@ -83,9 +83,9 @@ namespace ERA.PermanentContractSalaryCalculation.Application.Tests
             decimal expectedValue)
         {
             // arrange
-            var calculator = new PermanentContractSalaryCalculator();
+            var calculator = new EmployeeEmployeeSalaryCalculator();
 
-            var context = new PermanentContractSalaryCalculationContext();
+            var context = new EmployeeSalaryCalculationContext();
             context.Parameters.SocialInsuranceSetting = EmployeeExampleValues.SocialInsuranceSetting;
             context.Parameters.HealthInsuranceSetting = EmployeeExampleValues.HealthInsuranceSetting;
             context.Parameters.EmploymentRelationshipTaxSetting = EmployeeExampleValues.EmploymentRelationshipTaxSetting;
@@ -104,9 +104,9 @@ namespace ERA.PermanentContractSalaryCalculation.Application.Tests
             decimal expectedValue)
         {
             // arrange
-            var calculator = new PermanentContractSalaryCalculator();
+            var calculator = new EmployeeEmployeeSalaryCalculator();
 
-            var context = new PermanentContractSalaryCalculationContext();
+            var context = new EmployeeSalaryCalculationContext();
             context.Parameters.SocialInsuranceSetting = EmployeeExampleValues.SocialInsuranceSetting;
             context.Parameters.HealthInsuranceSetting = EmployeeExampleValues.HealthInsuranceSetting;
             context.Parameters.EmploymentRelationshipTaxSetting = EmployeeExampleValues.EmploymentRelationshipTaxSetting;

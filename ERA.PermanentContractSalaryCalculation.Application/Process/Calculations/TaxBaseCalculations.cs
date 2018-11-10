@@ -6,8 +6,8 @@ namespace ERA.PermanentContractSalaryCalculation.Application.Process.Calculation
 {
     public static class TaxBaseCalculations
     {
-        public static CalculationResultBuilder CalculateTaxBase(
-            this CalculationResultBuilder builder,
+        public static EmployeeSalaryCalculationResultBuilder CalculateTaxBase(
+            this EmployeeSalaryCalculationResultBuilder builder,
             float copyrightLawsPercent,
             decimal totalSocialInsurance,
             decimal employmentRelationshipDeductibles)
@@ -23,8 +23,8 @@ namespace ERA.PermanentContractSalaryCalculation.Application.Process.Calculation
                     builder.Result.TaxBase = Math.Round(salaryMinusSocial - builder.Result.TotalDeductibles));
         }
 
-        private static CalculationResultBuilder CalculateCopyrightLawsDeductibles(
-            this CalculationResultBuilder builder,
+        private static EmployeeSalaryCalculationResultBuilder CalculateCopyrightLawsDeductibles(
+            this EmployeeSalaryCalculationResultBuilder builder,
             decimal salaryMinusSocial,
             float copyrightLawsPercent)
         {

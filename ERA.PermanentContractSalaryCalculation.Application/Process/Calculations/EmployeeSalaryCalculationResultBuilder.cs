@@ -3,12 +3,12 @@ using ERA.PermanentContractSalaryCalculation.Application.Models;
 
 namespace ERA.PermanentContractSalaryCalculation.Application.Process.Calculations
 {
-    public class CalculationResultBuilder
+    public class EmployeeSalaryCalculationResultBuilder
     {
         public decimal SalaryGross { get; private set; }
         public EmployeeSalaryCalculationResult Result { get; private set; }
 
-        public CalculationResultBuilder SetSalaryGross(decimal salaryGross)
+        public EmployeeSalaryCalculationResultBuilder SetSalaryGross(decimal salaryGross)
         {
             SalaryGross = salaryGross;
 
@@ -20,14 +20,14 @@ namespace ERA.PermanentContractSalaryCalculation.Application.Process.Calculation
             return this;
         }
 
-        public CalculationResultBuilder CreateResult()
+        public EmployeeSalaryCalculationResultBuilder CreateResult()
         {
             Result = new EmployeeSalaryCalculationResult();
             Result.SalaryGross = SalaryGross;
             return this;
         }
 
-        public CalculationResultBuilder Calculate(Action action)
+        public EmployeeSalaryCalculationResultBuilder Calculate(Action action)
         {
             action();
             return this;

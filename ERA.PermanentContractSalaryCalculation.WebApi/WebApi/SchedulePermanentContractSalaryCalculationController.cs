@@ -10,11 +10,11 @@ namespace ERA.PermanentContractSalaryCalculation.WebApi.WebApi
         // GET api/SchedulePermanentContractSalaryCalculation
         public EmployeeSalaryCalculationResult Get(decimal salaryGross, float copyrightLawsPercent = 0)
         {
-            var calculator = new PermanentContractSalaryCalculator();
+            var calculator = new EmployeeEmployeeSalaryCalculator();
 
-            var context = new PermanentContractSalaryCalculationContext
+            var context = new EmployeeSalaryCalculationContext
             {
-                Parameters = new PermanentContractEmployeeContributionParameters
+                Parameters = new EmployeeParameters
                 {
                     SocialInsuranceSetting = EmployeeExampleValues.SocialInsuranceSetting,
                     EmploymentRelationshipTaxSetting = EmployeeExampleValues.EmploymentRelationshipTaxSetting,

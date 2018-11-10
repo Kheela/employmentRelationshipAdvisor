@@ -8,12 +8,12 @@ namespace ERA.ConsoleApi
     {
         static void Main(string[] args)
         {
-            var calculator = new PermanentContractSalaryCalculator();
+            var calculator = new EmployeeEmployeeSalaryCalculator();
             var consoleReporter = new PermanentContractSalaryCalculationConsoleReporter();
 
-            var context = new PermanentContractSalaryCalculationContext
+            var context = new EmployeeSalaryCalculationContext
             {
-                Parameters = new PermanentContractEmployeeContributionParameters
+                Parameters = new EmployeeParameters
                 {
                     SocialInsuranceSetting = EmployeeExampleValues.SocialInsuranceSetting,
                     EmploymentRelationshipTaxSetting = EmployeeExampleValues.EmploymentRelationshipTaxSetting,

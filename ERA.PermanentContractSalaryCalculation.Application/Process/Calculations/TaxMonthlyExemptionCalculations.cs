@@ -2,8 +2,8 @@
 {
     public static class TaxMonthlyExemptionCalculations
     {
-        public static CalculationResultBuilder CalculateTaxMonthlyExemption(
-            this CalculationResultBuilder builder)
+        public static EmployeeSalaryCalculationResultBuilder CalculateTaxMonthlyExemption(
+            this EmployeeSalaryCalculationResultBuilder builder)
         {
             // 1/12 z kwoty wolnej od podatku (bo jest ona roczna)
             // od 2018r wyliczana inaczej w zaleznosci od podstawy opodatkowania
