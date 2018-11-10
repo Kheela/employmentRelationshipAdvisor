@@ -1,9 +1,9 @@
 ﻿using System;
-using ERA.PermanentContractSalaryCalculation.Application.EmployerPaymentCostCalculation.Models;
+using ERA.PermanentContractSalaryCalculation.Application.Models;
 using ERA.PermanentContractSalaryCalculation.Domain.Referential;
 using ERA.Shared.Extensions;
 
-namespace ERA.PermanentContractSalaryCalculation.Application.EmployerPaymentCostCalculation.Process.Calculations
+namespace ERA.PermanentContractSalaryCalculation.Application.Process.EmployerPaymentCostCalculation.Calculations
 {
     public class EmployerPaymentCostCalculationResultBuilder
     {

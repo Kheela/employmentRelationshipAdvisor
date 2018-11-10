@@ -1,7 +1,6 @@
 ﻿using System;
 using ERA.PermanentContractSalaryCalculation.Application;
-using ERA.PermanentContractSalaryCalculation.Application.EmployeeSalaryCalculation;
-using ERA.PermanentContractSalaryCalculation.Application.EmployeeSalaryCalculation.Process;
+using ERA.PermanentContractSalaryCalculation.Application.Process.EmployeeSalaryCalculation;
 
 namespace ERA.ConsoleApi
 {

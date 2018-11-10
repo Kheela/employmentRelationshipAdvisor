@@ -1,7 +1,7 @@
-using ERA.PermanentContractSalaryCalculation.Application.EmployeeSalaryCalculation.Models;
-using ERA.PermanentContractSalaryCalculation.Application.EmployeeSalaryCalculation.Process.Calculations;
+using ERA.PermanentContractSalaryCalculation.Application.Models;
+using ERA.PermanentContractSalaryCalculation.Application.Process.EmployeeSalaryCalculation.Calculations;
 
-namespace ERA.PermanentContractSalaryCalculation.Application.EmployeeSalaryCalculation.Process
+namespace ERA.PermanentContractSalaryCalculation.Application.Process.EmployeeSalaryCalculation
 {
     public interface IEmployeeSalaryCalculator
     {

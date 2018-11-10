@@ -1,4 +1,4 @@
-﻿namespace ERA.PermanentContractSalaryCalculation.Application.EmployerPaymentCostCalculation.Models
+﻿namespace ERA.PermanentContractSalaryCalculation.Application.Models
 {
     public class EmployerPaymentCostCalculationResult
     {

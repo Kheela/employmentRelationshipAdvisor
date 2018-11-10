@@ -1,6 +1,6 @@
 ﻿using ERA.PermanentContractSalaryCalculation.Domain.Referential;
 
-namespace ERA.PermanentContractSalaryCalculation.Application.EmployerPaymentCostCalculation
+namespace ERA.PermanentContractSalaryCalculation.Application.Process.EmployerPaymentCostCalculation
 {
     public static class EmployerExampleValues
     {
