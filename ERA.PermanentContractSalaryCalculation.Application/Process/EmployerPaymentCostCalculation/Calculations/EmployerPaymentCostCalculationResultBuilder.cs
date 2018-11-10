@@ -36,10 +36,16 @@ namespace ERA.PermanentContractSalaryCalculation.Application.Process.EmployerPay
         {
             return
                 Calculate(() => Result.SocialInsurance = SalaryGross.GetPercent(setting.SocialInsurancePercent))
-                    .Calculate(() => Result.DisabilityPensionInsurance = SalaryGross.GetPercent(setting.DisabilityPensionInsurancePercent))
-                    .Calculate(() => Result.AccidentInsurance = SalaryGross.GetPercent(setting.AccidentInsurancePercent))
+                    .Calculate(() =>
+                        Result.DisabilityPensionInsurance =
+                            SalaryGross.GetPercent(setting.DisabilityPensionInsurancePercent))
+                    .Calculate(
+                        () => Result.AccidentInsurance = SalaryGross.GetPercent(setting.AccidentInsurancePercent))
                     .Calculate(() => Result.LabourFund = SalaryGross.GetPercent(setting.LabourFundPercent))
-                    .Calculate(() => Result.GuaranteedEmploymentBenefitFund = SalaryGross.GetPercent(setting.GuaranteedEmploymentBenefitFundPercent));
+                    .Calculate(() =>
+                        Result.GuaranteedEmploymentBenefitFund =
+                            SalaryGross.GetPercent(setting.GuaranteedEmploymentBenefitFundPercent))
+                    .Calculate(() => Result.TotalPaymentCost = SalaryGross + Result.TotalAdditionalCosts);
         }
 
         private EmployerPaymentCostCalculationResultBuilder Calculate(Action action)

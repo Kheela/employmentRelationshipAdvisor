@@ -39,9 +39,8 @@ namespace ERA.PermanentContractSalaryCalculation.Application.Process
                 }
             };
 
-            var employerPaymentCostCalculationResult = _employerPaymentCostCalculator.Calculate(salaryGross,
+            return _employerPaymentCostCalculator.Calculate(salaryGross,
                 copyrightLawsPercent, employerPaymentCostCalculationContext);
-            return employerPaymentCostCalculationResult;
         }
 
         private EmployeeSalaryCalculationResult CalculateEmployeePart(decimal salaryGross, float copyrightLawsPercent)
@@ -56,9 +55,7 @@ namespace ERA.PermanentContractSalaryCalculation.Application.Process
                 }
             };
 
-            var employeeSalaryCalculationResult =
-                _employeeSalaryCalculator.Calculate(salaryGross, copyrightLawsPercent, employeeSalaryCalculationContext);
-            return employeeSalaryCalculationResult;
+            return _employeeSalaryCalculator.Calculate(salaryGross, copyrightLawsPercent, employeeSalaryCalculationContext);
         }
     }
 }
