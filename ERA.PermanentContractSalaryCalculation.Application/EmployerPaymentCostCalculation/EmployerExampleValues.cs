@@ -4,23 +4,13 @@ namespace ERA.PermanentContractSalaryCalculation.Application.EmployerPaymentCost
 {
     public static class EmployerExampleValues
     {
-        public static SocialInsuranceSetting SocialInsuranceSetting = new SocialInsuranceSetting
+        public static EmployerPaymentCostSetting PaymentCostSetting = new EmployerPaymentCostSetting
         {
-            RetirementInsurancePercent = 9.76f,
-            DisabilityPensionInsurancePercent = 1.5f,
-            SicknessInsurancePercent = 2.45f
-        };
-
-        public static EmploymentRelationshipTaxSetting EmploymentRelationshipTaxSetting =
-            new EmploymentRelationshipTaxSetting
-            {
-                DeductiblesAmount = 111.25m
-            };
-
-        public static HealthInsuranceSetting HealthInsuranceSetting = new HealthInsuranceSetting
-        {
-            DeductibleHealthInsurancePercent = 7.75f,
-            HealthInsurancePercent = 9f
+            SocialInsurancePercent = 9.76f,
+            DisabilityPensionInsurancePercent = 6.5f,
+            AccidentInsurancePercent = 1.93f,
+            LabourFundPercent = 2.45f,
+            GuaranteedEmploymentBenefitFundPercent = 0.1f
         };
     }
 }

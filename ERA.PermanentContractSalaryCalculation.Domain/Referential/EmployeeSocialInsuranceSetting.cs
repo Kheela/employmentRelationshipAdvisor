@@ -2,7 +2,7 @@
 
 namespace ERA.PermanentContractSalaryCalculation.Domain.Referential
 {
-    public class SocialInsuranceSetting
+    public class EmployeeSocialInsuranceSetting
     {
         // emerytalne
         public float RetirementInsurancePercent { get; set; }

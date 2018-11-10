@@ -44,9 +44,10 @@
   <ItemGroup>
     <Compile Include="Constants\CopyrightLaws.cs" />
     <Compile Include="Constants\TaxThreshold.cs" />
+    <Compile Include="Referential\EmployerPaymentCostSetting.cs" />
     <Compile Include="Referential\EmploymentRelationshipTaxSetting.cs" />
-    <Compile Include="Referential\HealthInsuranceSetting.cs" />
-    <Compile Include="Referential\SocialInsuranceSetting.cs" />
+    <Compile Include="Referential\EmployeeHealthInsuranceSetting.cs" />
+    <Compile Include="Referential\EmployeeSocialInsuranceSetting.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

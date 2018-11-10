@@ -10,8 +10,8 @@ namespace ERA.PermanentContractSalaryCalculation.Application.EmployeeSalaryCalcu
     // todo: get from net
     public class EmployeeParameters
     {
-        public SocialInsuranceSetting SocialInsuranceSetting { get; set; }
-        public HealthInsuranceSetting HealthInsuranceSetting { get; set; }
+        public EmployeeSocialInsuranceSetting SocialInsuranceSetting { get; set; }
+        public EmployeeHealthInsuranceSetting HealthInsuranceSetting { get; set; }
         // koszty uzyskania przychodu
         public EmploymentRelationshipTaxSetting EmploymentRelationshipTaxSetting { get; set; } // wybieram 1 z 4 na podstawie informacji z UI
     }

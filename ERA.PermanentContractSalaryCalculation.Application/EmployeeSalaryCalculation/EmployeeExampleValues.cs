@@ -4,7 +4,7 @@ namespace ERA.PermanentContractSalaryCalculation.Application.EmployeeSalaryCalcu
 {
     public static class EmployeeExampleValues
     {
-        public static SocialInsuranceSetting SocialInsuranceSetting = new SocialInsuranceSetting
+        public static EmployeeSocialInsuranceSetting SocialInsuranceSetting = new EmployeeSocialInsuranceSetting
         {
             RetirementInsurancePercent = 9.76f,
             DisabilityPensionInsurancePercent = 1.5f,
@@ -17,7 +17,7 @@ namespace ERA.PermanentContractSalaryCalculation.Application.EmployeeSalaryCalcu
                 DeductiblesAmount = 111.25m
             };
 
-        public static HealthInsuranceSetting HealthInsuranceSetting = new HealthInsuranceSetting
+        public static EmployeeHealthInsuranceSetting HealthInsuranceSetting = new EmployeeHealthInsuranceSetting
         {
             DeductibleHealthInsurancePercent = 7.75f,
             HealthInsurancePercent = 9f

@@ -9,7 +9,7 @@ namespace ERA.PermanentContractSalaryCalculation.Application.EmployeeSalaryCalcu
         public static EmployeeSalaryCalculationResultBuilder CalculateHealthInsurance(
             this EmployeeSalaryCalculationResultBuilder builder,
             decimal totalSocialInsurance,
-            HealthInsuranceSetting setting)
+            EmployeeHealthInsuranceSetting setting)
         {
             var salaryMinusSocial = builder.SalaryGross - totalSocialInsurance;
 

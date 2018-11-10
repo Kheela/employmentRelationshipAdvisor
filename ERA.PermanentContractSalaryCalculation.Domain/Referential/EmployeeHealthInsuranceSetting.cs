@@ -1,6 +1,6 @@
 ﻿namespace ERA.PermanentContractSalaryCalculation.Domain.Referential
 {
-    public class HealthInsuranceSetting
+    public class EmployeeHealthInsuranceSetting
     {
         // tyle trzeba wplacic do zusu
         public float HealthInsurancePercent { get; set; }

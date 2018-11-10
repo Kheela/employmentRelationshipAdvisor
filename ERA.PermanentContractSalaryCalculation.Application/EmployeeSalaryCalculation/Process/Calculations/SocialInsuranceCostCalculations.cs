@@ -7,7 +7,7 @@ namespace ERA.PermanentContractSalaryCalculation.Application.EmployeeSalaryCalcu
     {
         public static EmployeeSalaryCalculationResultBuilder CalculateSocialInsurance(
             this EmployeeSalaryCalculationResultBuilder builder, 
-            SocialInsuranceSetting setting)
+            EmployeeSocialInsuranceSetting setting)
         {
             return builder
                 .Calculate(() => builder.Result.RetirementInsurance = builder.SalaryGross.GetPercent(setting.RetirementInsurancePercent))
