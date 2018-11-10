@@ -27,7 +27,7 @@ namespace ERA.PermanentContractSalaryCalculation.Application.EmployeeSalaryCalcu
             return this;
         }
 
-        public EmployeeSalaryCalculationResultBuilder Calculate(Action action)
+        protected internal EmployeeSalaryCalculationResultBuilder Calculate(Action action)
         {
             action();
             return this;

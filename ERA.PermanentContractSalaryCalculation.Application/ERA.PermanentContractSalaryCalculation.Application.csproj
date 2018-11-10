@@ -57,8 +57,11 @@
     <Compile Include="EmployeeSalaryCalculation\EmployeeExampleValues.cs" />
     <Compile Include="EmployeeSalaryCalculation\Process\EmployeeSalaryCalculationContext.cs" />
     <Compile Include="EmployeeSalaryCalculation\Process\Calculations\SocialInsuranceCostCalculations.cs" />
+    <Compile Include="EmployerPaymentCostCalculation\Process\Calculations\EmployerPaymentCostCalculationResultBuilder.cs" />
+    <Compile Include="EmployerPaymentCostCalculation\Process\EmployerPaymentCostCalculationContext.cs" />
     <Compile Include="EmployerPaymentCostCalculation\EmployerExampleValues.cs" />
     <Compile Include="EmployerPaymentCostCalculation\Models\EmployerPaymentCostCalculationResult.cs" />
+    <Compile Include="EmployerPaymentCostCalculation\Process\EmployerPaymentCostCalculator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -71,5 +74,6 @@
       <Name>ERA.Shared</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

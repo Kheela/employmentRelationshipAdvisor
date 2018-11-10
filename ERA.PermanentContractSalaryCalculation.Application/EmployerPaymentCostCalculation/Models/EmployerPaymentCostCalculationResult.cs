@@ -4,9 +4,11 @@
     {
         public decimal TotalPaymentCost { get; set; }
 
+        public decimal SalaryGross { get; set; }
+
         public decimal SocialInsurance { get; set; }
         // Ubezpieczenie rentowe
-        public decimal RetirementAnnuity { get; set; }
+        public decimal DisabilityPensionInsurance { get; set; }
         public decimal AccidentInsurance { get; set; }
         // Fundusz Pracy
         public decimal LabourFund { get; set; }
@@ -14,7 +16,7 @@
         public decimal GuaranteedEmploymentBenefitFund { get; set; }
 
         public decimal TotalAdditionalCosts => SocialInsurance +
-                                               RetirementAnnuity +
+                                               DisabilityPensionInsurance +
                                                AccidentInsurance +
                                                LabourFund +
                                                GuaranteedEmploymentBenefitFund;
