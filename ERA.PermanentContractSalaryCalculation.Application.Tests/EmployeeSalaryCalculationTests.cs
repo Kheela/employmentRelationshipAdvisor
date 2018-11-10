@@ -5,7 +5,7 @@ using NUnit.Framework;
 
 namespace ERA.PermanentContractSalaryCalculation.Application.Tests
 {
-    public class PermanentContractCalculationTests
+    public class EmployeeSalaryCalculationTests
     {
         [TestCase(2000, 274.2)]
         public void PermanentContract__SalaryGross_eq__SocialInsuranceCost_eq(
