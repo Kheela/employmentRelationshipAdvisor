@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\EmployeeSalaryCalculationResult.cs" />
+    <Compile Include="Models\EmployerSalaryCalculationResult.cs" />
     <Compile Include="Process\Calculations\CalculationResultBuilder.cs" />
     <Compile Include="Process\Calculations\HealthInsuranceCalculations.cs" />
     <Compile Include="Process\Calculations\TaxMonthlyExemptionCalculations.cs" />
