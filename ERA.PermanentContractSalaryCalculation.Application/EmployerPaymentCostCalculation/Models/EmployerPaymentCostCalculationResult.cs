@@ -1,6 +1,6 @@
-﻿namespace ERA.PermanentContractSalaryCalculation.Application.Models
+﻿namespace ERA.PermanentContractSalaryCalculation.Application.EmployerPaymentCostCalculation.Models
 {
-    public class EmployerSalaryCalculationResult
+    public class EmployerPaymentCostCalculationResult
     {
         public decimal TotalPaymentCost { get; set; }
         public decimal SocialInsurance { get; set; }

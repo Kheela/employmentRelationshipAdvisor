@@ -1,4 +1,4 @@
-﻿namespace ERA.PermanentContractSalaryCalculation.Application.Process.Calculations
+﻿namespace ERA.PermanentContractSalaryCalculation.Application.EmployeeSalaryCalculation.Process.Calculations
 {
     public static class TaxMonthlyExemptionCalculations
     {

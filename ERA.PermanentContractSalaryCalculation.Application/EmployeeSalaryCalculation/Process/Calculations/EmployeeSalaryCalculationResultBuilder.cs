@@ -1,7 +1,7 @@
 ﻿using System;
-using ERA.PermanentContractSalaryCalculation.Application.Models;
+using ERA.PermanentContractSalaryCalculation.Application.EmployeeSalaryCalculation.Models;
 
-namespace ERA.PermanentContractSalaryCalculation.Application.Process.Calculations
+namespace ERA.PermanentContractSalaryCalculation.Application.EmployeeSalaryCalculation.Process.Calculations
 {
     public class EmployeeSalaryCalculationResultBuilder
     {

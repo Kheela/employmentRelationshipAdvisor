@@ -1,8 +1,8 @@
 ﻿using ERA.PermanentContractSalaryCalculation.Domain.Referential;
 
-namespace ERA.PermanentContractSalaryCalculation.Application
+namespace ERA.PermanentContractSalaryCalculation.Application.EmployerPaymentCostCalculation
 {
-    public static class EmployeeExampleValues
+    public static class EmployerExampleValues
     {
         public static SocialInsuranceSetting SocialInsuranceSetting = new SocialInsuranceSetting
         {

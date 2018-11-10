@@ -1,5 +1,6 @@
-﻿using ERA.PermanentContractSalaryCalculation.Application.Process;
-using ERA.PermanentContractSalaryCalculation.Application.Process.Calculations;
+﻿using ERA.PermanentContractSalaryCalculation.Application.EmployeeSalaryCalculation;
+using ERA.PermanentContractSalaryCalculation.Application.EmployeeSalaryCalculation.Process;
+using ERA.PermanentContractSalaryCalculation.Application.EmployeeSalaryCalculation.Process.Calculations;
 using FluentAssertions;
 using NUnit.Framework;
 

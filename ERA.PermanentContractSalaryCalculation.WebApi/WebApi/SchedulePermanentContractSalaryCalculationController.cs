@@ -1,7 +1,8 @@
 ﻿using System.Web.Http;
 using ERA.PermanentContractSalaryCalculation.Application;
-using ERA.PermanentContractSalaryCalculation.Application.Models;
-using ERA.PermanentContractSalaryCalculation.Application.Process;
+using ERA.PermanentContractSalaryCalculation.Application.EmployeeSalaryCalculation;
+using ERA.PermanentContractSalaryCalculation.Application.EmployeeSalaryCalculation.Models;
+using ERA.PermanentContractSalaryCalculation.Application.EmployeeSalaryCalculation.Process;
 
 namespace ERA.PermanentContractSalaryCalculation.WebApi.WebApi
 {

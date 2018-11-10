@@ -46,18 +46,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\EmployeeSalaryCalculationResult.cs" />
-    <Compile Include="Models\EmployerSalaryCalculationResult.cs" />
-    <Compile Include="Process\Calculations\EmployeeSalaryCalculationResultBuilder.cs" />
-    <Compile Include="Process\Calculations\HealthInsuranceCalculations.cs" />
-    <Compile Include="Process\Calculations\TaxMonthlyExemptionCalculations.cs" />
-    <Compile Include="Process\Calculations\SalaryNettCalculations.cs" />
-    <Compile Include="Process\Calculations\TaxBaseCalculations.cs" />
-    <Compile Include="Process\Calculations\TaxCalculations.cs" />
-    <Compile Include="Process\EmployeeSalaryCalculator.cs" />
-    <Compile Include="EmployeeExampleValues.cs" />
-    <Compile Include="Process\EmployeeSalaryCalculationContext.cs" />
-    <Compile Include="Process\Calculations\SocialInsuranceCostCalculations.cs" />
+    <Compile Include="EmployeeSalaryCalculation\Models\EmployeeSalaryCalculationResult.cs" />
+    <Compile Include="EmployeeSalaryCalculation\Process\Calculations\EmployeeSalaryCalculationResultBuilder.cs" />
+    <Compile Include="EmployeeSalaryCalculation\Process\Calculations\HealthInsuranceCalculations.cs" />
+    <Compile Include="EmployeeSalaryCalculation\Process\Calculations\TaxMonthlyExemptionCalculations.cs" />
+    <Compile Include="EmployeeSalaryCalculation\Process\Calculations\SalaryNettCalculations.cs" />
+    <Compile Include="EmployeeSalaryCalculation\Process\Calculations\TaxBaseCalculations.cs" />
+    <Compile Include="EmployeeSalaryCalculation\Process\Calculations\TaxCalculations.cs" />
+    <Compile Include="EmployeeSalaryCalculation\Process\EmployeeSalaryCalculator.cs" />
+    <Compile Include="EmployeeSalaryCalculation\EmployeeExampleValues.cs" />
+    <Compile Include="EmployeeSalaryCalculation\Process\EmployeeSalaryCalculationContext.cs" />
+    <Compile Include="EmployeeSalaryCalculation\Process\Calculations\SocialInsuranceCostCalculations.cs" />
+    <Compile Include="EmployerPaymentCostCalculation\EmployerExampleValues.cs" />
+    <Compile Include="EmployerPaymentCostCalculation\Models\EmployerPaymentCostCalculationResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

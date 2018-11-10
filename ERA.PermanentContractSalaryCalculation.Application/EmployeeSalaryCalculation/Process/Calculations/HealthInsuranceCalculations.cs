@@ -1,8 +1,8 @@
-﻿using ERA.PermanentContractSalaryCalculation.Domain.Referential;
+﻿using System;
+using ERA.PermanentContractSalaryCalculation.Domain.Referential;
 using ERA.Shared.Extensions;
-using System;
 
-namespace ERA.PermanentContractSalaryCalculation.Application.Process.Calculations
+namespace ERA.PermanentContractSalaryCalculation.Application.EmployeeSalaryCalculation.Process.Calculations
 {
     public static class HealthInsuranceCalculations
     {

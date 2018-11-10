@@ -1,8 +1,8 @@
-﻿using ERA.Shared.Extensions;
-using System;
+﻿using System;
 using ERA.PermanentContractSalaryCalculation.Domain.Constants;
+using ERA.Shared.Extensions;
 
-namespace ERA.PermanentContractSalaryCalculation.Application.Process.Calculations
+namespace ERA.PermanentContractSalaryCalculation.Application.EmployeeSalaryCalculation.Process.Calculations
 {
     public static class TaxCalculations
     {
