@@ -83,7 +83,8 @@ namespace ERA.PermanentContractSalaryCalculation.Application.Tests
             decimal expectedValue)
         {
             // arrange
-            var calculator = new EmployeeEmployeeSalaryCalculator();
+            var builder = new EmployeeSalaryCalculationResultBuilder();
+            var calculator = new EmployeeSalaryCalculator(builder);
 
             var context = new EmployeeSalaryCalculationContext();
             context.Parameters.SocialInsuranceSetting = EmployeeExampleValues.SocialInsuranceSetting;
@@ -104,7 +105,8 @@ namespace ERA.PermanentContractSalaryCalculation.Application.Tests
             decimal expectedValue)
         {
             // arrange
-            var calculator = new EmployeeEmployeeSalaryCalculator();
+            var builder = new EmployeeSalaryCalculationResultBuilder();
+            var calculator = new EmployeeSalaryCalculator(builder);
 
             var context = new EmployeeSalaryCalculationContext();
             context.Parameters.SocialInsuranceSetting = EmployeeExampleValues.SocialInsuranceSetting;

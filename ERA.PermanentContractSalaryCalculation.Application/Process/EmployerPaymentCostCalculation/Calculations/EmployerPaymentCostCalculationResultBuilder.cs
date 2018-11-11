@@ -5,7 +5,17 @@ using ERA.Shared.Extensions;
 
 namespace ERA.PermanentContractSalaryCalculation.Application.Process.EmployerPaymentCostCalculation.Calculations
 {
-    public class EmployerPaymentCostCalculationResultBuilder
+    public interface IEmployerPaymentCostCalculationResultBuilder
+    {
+        EmployerPaymentCostCalculationResult Result { get; }
+        decimal SalaryGross { get; }
+
+        EmployerPaymentCostCalculationResultBuilder Calculate(EmployerPaymentCostSetting setting);
+        EmployerPaymentCostCalculationResultBuilder CreateResult();
+        EmployerPaymentCostCalculationResultBuilder SetSalaryGross(decimal salaryGross);
+    }
+
+    public class EmployerPaymentCostCalculationResultBuilder : IEmployerPaymentCostCalculationResultBuilder
     {
         public decimal SalaryGross { get; private set; }
         public EmployerPaymentCostCalculationResult Result { get; private set; }

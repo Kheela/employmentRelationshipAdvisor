@@ -14,15 +14,21 @@ namespace ERA.PermanentContractSalaryCalculation.Application.Process.EmployerPay
 
     public class EmployerPaymentCostCalculator : IEmployerPaymentCostCalculator
     {
+        private IEmployerPaymentCostCalculationResultBuilder _builder;
+
+        public EmployerPaymentCostCalculator(
+            IEmployerPaymentCostCalculationResultBuilder builder)
+        {
+            _builder = builder;
+        }
+
         public EmployerPaymentCostCalculationResult Calculate(
             decimal salaryGross, 
             //todo: decimal driveExpenses,
             float copyrightLawsPercent,
             EmployerPaymentCostCalculationContext context)
         {
-            var builder = new EmployerPaymentCostCalculationResultBuilder();
-
-            var result = builder
+            var result = _builder
                 .SetSalaryGross(salaryGross)
                 .CreateResult()
                 .Calculate(context.Parameters.EmployerPaymentCostSetting)

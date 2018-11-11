@@ -1,4 +1,5 @@
 ﻿using ERA.PermanentContractSalaryCalculation.Application.Process.EmployerPaymentCostCalculation;
+using ERA.PermanentContractSalaryCalculation.Application.Process.EmployerPaymentCostCalculation.Calculations;
 using FluentAssertions;
 using NUnit.Framework;
 
@@ -20,7 +21,8 @@ namespace ERA.PermanentContractSalaryCalculation.Application.Tests
                 }
             };
 
-            var calculator = new EmployerPaymentCostCalculator();
+            var builder = new EmployerPaymentCostCalculationResultBuilder();
+            var calculator = new EmployerPaymentCostCalculator(builder);
 
             // act
             var result = calculator.Calculate(salaryGross, 0, context);

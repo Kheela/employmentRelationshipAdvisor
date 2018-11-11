@@ -14,8 +14,16 @@ namespace ERA.PermanentContractSalaryCalculation.Application.Process
 
     public class PermanentContractSalaryCalculator : IPermanentContractSalaryCalculator
     {
-        private IEmployeeSalaryCalculator _employeeSalaryCalculator = new EmployeeEmployeeSalaryCalculator();
-        private IEmployerPaymentCostCalculator _employerPaymentCostCalculator = new EmployerPaymentCostCalculator();
+        private readonly IEmployeeSalaryCalculator _employeeSalaryCalculator;
+        private readonly IEmployerPaymentCostCalculator _employerPaymentCostCalculator;
+
+        public PermanentContractSalaryCalculator(
+            IEmployeeSalaryCalculator employeeSalaryCalculator,
+            IEmployerPaymentCostCalculator employerPaymentCostCalculator)
+        {
+            _employeeSalaryCalculator = employeeSalaryCalculator;
+            _employerPaymentCostCalculator = employerPaymentCostCalculator;
+        }
 
         public PermanentContractSalary Calculate(decimal salaryGross, float copyrightLawsPercent)
         {

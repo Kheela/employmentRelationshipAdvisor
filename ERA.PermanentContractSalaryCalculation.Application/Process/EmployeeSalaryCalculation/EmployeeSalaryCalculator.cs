@@ -12,25 +12,31 @@ namespace ERA.PermanentContractSalaryCalculation.Application.Process.EmployeeSal
             EmployeeSalaryCalculationContext context);
     }
 
-    public class EmployeeEmployeeSalaryCalculator : IEmployeeSalaryCalculator
+    public class EmployeeSalaryCalculator : IEmployeeSalaryCalculator
     {
+        private IEmployeeSalaryCalculationResultBuilder _builder;
+
+        public EmployeeSalaryCalculator(
+            IEmployeeSalaryCalculationResultBuilder builder)
+        {
+            _builder = builder;
+        }
+
         public EmployeeSalaryCalculationResult Calculate(
             decimal salaryGross, 
             //todo: decimal driveExpenses,
             float copyrightLawsPercent,
             EmployeeSalaryCalculationContext context)
         {
-            var builder = new EmployeeSalaryCalculationResultBuilder();
-
-            var result = builder
+            var result = _builder
                 .SetSalaryGross(salaryGross)
                 .CreateResult()
                 .CalculateSocialInsurance(context.Parameters.SocialInsuranceSetting)
-                .CalculateTaxBase(copyrightLawsPercent, builder.Result.TotalSocialInsurance, context.Parameters.EmploymentRelationshipTaxSetting.DeductiblesAmount)
-                .CalculateHealthInsurance(builder.Result.TotalSocialInsurance, context.Parameters.HealthInsuranceSetting)
+                .CalculateTaxBase(copyrightLawsPercent, _builder.Result.TotalSocialInsurance, context.Parameters.EmploymentRelationshipTaxSetting.DeductiblesAmount)
+                .CalculateHealthInsurance(_builder.Result.TotalSocialInsurance, context.Parameters.HealthInsuranceSetting)
                 .CalculateTaxMonthlyExemption()
-                .CalculateTax(builder.Result.TaxBase, builder.Result.TaxMonthlyExemption, builder.Result.HealthInsuranceDeductibles)
-                .CalculateSalaryNett(builder.Result.Tax, builder.Result.TotalSocialInsurance, builder.Result.HealthInsurance)
+                .CalculateTax(_builder.Result.TaxBase, _builder.Result.TaxMonthlyExemption, _builder.Result.HealthInsuranceDeductibles)
+                .CalculateSalaryNett(_builder.Result.Tax, _builder.Result.TotalSocialInsurance, _builder.Result.HealthInsurance)
                 .Result;
 
             return result;

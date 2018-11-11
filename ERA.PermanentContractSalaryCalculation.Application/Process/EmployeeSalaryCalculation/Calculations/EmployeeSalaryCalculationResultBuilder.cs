@@ -3,7 +3,16 @@ using ERA.PermanentContractSalaryCalculation.Application.Models;
 
 namespace ERA.PermanentContractSalaryCalculation.Application.Process.EmployeeSalaryCalculation.Calculations
 {
-    public class EmployeeSalaryCalculationResultBuilder
+    public interface IEmployeeSalaryCalculationResultBuilder
+    {
+        EmployeeSalaryCalculationResult Result { get; }
+        decimal SalaryGross { get; }
+
+        EmployeeSalaryCalculationResultBuilder CreateResult();
+        EmployeeSalaryCalculationResultBuilder SetSalaryGross(decimal salaryGross);
+    }
+
+    public class EmployeeSalaryCalculationResultBuilder : IEmployeeSalaryCalculationResultBuilder
     {
         public decimal SalaryGross { get; private set; }
         public EmployeeSalaryCalculationResult Result { get; private set; }

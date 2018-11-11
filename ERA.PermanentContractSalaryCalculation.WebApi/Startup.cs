@@ -1,8 +1,10 @@
 ﻿using System.Web.Http;
+using ERA.Externals.DI;
 using ERA.PermanentContractSalaryCalculation.WebApi.App_Start;
 using Microsoft.Owin.FileSystems;
 using Microsoft.Owin.StaticFiles;
 using Microsoft.Owin.StaticFiles.ContentTypes;
+using Autofac.Integration.WebApi;
 using Owin;
 
 namespace ERA.PermanentContractSalaryCalculation.WebApi
@@ -15,6 +17,8 @@ namespace ERA.PermanentContractSalaryCalculation.WebApi
             WebApiConfig.Register(httpConfiguration);
 
             appBuilder.UseWebApi(httpConfiguration);
+
+            httpConfiguration.DependencyResolver = new AutofacWebApiDependencyResolver(AutofacContainer.Container);
 
             //SetStaticFilesHosting(appBuilder);
         }

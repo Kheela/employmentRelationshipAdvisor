@@ -1,6 +1,7 @@
 ﻿using System;
 using ERA.PermanentContractSalaryCalculation.Application;
 using ERA.PermanentContractSalaryCalculation.Application.Process.EmployeeSalaryCalculation;
+using ERA.PermanentContractSalaryCalculation.Application.Process.EmployeeSalaryCalculation.Calculations;
 
 namespace ERA.ConsoleApi
 {
@@ -8,7 +9,8 @@ namespace ERA.ConsoleApi
     {
         static void Main(string[] args)
         {
-            var calculator = new EmployeeEmployeeSalaryCalculator();
+            var builder = new EmployeeSalaryCalculationResultBuilder();
+            var calculator = new EmployeeSalaryCalculator(builder);
             var consoleReporter = new PermanentContractSalaryCalculationConsoleReporter();
 
             var context = new EmployeeSalaryCalculationContext
