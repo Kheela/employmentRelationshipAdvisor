@@ -9,5 +9,9 @@
     <Import_RootNamespace>ERA.WebUI</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)ng\Sources\angular.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)ng\Sources\yarn.lock" />
   </ItemGroup>
 </Project>
