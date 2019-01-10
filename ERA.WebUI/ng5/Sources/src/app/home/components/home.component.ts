@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { element } from 'protractor';
 import { MouseEvent } from 'ngx-bootstrap/utils/facade/browser';
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 import "rxjs/Rx"
 
 import { EmploymentContractCalculationService } from '../services/employmentContractCalculation.service';

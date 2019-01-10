@@ -1,6 +1,9 @@
+
+import {throwError as observableThrowError,  Observable } from 'rxjs';
+
+import {catchError, map} from 'rxjs/operators';
 import { Injectable } from "@angular/core";
 import { Http } from "@angular/http";
-import { Observable } from "rxjs/Observable";
 import "rxjs/Rx"
 
 @Injectable()
@@ -11,13 +14,13 @@ export class EmploymentContractCalculationService {
     constructor(private http: Http) { }
 
     scheduleCalculation(salaryGross: number) {
-        return this.http.get(this.baseUrl + "?salaryGross=" + salaryGross)
+        return this.http.get(this.baseUrl + "?salaryGross=" + salaryGross).pipe(
             //.map(res => <Customer[]> res.json())
-            .map(res => res.json())
-            .catch(error => {
+            map(res => res.json()),
+            catchError(error => {
                 console.log(error);
-                return Observable.throw(error);
-            });
+                return observableThrowError(error);
+            }),);
     }
 
     // getCalculations() {
