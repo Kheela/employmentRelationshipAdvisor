@@ -4,6 +4,12 @@ using ERA.PermanentContractSalaryCalculation.Application.Process;
 
 namespace ERA.PermanentContractSalaryCalculation.WebApi.WebApi
 {
+    public enum SalaryType : byte
+    {
+        Gross = 1,
+        Nett = 2
+    }
+
     public class SchedulePermanentContractSalaryCalculationController : ApiController
     {
         private IPermanentContractSalaryCalculator _calculator;
@@ -15,9 +21,11 @@ namespace ERA.PermanentContractSalaryCalculation.WebApi.WebApi
         }
 
         // GET api/SchedulePermanentContractSalaryCalculation
-        public PermanentContractSalary Get(decimal salaryGross, float copyrightLawsPercent = 0)
+        public PermanentContractSalary Get(decimal salary, SalaryType salaryType, float copyrightLawsPercent = 0)
         {
-            return _calculator.Calculate(salaryGross, copyrightLawsPercent);
+            return salaryType == SalaryType.Gross 
+                ? _calculator.CalculateFromGross(salary, copyrightLawsPercent)
+                : _calculator.CalculateFromNett(salary, copyrightLawsPercent);
         }
     }
 }

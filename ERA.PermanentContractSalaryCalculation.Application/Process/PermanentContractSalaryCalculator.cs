@@ -6,8 +6,13 @@ namespace ERA.PermanentContractSalaryCalculation.Application.Process
 {
     public interface IPermanentContractSalaryCalculator
     {
-        PermanentContractSalary Calculate(
+        PermanentContractSalary CalculateFromGross(
             decimal salaryGross,
+            //todo: decimal driveExpenses,
+            float copyrightLawsPercent);
+
+        PermanentContractSalary CalculateFromNett(
+            decimal salaryNett,
             //todo: decimal driveExpenses,
             float copyrightLawsPercent);
     }
@@ -25,10 +30,23 @@ namespace ERA.PermanentContractSalaryCalculation.Application.Process
             _employerPaymentCostCalculator = employerPaymentCostCalculator;
         }
 
-        public PermanentContractSalary Calculate(decimal salaryGross, float copyrightLawsPercent)
+        public PermanentContractSalary CalculateFromGross(decimal salaryGross, float copyrightLawsPercent)
         {
             var employeeSalaryCalculationResult = CalculateEmployeePart(salaryGross, copyrightLawsPercent);
             var employerPaymentCostCalculationResult = CalculateEmployerPart(salaryGross, copyrightLawsPercent);
+
+            return new PermanentContractSalary
+            {
+                EmployeeSalaryCalculationResult = employeeSalaryCalculationResult,
+                EmployerPaymentCostCalculationResult = employerPaymentCostCalculationResult
+            };
+        }
+
+        public PermanentContractSalary CalculateFromNett(decimal salaryNett, float copyrightLawsPercent)
+        {
+            //todo:
+            var employeeSalaryCalculationResult = CalculateEmployeePart(salaryNett, copyrightLawsPercent);
+            var employerPaymentCostCalculationResult = CalculateEmployerPart(salaryNett, copyrightLawsPercent);
 
             return new PermanentContractSalary
             {

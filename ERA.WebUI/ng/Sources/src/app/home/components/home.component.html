@@ -33,13 +33,19 @@
 
 <div class="card" (keydown.enter)="calculate()">
     <div class="card-body">
-        <h4>Wprowadź informacje o zarobkach</h4>
+        <h4 class="card-title">Wprowadź informacje o zarobkach</h4>
         <br>
 
-        <div class="form-group">
-            <label for="salaryGross">Miesięczna pensja brutto (PLN)</label>
-            <input type="text" class="form-control" id="salaryGross" placeholder="brutto" [(ngModel)]="salaryGross" required> 
-        </div>
+        <form class="col-12">
+            <div class="form-row">
+                <label for="salaryGrossIn" class="col-sm-2 col-form-label">Miesięczna pensja brutto (PLN): </label>
+                <input type="text" class="form-control col-sm-10" id="salaryGrossIn" placeholder="brutto" name="gross" [ngModel]="salaryGross" (ngModelChange)="onGrossChange($event)" required> 
+            </div>
+            <div class="form-row">
+                <label for="salaryNettIn" class="col-sm-2 col-form-label">Miesięczna pensja netto (PLN): </label>
+                <input type="text" class="form-control col-sm-10" id="salaryGrossIn" placeholder="netto" name="nett" [ngModel]="salaryNett" (ngModelChange)="onNettChange($event)" required> 
+            </div>
+        </form>
     </div>
 
     <button id="calculateBtn" type="button" class="btn btn-outline-primary btn-lg has-spinner" (click)="calculate(); onClick()"
@@ -48,18 +54,31 @@
             <i class="icon-spin icon-refresh icon-large"></i>
         </span>
         <span [style.display]="isLoading ? 'none' : 'inline'">
-            Sprawdź
+            Przelicz
         </span>
     </button>
+</div>
 
-    <br>
+<div class="card">
     <div class="card-body">
-        <label for="salaryNett">Miesięczna pensja netto (PLN)</label>
-        <h1 *ngIf="calculationResult" id="salaryNett">{{ calculationResult.EmployeeSalaryCalculationResult.SalaryNett }} </h1>
+
+        <div class="row col-12">
+            <label for="salaryNettOut" class="col-sm-3">Miesięczna pensja netto (PLN): </label>
+            <h1 *ngIf="calculationResult" id="salaryNettOut" class="col-sm-9">{{ calculationResult.EmployeeSalaryCalculationResult.SalaryNett }}</h1>
+        </div>
+
+        <div class="row col-12">
+            <label for="salaryGrossOut" class="col-sm-3">Miesięczna pensja brutto (PLN): </label>
+            <h1 *ngIf="calculationResult" id="salaryGrossOut" class="col-sm-9">{{ calculationResult.EmployeeSalaryCalculationResult.SalaryGross }}</h1>
+        </div>
+
+        <div class="row col-12">
+            <label for="employerPaymentCost" class="col-sm-3">Całkowity koszt wypłaty (PLN): </label>
+            <h1 *ngIf="calculationResult" id="employerPaymentCost" class="col-sm-9">{{ calculationResult.EmployerPaymentCostCalculationResult.TotalPaymentCost }}</h1>
+        </div>
         <br>
-        <label for="employerPaymentCost">Całkowity koszt wypłaty (PLN)</label>
-        <h1 *ngIf="calculationResult" id="employerPaymentCost">{{ calculationResult.EmployerPaymentCostCalculationResult.TotalPaymentCost }} </h1>
-        <br>
+
         <div *ngIf="calculationResult"> {{ calculationResult | json }} </div>
+        <br>
     </div>
 </div>
