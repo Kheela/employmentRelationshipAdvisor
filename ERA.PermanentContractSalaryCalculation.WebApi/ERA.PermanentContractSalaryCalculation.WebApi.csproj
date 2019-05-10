@@ -50,9 +50,8 @@
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Autofac, Version=4.8.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Autofac.4.8.1\lib\net45\Autofac.dll</HintPath>
+    <Reference Include="Autofac, Version=4.9.2.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.9.2\lib\net45\Autofac.dll</HintPath>
     </Reference>
     <Reference Include="Autofac.Integration.WebApi, Version=4.2.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\Autofac.WebApi2.4.2.0\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
@@ -136,24 +135,24 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ERA.Externals\ERA.Externals.csproj">
-      <Project>{4c08d1cc-6173-4cd7-85eb-76012040fb96}</Project>
-      <Name>ERA.Externals</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ERA.PermanentContractSalaryCalculation.Application\ERA.PermanentContractSalaryCalculation.Application.csproj">
-      <Project>{9420872D-688B-4DA0-8A40-B40962B3F958}</Project>
-      <Name>ERA.PermanentContractSalaryCalculation.Application</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ERA.PermanentContractSalaryCalculation.Domain\ERA.PermanentContractSalaryCalculation.Domain.csproj">
-      <Project>{F4645549-0CF4-46EF-8DAF-81BBCE41FB9A}</Project>
-      <Name>ERA.PermanentContractSalaryCalculation.Domain</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Website\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NewERA.Externals\NewERA.Externals.csproj">
+      <Project>{5b3c2382-bc94-4aaa-a9c0-5f45af83ac6f}</Project>
+      <Name>NewERA.Externals</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NewERA.PermanentContractSalaryCalculation.Application\NewERA.PermanentContractSalaryCalculation.Application.csproj">
+      <Project>{313f1681-1668-47fb-87fc-7c1375fd2f06}</Project>
+      <Name>NewERA.PermanentContractSalaryCalculation.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NewERA.PermanentContractSalaryCalculation.Domain\NewERA.PermanentContractSalaryCalculation.Domain.csproj">
+      <Project>{c4aec5e4-c2e1-42f8-80d5-ebe6e4e3a22f}</Project>
+      <Name>NewERA.PermanentContractSalaryCalculation.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

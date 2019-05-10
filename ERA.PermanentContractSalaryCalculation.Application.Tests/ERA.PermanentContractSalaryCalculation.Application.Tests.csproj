@@ -60,13 +60,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ERA.PermanentContractSalaryCalculation.Application\ERA.PermanentContractSalaryCalculation.Application.csproj">
-      <Project>{9420872d-688b-4da0-8a40-b40962b3f958}</Project>
-      <Name>ERA.PermanentContractSalaryCalculation.Application</Name>
+    <ProjectReference Include="..\NewERA.PermanentContractSalaryCalculation.Application\NewERA.PermanentContractSalaryCalculation.Application.csproj">
+      <Project>{313f1681-1668-47fb-87fc-7c1375fd2f06}</Project>
+      <Name>NewERA.PermanentContractSalaryCalculation.Application</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ERA.PermanentContractSalaryCalculation.Domain\ERA.PermanentContractSalaryCalculation.Domain.csproj">
-      <Project>{F4645549-0CF4-46EF-8DAF-81BBCE41FB9A}</Project>
-      <Name>ERA.PermanentContractSalaryCalculation.Domain</Name>
+    <ProjectReference Include="..\NewERA.PermanentContractSalaryCalculation.Domain\NewERA.PermanentContractSalaryCalculation.Domain.csproj">
+      <Project>{c4aec5e4-c2e1-42f8-80d5-ebe6e4e3a22f}</Project>
+      <Name>NewERA.PermanentContractSalaryCalculation.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

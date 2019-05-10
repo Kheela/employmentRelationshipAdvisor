@@ -71,16 +71,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ERA.PermanentContractSalaryCalculation.Domain\ERA.PermanentContractSalaryCalculation.Domain.csproj">
-      <Project>{f4645549-0cf4-46ef-8daf-81bbce41fb9a}</Project>
-      <Name>ERA.PermanentContractSalaryCalculation.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ERA.Shared\ERA.Shared.csproj">
-      <Project>{34d898c8-ccca-42bb-b152-3c3d951f0502}</Project>
-      <Name>ERA.Shared</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
