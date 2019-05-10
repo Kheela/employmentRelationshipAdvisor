@@ -9,8 +9,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\NewERA.PermanentContractSalaryCalculation.Domain\NewERA.PermanentContractSalaryCalculation.Domain.csproj" />
-    <ProjectReference Include="..\NewERA.Shared\NewERA.Shared.csproj" />
+    <ProjectReference Include="..\ERA.PermanentContractSalaryCalculation.Domain\ERA.PermanentContractSalaryCalculation.Domain.csproj" />
+    <ProjectReference Include="..\ERA.Shared\ERA.Shared.csproj" />
   </ItemGroup>
 
 </Project>

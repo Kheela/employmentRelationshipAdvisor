@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\NewERA.PermanentContractSalaryCalculation.Application\NewERA.PermanentContractSalaryCalculation.Application.csproj" />
+    <ProjectReference Include="..\ERA.PermanentContractSalaryCalculation.Application\ERA.PermanentContractSalaryCalculation.Application.csproj" />
   </ItemGroup>
 
 </Project>
